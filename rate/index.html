@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<base target="_top">
+<meta charset="utf-8">
+<title>تقييم الدورة واستلام الشهادة</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@500;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#faf7f2; --surface:#ffffff; --sage:#eef3ea; --sage-deep:#a9b8a2; --field:#fcfbf8;
+  --ink:#2f3a33; --muted:#5f6b62; --rose:#ecd8d1; --pulse:#c4553d; --line:#e8e2d8; --ok:#3e7a52;
+  --display:"Alexandria","IBM Plex Sans Arabic",Tahoma,sans-serif;
+  --body:"IBM Plex Sans Arabic",Tahoma,"Segoe UI",sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.7}
+.app{max-width:560px;margin:0 auto;padding:0 max(16px,env(safe-area-inset-right,0px)) 60px max(16px,env(safe-area-inset-left,0px))}
+.band{background:#e9efe5;border-radius:0 0 22px 22px;padding:24px 20px 16px;text-align:center;position:relative;overflow:hidden;margin-inline:-4px}
+.blob{position:absolute;border-radius:50%;animation:float 9s ease-in-out infinite}
+.blob.a{width:180px;height:180px;background:#f6f9f4;top:-85px;right:-60px}
+.blob.b{width:140px;height:140px;background:#f4e3dd;bottom:-75px;left:-45px;animation-delay:-4s}
+@keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(12px,8px)}}
+.band>*:not(.blob){position:relative}
+.brand{font-family:var(--display);font-weight:500;font-size:11.5px;letter-spacing:.22em;color:#7d8b80;direction:ltr;margin-bottom:8px;display:flex;align-items:center;justify-content:center;gap:8px}
+.brand::before,.brand::after{content:"";width:18px;height:1px;background:#b9c6b2}
+.tag{font-family:var(--display);font-weight:700;font-size:clamp(17px,5vw,22px);direction:ltr;color:#2f3a33}
+.ecg{display:block;margin:8px auto 0;width:180px;max-width:70%}
+.ecg path{stroke:#c4553d;stroke-width:2.2;fill:none;stroke-dasharray:320;animation:beat 2.8s ease-in-out infinite}
+@keyframes beat{0%{stroke-dashoffset:320}50%,100%{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){.ecg path,.blob{animation:none}}
+h1{font-family:var(--display);font-weight:700;font-size:21px;margin:22px 0 2px;text-wrap:balance}
+.sub{color:var(--muted);margin:0 0 16px;font-size:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px 18px;margin-bottom:14px}
+.card h2{font-family:var(--display);font-size:17px;margin:0 0 4px;font-weight:700}
+.muted{color:var(--muted);font-size:13.5px;margin:0}
+label.q{display:block;font-weight:600;margin:0 0 6px}
+input[type=tel],textarea{width:100%;font:inherit;color:var(--ink);background:var(--field);border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;outline:none}
+input:focus-visible,textarea:focus-visible{border-color:var(--pulse)}
+input[type=tel]{direction:ltr;text-align:right;font-size:18px;letter-spacing:.04em;font-variant-numeric:tabular-nums}
+textarea{min-height:84px;resize:vertical}
+.f{margin-top:18px}
+.btn{font:inherit;font-weight:600;border-radius:14px;padding:13px 18px;cursor:pointer;border:1.5px solid var(--ink);background:var(--ink);color:#fff;width:100%;margin-top:18px}
+.btn.soft{background:var(--surface);color:var(--ink);border-color:var(--line)}
+.btn[disabled]{opacity:.55;cursor:progress}
+.btn:focus-visible,.star:focus-visible,.pill input:focus-visible+span{outline:2px solid var(--pulse);outline-offset:2px}
+.err{color:var(--pulse);font-size:13px;margin-top:8px}
+.reg{display:flex;justify-content:space-between;align-items:center;gap:10px;border:1.5px solid var(--line);border-radius:14px;padding:12px 14px;background:var(--field);cursor:pointer;width:100%;font:inherit;color:inherit;text-align:right;margin-top:10px}
+.reg b{display:block;direction:ltr;text-align:right;font-family:var(--display)}
+.reg small{color:var(--muted)}
+.chip{flex:none;font-size:12px;font-weight:600;border-radius:20px;padding:2px 10px;background:var(--rose);color:var(--pulse)}
+.chip.ok{background:#e5f1e8;color:#2f6b4a}
+.stars{display:flex;gap:6px;direction:ltr;justify-content:flex-end}
+.star{width:44px;height:44px;border:0;background:none;padding:0;cursor:pointer;border-radius:10px}
+.star svg{width:100%;height:100%}
+.star path{fill:#e8e2d8;transition:fill .15s}
+.star.on path{fill:#e0a43c}
+.rowq{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;padding:10px 0;border-top:1px dashed var(--line)}
+.rowq:first-of-type{border-top:0}
+.rowq .stars .star{width:34px;height:34px}
+.pills{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.pill{position:relative}
+.pill input{position:absolute;opacity:0;inset:0}
+.pill span{display:block;text-align:center;border:1.5px solid var(--line);border-radius:12px;padding:10px;background:var(--field);cursor:pointer}
+.pill input:checked+span{border-color:var(--pulse);background:var(--rose);font-weight:600}
+.check{display:flex;gap:10px;align-items:flex-start;margin-top:16px;font-size:14px;cursor:pointer}
+.check input{width:20px;height:20px;accent-color:var(--pulse);flex:none;margin-top:3px}
+.done{text-align:center;padding:30px 20px}
+.tick{width:64px;height:64px;border-radius:50%;background:var(--sage);display:grid;place-items:center;margin:0 auto 12px}
+.tick path{stroke:var(--ok);stroke-width:3;fill:none}
+.dl{display:flex;text-decoration:none;align-items:center;justify-content:center;gap:8px}
+.dl svg{width:18px;height:18px}
+.wait{background:var(--sage);border-radius:12px;padding:12px 14px;font-size:14px;margin-top:14px}
+.foot{text-align:center;font-size:13px;color:var(--muted);margin-top:18px}
+.foot a{color:var(--ink);font-weight:600;direction:ltr;display:inline-block}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="band">
+    <span class="blob a" aria-hidden="true"></span><span class="blob b" aria-hidden="true"></span>
+    <div class="brand">Rawan Hub</div>
+    <div class="tag">Because one skill can save a life</div>
+    <svg class="ecg" viewBox="0 0 200 30" aria-hidden="true"><path d="M0 18 H78 L86 18 L92 6 L98 28 L104 2 L110 18 H200"/></svg>
+  </header>
+
+  <h1>قيّم دورتك واستلم شهادتك</h1>
+  <p class="sub">رأيك يهمنا ويساعدنا نطوّر دوراتنا. بعد التقييم تقدر تحمّل شهادتك مباشرة.</p>
+
+  <!-- 1) رقم الجوال -->
+  <section class="card" id="sPhone">
+    <h2>رقم الجوال</h2>
+    <p class="muted">اكتب نفس الرقم اللي سجلت فيه في الدورة.</p>
+    <div class="f">
+      <label class="q" for="mobile">رقم الجوال</label>
+      <input type="tel" id="mobile" inputmode="numeric" autocomplete="tel" placeholder="05XXXXXXXX">
+      <div class="err" id="phoneErr" hidden></div>
+    </div>
+    <button class="btn" id="goPhone" type="button">متابعة</button>
+  </section>
+
+  <!-- 2) اختيار التسجيل لو أكثر من واحد -->
+  <section class="card" id="sPick" hidden>
+    <h2 id="hello"></h2>
+    <p class="muted">اختر الدورة اللي تبي تقيّمها أو تستلم شهادتها.</p>
+    <div id="regList"></div>
+  </section>
+
+  <!-- 3) التقييم -->
+  <section class="card" id="sRate" hidden>
+    <h2>تقييم الدورة</h2>
+    <p class="muted" id="rateFor"></p>
+
+    <div class="f">
+      <label class="q">التقييم العام للدورة <span style="color:var(--pulse)">*</span></label>
+      <div class="stars" data-k="overall" role="radiogroup" aria-label="التقييم العام"></div>
+    </div>
+
+    <div class="f">
+      <label class="q">قيّم كل جانب</label>
+      <div class="rowq"><span>المدربة</span><div class="stars" data-k="trainer" role="radiogroup" aria-label="المدربة"></div></div>
+      <div class="rowq"><span>المحتوى والتطبيق العملي</span><div class="stars" data-k="content" role="radiogroup" aria-label="المحتوى"></div></div>
+      <div class="rowq"><span>التنظيم والمكان</span><div class="stars" data-k="place" role="radiogroup" aria-label="التنظيم والمكان"></div></div>
+    </div>
+
+    <div class="f">
+      <label class="q">هل تنصح غيرك بالدورة؟</label>
+      <div class="pills">
+        <label class="pill"><input type="radio" name="rec" value="yes"><span>نعم 👍</span></label>
+        <label class="pill"><input type="radio" name="rec" value="no"><span>لا</span></label>
+      </div>
+    </div>
+
+    <div class="f">
+      <label class="q" for="comment">كلمة عن تجربتك <span class="muted">(اختياري)</span></label>
+      <textarea id="comment" maxlength="1500" placeholder="وش أكثر شي استفدت منه؟ وش تحب نطوّره؟"></textarea>
+      <label class="check"><input type="checkbox" id="publish"><span>أوافق على نشر كلمتي باسمي الأول في حسابات Rawan Hub</span></label>
+    </div>
+
+    <div class="f">
+      <label class="q" for="next">وش الدورة اللي تحب تاخذها بعدها؟ <span class="muted">(اختياري)</span></label>
+      <textarea id="next" maxlength="200" style="min-height:52px" placeholder="مثلاً ACLS أو الإسعافات الأولية"></textarea>
+    </div>
+
+    <div class="err" id="rateErr" hidden></div>
+    <button class="btn" id="sendRate" type="button">إرسال التقييم واستلام الشهادة</button>
+  </section>
+
+  <!-- 4) الشهادة -->
+  <section class="card done" id="sCert" hidden>
+    <div class="tick"><svg width="34" height="34" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+    <h2>شكراً لتقييمك 🌿</h2>
+    <p class="muted" id="certFor"></p>
+    <div id="certBtns"></div>
+    <div class="wait" id="certWait" hidden>شهادتك تحت التجهيز. ارجع لنفس الرابط وأدخل رقمك أول ما نبلغك في القروب، وتطلع لك مباشرة بدون ما تعيد التقييم.</div>
+    <div class="err" id="certErr" hidden></div>
+    <button class="btn soft" id="back" type="button" hidden>دورة ثانية</button>
+  </section>
+
+  <p class="foot">للاستفسار عبر واتساب: <a href="https://wa.me/966568587031" target="_blank" rel="noopener">0568587031</a></p>
+</div>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const STAR = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4L2.8 9.5l6.4-.8z"/></svg>';
+const LABELS = ['ضعيف', 'مقبول', 'جيد', 'جيد جداً', 'ممتاز'];
+let mobile = '', regs = [], cur = null;
+const rating = {};
+
+function show(id) { ['sPhone', 'sPick', 'sRate', 'sCert'].forEach(s => $(s).hidden = s !== id); window.scrollTo(0, 0); }
+function err(id, msg) { $(id).textContent = msg || ''; $(id).hidden = !msg; }
+function busy(btn, on, txt) { btn.disabled = on; if (txt) btn.textContent = txt; }
+function esc(x) { return String(x || '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
+function call(fn, ...args) {
+  return new Promise((res, rej) => google.script.run.withSuccessHandler(res).withFailureHandler(rej)[fn](...args));
+}
+
+// النجوم
+document.querySelectorAll('.stars').forEach(box => {
+  const k = box.dataset.k;
+  for (let i = 1; i <= 5; i++) {
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'star'; b.innerHTML = STAR;
+    b.setAttribute('role', 'radio'); b.setAttribute('aria-label', i + ' من 5 · ' + LABELS[i - 1]); b.setAttribute('aria-checked', 'false');
+    b.onclick = () => {
+      rating[k] = i;
+      [...box.children].forEach((s, j) => { s.classList.toggle('on', j < i); s.setAttribute('aria-checked', j === i - 1 ? 'true' : 'false'); });
+      if (k === 'overall') err('rateErr', '');
+    };
+    box.appendChild(b);
+  }
+});
+
+// 1) البحث برقم الجوال
+const digits = (x) => String(x).replace(/[٠-٩]/g, c => '٠١٢٣٤٥٦٧٨٩'.indexOf(c)).replace(/\D/g, '');
+$('mobile').addEventListener('keydown', e => { if (e.key === 'Enter') $('goPhone').click(); });
+$('goPhone').onclick = async () => {
+  const m = digits($('mobile').value);
+  if (m.length < 9) return err('phoneErr', 'اكتب رقم الجوال كامل، مثل 0551234567');
+  err('phoneErr', ''); busy($('goPhone'), true, 'جارٍ البحث…');
+  try {
+    const r = await call('findTrainee', m);
+    if (!r.ok) return err('phoneErr', r.msg);
+    mobile = m; regs = r.regs;
+    if (regs.length === 1) open_(regs[0]); else pickList();
+  } catch (e) { err('phoneErr', 'صار خطأ في الاتصال، حاول مرة ثانية'); }
+  finally { busy($('goPhone'), false, 'متابعة'); }
+};
+
+function pickList() {
+  $('hello').textContent = 'أهلاً ' + (regs[0].first || '') + ' 👋';
+  $('regList').innerHTML = regs.map((r, i) =>
+    '<button class="reg" type="button" data-i="' + i + '"><span><b>' + esc(r.course) + '</b><small>' + esc(r.sessions || r.ref) + '</small></span>' +
+    '<span class="chip' + (r.rated ? ' ok' : '') + '">' + (r.rated ? 'تم التقييم' : 'قيّم الآن') + '</span></button>').join('');
+  $('regList').querySelectorAll('.reg').forEach(b => b.onclick = () => open_(regs[+b.dataset.i]));
+  show('sPick');
+}
+
+function open_(r) {
+  cur = r;
+  if (r.rated) return certView(r);
+  Object.keys(rating).forEach(k => delete rating[k]);
+  document.querySelectorAll('.star').forEach(s => { s.classList.remove('on'); s.setAttribute('aria-checked', 'false'); });
+  document.querySelectorAll('input[name=rec]').forEach(x => x.checked = false);
+  $('comment').value = ''; $('next').value = ''; $('publish').checked = false; err('rateErr', '');
+  $('rateFor').textContent = 'أهلاً ' + (r.first || '') + '، كيف كانت دورة ' + r.course + (r.sessions ? ' (' + r.sessions + ')' : '') + '؟';
+  show('sRate');
+}
+
+// 2) إرسال التقييم
+$('sendRate').onclick = async () => {
+  if (!rating.overall) return err('rateErr', 'اختر التقييم العام بالنجوم');
+  busy($('sendRate'), true, 'جارٍ الإرسال…');
+  const rec = document.querySelector('input[name=rec]:checked');
+  try {
+    const r = await call('submitRating', mobile, cur.ref, {
+      overall: rating.overall, trainer: rating.trainer || '', content: rating.content || '', place: rating.place || '',
+      recommend: rec ? rec.value : '', comment: $('comment').value.trim(), publish: $('publish').checked, next: $('next').value.trim()
+    });
+    if (!r.ok) return err('rateErr', r.msg);
+    const i = regs.findIndex(x => x.ref === cur.ref); regs[i] = r.reg;
+    certView(r.reg);
+  } catch (e) { err('rateErr', 'صار خطأ في الإرسال، حاول مرة ثانية'); }
+  finally { busy($('sendRate'), false, 'إرسال التقييم واستلام الشهادة'); }
+};
+
+// 3) الشهادة
+const DL = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 19.5h14"/></svg>';
+function certView(r) {
+  cur = r; err('certErr', '');
+  $('certFor').textContent = 'دورة ' + r.course;
+  $('certBtns').innerHTML = r.certs.map((c, i) =>
+    '<a class="btn dl" target="_blank" rel="noopener" href="' + esc(c.url) + '" data-i="' + i + '">' + DL + '<span>تحميل ' + esc(c.label) + '</span></a>').join('');
+  $('certBtns').querySelectorAll('a').forEach(a => a.onclick = () => { try { google.script.run.logDownload(mobile, cur.ref, r.certs[+a.dataset.i].id); } catch (e) {} });
+  $('certWait').hidden = r.certs.length > 0;
+  $('back').hidden = regs.length < 2;
+  show('sCert');
+}
+$('back').onclick = pickList;
+
+</script>
+</body>
+</html>
