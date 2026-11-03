@@ -9,28 +9,71 @@
 <style>
   html,body{margin:0;height:100%;background:#faf7f2}
   iframe{border:0;width:100%;height:100%;display:block}
-  #fb{position:fixed;left:12px;right:12px;bottom:16px;max-width:440px;margin:0 auto;background:#fff;border:1px solid #e8e2d8;border-radius:16px;box-shadow:0 8px 30px rgba(47,58,51,.15);padding:16px 18px;font-family:Tahoma,Arial,sans-serif;color:#2f3a33;text-align:center;line-height:1.8}
-  #fb[hidden]{display:none}
-  #fb p{margin:0 0 10px;font-size:14px}
-  #fb a{display:block;background:#2f3a33;color:#fff;text-decoration:none;border-radius:12px;padding:11px;font-weight:700;font-size:15px}
+  .ld{font-family:Tahoma,Arial,sans-serif;color:#5f6b62;text-align:center;padding-top:40vh;font-size:15px}
 </style>
 </head>
 <body>
-<iframe id="f" title="Rawan Courses" allow="clipboard-write"></iframe>
-<div id="fb" hidden>
-  <p>ما ظهر نموذج التسجيل؟</p>
-  <a id="fbBtn" href="#" target="_top">افتح نموذج التسجيل</a>
-</div>
+<p class="ld">جارٍ فتح نموذج التسجيل…</p>
 <script>
-var EXEC = "https://script.google.com/macros/s/AKfycbxvUBpwEXMsv_tICeW17V7eL4NaSgJjUkC87Sd3NTBoM7yO_fd3oukm_hDV0dsPBdRKzQ/exec" + location.search;
-var ready = false;
-document.getElementById("f").src = EXEC;
-document.getElementById("fbBtn").href = EXEC;
-// الفورم يرسل «rawan-ready» أول ما يفتح. إذا ما وصل (مثلاً كروم مسجّل فيه أكثر من حساب قوقل) يطلع زر يفتح الفورم مباشرة
-addEventListener("message", function (e) {
-  if (e.data === "rawan-ready") { ready = true; document.getElementById("fb").hidden = true; }
-});
-setTimeout(function () { if (!ready) document.getElementById("fb").hidden = false; }, 7000);
+/*
+  الموقع يجيب الفورم من Apps Script ويعرضه هنا مباشرة، ويكلّم السيرفر بـ fetch بدون حسابات قوقل.
+  كذا ما يتأثر إذا المتصفح مسجّل فيه أكثر من حساب قوقل.
+  روابط إيقاف العروض وصفحة التقييم تفتح بالطريقة القديمة.
+*/
+var EXEC = "https://script.google.com/macros/s/AKfycbxvUBpwEXMsv_tICeW17V7eL4NaSgJjUkC87Sd3NTBoM7yO_fd3oukm_hDV0dsPBdRKzQ/exec";
+var Q = new URLSearchParams(location.search);
+
+function legacy() {
+  document.body.innerHTML = '<iframe title="Rawan Courses" allow="clipboard-write" src="' + EXEC + location.search + '"></iframe>';
+}
+
+// بديل google.script.run و google.script.url داخل الفورم
+var SHIM = "(" + function (EXEC) {
+  function runner(ok, fail, user) {
+    return new Proxy({}, {
+      get: function (_, name) {
+        if (name === "withSuccessHandler") return function (h) { return runner(h, fail, user); };
+        if (name === "withFailureHandler") return function (h) { return runner(ok, h, user); };
+        if (name === "withUserObject") return function (o) { return runner(ok, fail, o); };
+        return function () {
+          var args = Array.prototype.slice.call(arguments);
+          fetch(EXEC, {
+            method: "POST", credentials: "omit",
+            headers: { "Content-Type": "text/plain;charset=utf-8" },
+            body: JSON.stringify({ fn: name, args: args })
+          }).then(function (r) { return r.json(); }).then(function (j) {
+            if (j && j.ok) { if (ok) ok(j.result, user); }
+            else if (fail) fail(new Error((j && j.error) || "error"), user);
+          }).catch(function (e) { if (fail) fail(e, user); });
+        };
+      }
+    });
+  }
+  var params = {}, parameters = {};
+  new URLSearchParams(location.search).forEach(function (v, k) {
+    if (!(k in params)) params[k] = v;
+    (parameters[k] = parameters[k] || []).push(v);
+  });
+  window.google = { script: {
+    run: runner(null, null, undefined),
+    url: { getLocation: function (cb) { cb({ parameter: params, parameters: parameters, hash: location.hash.replace(/^#/, "") }); } },
+    host: { close: function () {}, setHeight: function () {}, setWidth: function () {} }
+  } };
+} + ")(" + JSON.stringify(EXEC) + ");";
+
+if (Q.has("unsub") || Q.has("page")) {
+  legacy();
+} else {
+  fetch(EXEC + "?raw=1", { credentials: "omit" })
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+    .then(function (html) {
+      if (html.indexOf("google.script") < 0) throw new Error("bad page");
+      document.open();
+      document.write('<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><script>' + SHIM + '<\/script>' + html);
+      document.close();
+    })
+    .catch(legacy);
+}
 </script>
 </body>
 </html>
