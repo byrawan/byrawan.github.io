@@ -4,10 +4,33 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Rawan Courses</title>
-<style>html,body{margin:0;height:100%;background:#faf7f2}iframe{border:0;width:100%;height:100%;display:block}</style>
+<meta name="description" content="شهادات معتمدة، وتطبيق عملي، وتجربة تدريبية تليق بك.">
+<meta name="theme-color" content="#e9efe5">
+<style>
+  html,body{margin:0;height:100%;background:#faf7f2}
+  iframe{border:0;width:100%;height:100%;display:block}
+  #fb{position:fixed;left:12px;right:12px;bottom:16px;max-width:440px;margin:0 auto;background:#fff;border:1px solid #e8e2d8;border-radius:16px;box-shadow:0 8px 30px rgba(47,58,51,.15);padding:16px 18px;font-family:Tahoma,Arial,sans-serif;color:#2f3a33;text-align:center;line-height:1.8}
+  #fb[hidden]{display:none}
+  #fb p{margin:0 0 10px;font-size:14px}
+  #fb a{display:block;background:#2f3a33;color:#fff;text-decoration:none;border-radius:12px;padding:11px;font-weight:700;font-size:15px}
+</style>
 </head>
 <body>
 <iframe id="f" title="Rawan Courses" allow="clipboard-write"></iframe>
-<script>document.getElementById("f").src="https://script.google.com/macros/s/AKfycbxvUBpwEXMsv_tICeW17V7eL4NaSgJjUkC87Sd3NTBoM7yO_fd3oukm_hDV0dsPBdRKzQ/exec"+location.search;</script>
+<div id="fb" hidden>
+  <p>ما ظهر نموذج التسجيل؟</p>
+  <a id="fbBtn" href="#" target="_top">افتح نموذج التسجيل</a>
+</div>
+<script>
+var EXEC = "https://script.google.com/macros/s/AKfycbxvUBpwEXMsv_tICeW17V7eL4NaSgJjUkC87Sd3NTBoM7yO_fd3oukm_hDV0dsPBdRKzQ/exec" + location.search;
+var ready = false;
+document.getElementById("f").src = EXEC;
+document.getElementById("fbBtn").href = EXEC;
+// الفورم يرسل «rawan-ready» أول ما يفتح. إذا ما وصل (مثلاً كروم مسجّل فيه أكثر من حساب قوقل) يطلع زر يفتح الفورم مباشرة
+addEventListener("message", function (e) {
+  if (e.data === "rawan-ready") { ready = true; document.getElementById("fb").hidden = true; }
+});
+setTimeout(function () { if (!ready) document.getElementById("fb").hidden = false; }, 7000);
+</script>
 </body>
 </html>
