@@ -122,6 +122,23 @@ form{background:var(--surface);border:1px solid var(--line);border-radius:16px;p
 .grp-go{flex:none;background:#25a35a;color:#fff;font-weight:600;font-size:13px;border-radius:20px;padding:5px 14px}
 footer{text-align:center;color:var(--muted);font-size:13px;display:grid;gap:2px}
 footer .ltr{text-align:center}
+
+:root{--muted:#526057}
+body{font-size:15px;line-height:1.6}
+input,select,textarea{font-size:16px}
+.hint,.legend,.fine,.sec-sub,.gsub,.sm,.row small,.sl small,.sha-steps small,.hub .tx small,.grp-wa .gt small,.psh .lb small,.calbtn .cv small{font-size:13px;color:#526057;line-height:1.5}
+.rail .s{font-size:12px;font-weight:500}
+.course .nm b{font-size:15px;line-height:1.4}
+.cx-t,.sess-t,.f label.q,label.q{font-size:14px;font-weight:600}
+.hdf,.hdf-note{font-size:12px}
+.price small,.pr small,.cm small{font-size:12px;color:#526057}
+.att2 .at b{font-size:14px}.att2 .at .hint{font-size:13px;line-height:1.4;color:#526057}
+.att2 .atp,.att2 .atp.inc{font-size:12px}.att2 .att-time{font-size:12px}
+.agree-bar .opt>span,.pol-tx p,.pol-tx li{font-size:14px;line-height:1.55}
+.nm small,.prow.head{font-size:13px}
+.slot>span,.nocert>span{font-size:14px}
+.btn,button.primary{font-weight:600}
+@media(max-width:380px){.att2 .at b{font-size:14px}.att2 .att-time{font-size:12px}}
 </style>
 </head>
 <body>
@@ -130,7 +147,7 @@ footer .ltr{text-align:center}
   <header>
     <div class="brand">Rawan Hub</div>
     <h1>برنامج التسويق بالعمولة للدورات الصحية</h1>
-    <p class="lead">يُمنح كل مشترك في البرنامج كودًا خاصًّا به، وتُحتسب له عمولة عن كل متدرب يسجّل في الدورات عبر رابطه الخاص أو بكتابة الكود في نموذج التسجيل. توضّح هذه الصفحة آلية الاحتساب وقيمة العمولة لكل دورة.</p>
+    <p class="lead">تسري السياسة على التسجيلات الجديدة من وقت تشغيل الرابط. يُمنح كل مشترك في البرنامج كودًا خاصًّا به، وتُحتسب له عمولة عن كل متدرب يسجّل في الدورات عبر رابطه الخاص أو بكتابة الكود في نموذج التسجيل. توضّح هذه الصفحة آلية الاحتساب وقيمة العمولة لكل دورة. لا تصبح العمولة مستحقة إلا بعد اكتمال الطلب واعتماد المنسقة لتنفيذ التدريب الفعلي.</p>
   </header>
 
   <section aria-labelledby="h-method">
@@ -138,7 +155,7 @@ footer .ltr{text-align:center}
     <ol class="steps">
       <li><span class="n">١</span><div><b>استبعاد ضريبة القيمة المضافة</b><small>أسعار الدورات شاملة الضريبة (<span id="tVat"></span>)، وتُحتسب العمولة على السعر قبل الضريبة.</small></div></li>
       <li><span class="n">٢</span><div><b>خصم رسوم جمعية القلب السعودية (<span id="tSha"></span>)</b><small>يُطبّق على الدورات المعتمدة من جمعية القلب السعودية فقط.</small></div></li>
-      <li><span class="n">٣</span><div><b>احتساب نسبة العمولة على المبلغ المتبقي</b><small>بنسبة <span id="tBase"></span> عن كل متدرب، وترتفع النسبة عند تجاوز ١٠ متدربين في الدورة الواحدة.</small></div></li>
+      <li><span class="n">٣</span><div><b>احتساب نسبة العمولة على المبلغ المتبقي</b><small>بنسبة <span id="tBase"></span> عن كل متدرب، وترتفع إلى ١٢٪ للدورات غير BLS عند بلوغ ١٠ متدربين للمسوق في موعد الدورة نفسه، وتشمل جميع متدربي ذلك الموعد.</small></div></li>
     </ol>
   </section>
 
@@ -151,12 +168,12 @@ footer .ltr{text-align:center}
       <span><i style="background:var(--scfhs)"></i>هيئة التخصصات الصحية</span>
       <span><i style="background:var(--att)"></i>شهادة حضور</span>
     </div>
-    <p class="fine">الأسعار قابلة للتحديث، وتُحتسب العمولة وفق السعر المعتمد وقت تسجيل المتدرب.</p>
+    <p class="fine">الأسعار قابلة للتحديث، وتُحتسب العمولة وفق السعر المعتمد وقت تسجيل المتدرب. تُقفل العمولات بنهاية كل شهر ميلادي ويصدر الكشف بعد اعتماد المنسقة.</p>
   </section>
 
   <section aria-labelledby="h-calc">
     <h2 id="h-calc">حاسبة العمولة</h2>
-    <div class="calc">
+    <div class="calc"><label class="q">عدد متدربي BLS للمسوق خلال الشهر<input id="blsMonth" type="text" inputmode="numeric" pattern="[0-9٠-٩۰-۹]*" value="0"></label>
       <div class="cgrid">
         <label class="q" for="cCourse">الدورة<select id="cCourse"></select></label>
         <label class="q" for="cCount">عدد المتدربين
@@ -178,11 +195,11 @@ footer .ltr{text-align:center}
   </section>
 
   <section aria-labelledby="h-rep">
-    <h2 id="h-rep">التقرير الأسبوعي</h2>
+    <h2 id="h-rep">متابعة العمولات</h2>
     <div class="report">
       <div class="mail-h">
         <span class="mail-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg></span>
-        <p><b>بريد إلكتروني أسبوعي لكل مشترك في البرنامج</b>يصل إلى البريد المسجّل ملخّص بالمتدربين المسجّلين عن طريق الكود الخاص، والعمولات المستحقة.</p>
+        <p><b>الكشف النهائي بعد إقفال الشهر واعتماد المنسقة</b>تُقفل العمولات بنهاية كل شهر ميلادي، ثم يصلك الكشف المعتمد على بريدك بعد مراجعة المنسقة للتدريبات المكتملة.</p>
       </div>
       <ul class="rep-list">
         <li>أسماء المتدربين المسجّلين</li>
@@ -194,9 +211,9 @@ footer .ltr{text-align:center}
   </section>
 
   <section aria-labelledby="h-tiers">
-    <h2 id="h-tiers">نسب العمولة حسب عدد المتدربين</h2>
+    <p class="fine">عند الإلغاء أو التحويل تُعلّق العمولة وتُكتب ملاحظة للمنسقة والمسوق، ولا تدخل في المستحقات حتى اكتمال الطلب واعتماد تنفيذ التدريب الفعلي. تُراجع الفروقات بعد الاعتماد، مع بقاء المبالغ المصروفة سابقًا محفوظة.</p><h2 id="h-tiers">نسب العمولة حسب عدد المتدربين</h2>
     <div class="tiers" id="tiers"></div>
-    <p class="fine">تُطبّق الآلية نفسها على جميع الدورات، ويُحتسب عدد المتدربين لكل دورة على حدة.</p>
+    <p class="fine">يُحسب عدد المتدربين لكل مسوق وموعد دورة مستقل. شرط ٨٠ متدربًا شهريًا يخص BLS فقط.</p>
   </section>
 
   <section aria-labelledby="h-join">
@@ -204,7 +221,7 @@ footer .ltr{text-align:center}
     <p class="sec-sub">يُرجى تعبئة البيانات التالية. بعد اعتماد الطلب يصل إلى البريد المسجّل الرابط الخاص بالمسوّق ورابط قروب المسوقين.</p>
     <form id="join" novalidate>
       <label class="q" for="fName">الاسم الكامل<input id="fName" autocomplete="name"></label>
-      <label class="q" for="fEmail">البريد الإلكتروني<span class="hint">يصل إليه التقرير الأسبوعي</span><input id="fEmail" type="email" class="ltr" dir="ltr" autocomplete="email"></label>
+      <label class="q" for="fEmail">البريد الإلكتروني<span class="hint">يصل إليه كشف العمولات الشهري المعتمد</span><input id="fEmail" type="email" class="ltr" dir="ltr" autocomplete="email"></label>
       <label class="q" for="fPhone">رقم الجوال<input id="fPhone" type="tel" class="ltr" dir="ltr" inputmode="tel" placeholder="05XXXXXXXX" autocomplete="tel"></label>
       <label class="q" for="fCode">الكود المطلوب<span class="hint">حروف إنجليزية وأرقام، من ٣ إلى ١٢ خانة. في حال كان الكود مستخدمًا سيتم التنسيق لاختيار كود بديل.</span><input id="fCode" class="code-in" maxlength="12" placeholder="RAWAN10" autocomplete="off"></label>
       <p class="err" id="fErr" hidden></p>
@@ -234,7 +251,7 @@ footer .ltr{text-align:center}
 const CONFIG = {
   vat: 0.15,
   shaFee: 50,
-  tiers: [ { from:1, to:10, rate:0.08 }, { from:11, to:null, rate:null } ], // rate:null = تُحدد لاحقاً
+  tiers: [ { from:1, to:9, rate:0.08 }, { from:10, to:null, rate:0.12 } ], // rate:null = تُحدد لاحقاً
   sheetUrl: "",  // اتركيه فاضي: الصفحة تاخذ رابط الفورم (/exec) من byrawan.github.io تلقائياً
   groupUrl: ""   // يُرسل الآن في بريد الاعتماد بدل الصفحة // رابط قروب واتساب المسوقين
 };
@@ -261,7 +278,7 @@ const sar = n => nf(n) + ' ر.س';
 const pct = r => r==null ? 'تُحدد لاحقًا' : (r*100).toLocaleString('ar-SA',{maximumFractionDigits:2}) + '٪';
 const base = CONFIG.tiers[0].rate;
 function split(c){
-  const ex = c[3]/(1+CONFIG.vat), sha = c[2]==='sha' ? CONFIG.shaFee : 0, net = Math.max(0, ex - sha);
+  const sha = c[2]==='sha' ? CONFIG.shaFee : 0, net=Math.max(0,(c[3]-sha)/(1+CONFIG.vat)), ex=net+sha;
   return { price:c[3], vat:c[3]-ex, sha, net };
 }
 
@@ -278,7 +295,7 @@ $('plist').innerHTML =
 
 $('cCourse').innerHTML = COURSES.map((c,i)=>`<option value="${i}">${c[0]} · ${c[1]}</option>`).join('');
 
-function tierFor(n){ return CONFIG.tiers.find(t => n>=t.from && (t.to==null || n<=t.to)) || CONFIG.tiers[0]; }
+function tierFor(n){if(COURSES[+$('cCourse').value][0]==='BLS')return {rate:n>=25||+$('blsMonth').value>=80?0.10:base}; return CONFIG.tiers.find(t => n>=t.from && (t.to==null || n<=t.to)) || CONFIG.tiers[0]; }
 function calc(){
   const c = COURSES[+$('cCourse').value], s = split(c), n = +$('cCount').value, t = tierFor(n), known = t.rate!=null;
   const r = known ? t.rate : base, per = s.net*r;
@@ -292,16 +309,17 @@ function calc(){
   $('lTotal').textContent = (known?'':'أكثر من ') + sar(per*n);
   $('lTier').hidden = known;
 }
-$('cCourse').onchange = calc; $('cCount').oninput = calc; calc();
+$('blsMonth').oninput=function(){this.value=latinDigits(this.value).replace(/[^0-9]/g,'');calc()}; $('cCourse').onchange = calc; $('cCount').oninput = calc; calc();
 
-$('tiers').innerHTML = CONFIG.tiers.map(t => {
+$('tiers').innerHTML = '<p>غير BLS: ١٢٪ من ١٠ متدربين في موعد الدورة نفسه. BLS: ١٠٪ من ٢٥ متدربًا في الموعد، أو ٨٠ متدرب BLS شهريًا للمسوق. تشمل النسبة الجديدة جميع المتدربين المطابقين للشرط. عمولة الطباعة: ٤ ريالات لأول ٢٠ عملية شهريًا، ثم ٧ ريالات من العملية ٢١ لكل مسوق.</p>' + CONFIG.tiers.map(t => {
   const a = t.from.toLocaleString('ar-SA'), range = t.to==null ? `من ${a} متدربًا فأكثر` : `من ${a} إلى ${t.to.toLocaleString('ar-SA')} متدربين`;
   return `<div class="tcard${t.rate==null?' soon':''}"><b>${pct(t.rate)}</b><span>${range}</span></div>`;
 }).join('');
 
 /* ===== نموذج الانضمام ===== */
 $('fCode').addEventListener('input', e => { e.target.value = e.target.value.toUpperCase().replace(/[^A-Z0-9]/g,''); });
-function validate(d){
+function latinDigits(v){return String(v||'').replace(/[٠-٩]/g,d=>'٠١٢٣٤٥٦٧٨٩'.indexOf(d)).replace(/[۰-۹]/g,d=>'۰۱۲۳۴۵۶۷۸۹'.indexOf(d))}
+function validate(d){d.phone=latinDigits(d.phone);
   if (d.name.trim().length < 3) return 'يُرجى إدخال الاسم الكامل.';
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email)) return 'يُرجى إدخال بريد إلكتروني صحيح.';
   const p = d.phone.replace(/[\s-]/g,'').replace(/^\+?966/,'0');
@@ -323,7 +341,7 @@ $('join').addEventListener('submit', async e => {
     try{ await fetch(url,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify({...d,type:'marketer'})}); saved = true; }
     catch(_){ saved = false; }
   }
-  $('doneSum').textContent = `طلب انضمام إلى برنامج التسويق\nالاسم: ${d.name.trim()}\nالبريد: ${d.email}\nالجوال: ${d.phone}\nالكود المطلوب: ${d.code}`;
+  $('doneSum').replaceChildren(document.createTextNode('طلب انضمام إلى برنامج التسويق\n')); [['الاسم',d.name.trim()],['البريد',d.email],['الجوال',d.phone],['الكود المطلوب',d.code]].forEach(function(pair){var line=document.createElement('span'),value=document.createElement('span');value.setAttribute('data-l10n-preserve','');value.textContent=pair[1];line.append(document.createTextNode(pair[0]+': '),value,document.createTextNode('\n'));$('doneSum').append(line)});
   if (!saved){ $('doneMsg').textContent = 'يُرجى نسخ البيانات وإرسالها عبر واتساب إلى الرقم 0568587031 لاستكمال الطلب.'; $('copyBtn').hidden = false; }
   if (CONFIG.groupUrl){ $('grpLink').href = CONFIG.groupUrl; $('grpLink').hidden = false; }
   $('join').hidden = true; $('done').hidden = false;
@@ -341,6 +359,109 @@ $('copyBtn').addEventListener('click', async () => {
   try { await navigator.clipboard.writeText($('doneSum').textContent); $('copyBtn').textContent = 'تم النسخ'; }
   catch(_){ const r=document.createRange(); r.selectNodeContents($('doneSum')); const s=getSelection(); s.removeAllRanges(); s.addRange(r); }
 });
+</script>
+
+<!-- Rawan Hub language control -->
+<script>
+(function(){
+ 'use strict';
+ if(document.getElementById('siteLanguage'))return;
+ var entries={"التسجيل في الدورات التدريبية":"Training Course Registration","شهادات معتمدة، وتطبيق عملي، وتجربة تدريبية تليق بك":"Accredited certificates, hands-on practice, and a training experience you deserve","الدورات التدريبية تُقدَّم عن طريق":"Training courses are offered by","مركز مشوار الحياة للتدريب":"Journey of Life Training Center","وضع المعاينة":"Preview mode","تصفح بدون تعبئة":"Browse without filling in","✓ التصفح بدون تعبئة مفعّل":"✓ Browse mode enabled","عرض كل الصفحات":"Show all steps","رجوع لوضع الخطوات":"Return to step-by-step view","طباعة الرخصة فقط":"Licence printing only","لديك رخصة وتحتاج طباعتها؟ اطلب الخدمة دون التسجيل في دورة.":"Already have a licence? Request printing without registering for a course.","اختيار الدورة":"Course Selection","البيانات الأساسية":"Basic Information","مراجعة الطلب":"Order Review","الرسوم وآلية السداد":"Fees & Payment","الدورة":"Course","بياناتك":"Your details","المراجعة":"Review","السداد":"Payment","المدينة":"City","الدورة المطلوبة":"Requested course","اختر المدينة":"Select a city","قريباً":"Coming soon","جدة":"Jeddah","مكة":"Makkah","الرياض":"Riyadh","الطائف":"Taif","الخبر":"Khobar","الدمام":"Dammam","المدينة المنورة":"Madinah","اعتماد الشهادة":"Certificate accreditation","شهادة معتمدة صالحة لمدة سنتين":"Accredited certificate · valid for 2 years","جمعية القلب السعودية":"Saudi Heart Association","جمعية القلب الأمريكية":"American Heart Association","الهيئة السعودية للتخصصات الصحية":"Saudi Commission for Health Specialties","هيئة التخصصات الصحية":"Saudi Commission for Health Specialties","شهادة حضور":"Attendance certificate","السعودية":"Saudi","الأمريكية":"American","طريقة الحضور":"Attendance","حضوري كامل":"Fully in-person","هايبرد":"Hybrid","وقت أطول":"More time","وقت أقل":"Less time","النظري والاختبار والعملي حضوريًا.":"Theory, exam and practical training in person.","النظري والاختبار أونلاين؛ الحضور للعملي فقط.":"Online theory and exam; attend for practical training only.","نظري واختبار أونلاين + عملي حضوري":"Online theory and exam + in-person practical training","بدون رسوم إضافية":"No extra fee","اختر الموعد":"Choose a date","رسومها مؤهلة للاسترداد من هدف":"Fees may be reimbursed through HADAF","مكتملة":"Full","مكتمل":"Full","دورة غير موجودة في القائمة":"Request another course","طلب دورة":"Course request","تُؤكَّد الرسوم عند التواصل معكم":"Fees will be confirmed when we contact you","خصومات المجموعات والجهات":"Group & organization discounts","تواصل":"Contact us","تاريخ آخر شهادة":"Last certificate date","اختر التاريخ":"Select a date","لا توجد لديّ شهادة":"I have no previous certificate","لا توجد شهادة سابقة":"No previous certificate","ميلادي":"Gregorian","هجري":"Hijri","الشهر":"Month","السنة":"Year","مسح التاريخ":"Clear date","الاسم الكامل بالعربية":"Full name in Arabic","الاسم الكامل بالإنجليزية":"Full name in English","الاسم الكامل":"Full name","كما تريده أن يظهر في الشهادة":"As you want it to appear on the certificate","رقم الجوال":"Mobile number","البريد الإلكتروني":"Email address","يُرجى التأكد من صحة البريد الإلكتروني":"Please make sure your email address is correct","رقم الهوية / الإقامة":"National ID / Iqama","الجنسية":"Nationality","سعودي":"Saudi","الجنسية: سعودي ✓":"Nationality: Saudi ✓","اختر الجنسية":"Select nationality","الفئة المهنية":"Professional category","اختر الفئة":"Select a category","طالب":"Student","امتياز":"Intern","موظف":"Employee","باحث عن عمل":"Job seeker","أخرى":"Other","التخصص":"Specialty","كيف عرفت عن الدورة؟":"How did you hear about us?","يمكن اختيار أكثر من خيار":"You can select more than one option","ملاحظات إضافية":"Additional notes","الاسم":"Name","الاسم في الشهادة":"Name on certificate","الجوال":"Mobile","البريد":"Email","تأكيد صحة بياناتي":"Confirm my personal details","✓ تم تأكيد بياناتك":"✓ Personal details confirmed","تعديل":"Edit","أرغب":"Yes","لا أرغب":"No, thanks","طباعة الرخصة · اختياري":"Licence printing · optional","35 ريال لكل رخصة، شامل الضريبة":"35 SAR per licence, including VAT","اختَر الطباعة لكل دورة بشكل مستقل. الاستلام من المركز يوم الأحد والاثنين في أوقات العمل.":"Choose printing separately for each course. Collect from the center on Sunday or Monday during opening hours.","طباعة الرخصة":"Licence printing","بدون طباعة":"No printing","طباعة البطاقة البلاستيكية":"Plastic licence card printing","طباعة رخصتك من جمعية القلب السعودية على بطاقة بلاستيكية متينة، دون التسجيل في أي دورة.":"Print your Saudi Heart Association licence on a durable plastic card without registering for a course.","35 ريال شامل الضريبة لكل بطاقة.":"35 SAR per card, including VAT.","الاستلام من المركز يوم الأحد والاثنين فقط، في أوقات عمل المركز.":"Collection from the center on Sunday and Monday only, during opening hours.","طلب طباعة الرخصة عبر واتساب":"Request licence printing on WhatsApp","سعر الدورة":"Course fee","نظري عن بُعد (Hybrid)":"Online theory (Hybrid)","خصم الدورات المتعددة":"Multi-course discount","خصم كود":"Code discount","الإجمالي":"Total","رسوم الجمعية (عبر موقعها)":"SHA fee (paid on its website)","رسوم جمعية القلب السعودية":"Saudi Heart Association fee","رسوم الجمعية":"SHA fee","تحويل بنكي":"Bank transfer","المبلغ المطلوب تحويله":"Amount to transfer","تحويل باقي المبلغ":"Transfer the remaining amount","تحويل مبلغ الدورة":"Transfer the course fee","تم إرفاق إيصال التحويل":"Transfer receipt attached","كود الخصم":"Discount code","اختياري":"Optional","تطبيق":"Apply","إلغاء":"Remove","وفّرت":"You saved","خصم":"Discount","المجموع قبل الخصم":"Subtotal","أضف دورة أخرى للخصم":"Add another course for a discount","المبلغ الإجمالي":"Total amount","إضافة للتقويم":"Add to calendar","إضافة إلى التقويم":"Add to calendar","الموعد":"Date","دعم هدف للشهادات المهنية":"HADAF professional certificate support","بعد إتمام الدورة، احتفظ بالشهادة والفاتورة وقدّم طلب التعويض عبر هدف وفق شروط الأهلية.":"After completing the course, keep your certificate and invoice and apply through HADAF, subject to eligibility.","الطريقة والتواصل ←":"Steps & contact →","طريقة الاستفادة من دعم هدف":"How to benefit from HADAF support","أكمل الدورة واحصل على الشهادة.":"Complete the course and obtain the certificate.","احتفظ بفاتورة الدورة.":"Keep the course invoice.","ادخل برنامج دعم الشهادات المهنية في موقع هدف عبر النفاذ الوطني، وتحقق من أهلية شهادتك.":"Sign in to HADAF through Nafath, open Professional Certification Support, and check your certificate’s eligibility.","أرفق الشهادة والفاتورة وقدّم طلب التعويض.":"Attach the certificate and invoice, then submit your reimbursement application.","قبول التعويض يخضع لشروط صندوق هدف وأهليته، ولا يضمن المركز قبوله. لا يُجمع كود الخصم وتعويض هدف وفق السياسة المعتمدة.":"Reimbursement is subject to HADAF’s terms and eligibility and is not guaranteed by the center. A discount code and HADAF reimbursement cannot be combined under the current policy.","فتح برنامج هدف":"Open the HADAF program","الاستفسار عبر واتساب":"Ask us on WhatsApp","أُقر بصحة البيانات المدخلة، وأوافق على استخدام بياناتي الشخصية لأغراض التسجيل والتواصل، وعلى":"I confirm that my details are correct, consent to using my personal data for registration and communication, and agree to the","سياسة الإلغاء والاسترجاع":"Cancellation & Refund Policy","متابعة التسجيل":"Continue registration","المتابعة إلى السداد":"Proceed to payment","التالي":"Next","السابق":"Back","إغلاق":"Close","تم":"Done","تم استلام طلب التسجيل":"Registration request received","رقم الطلب":"Order number","تم استلام طلبك وإيصالات السداد. سنراجع البيانات ونرسل تأكيد الحجز لكل دورة إلى بريدك الإلكتروني خلال يومَي عمل.":"We have received your request and payment receipts. We will review them and email booking confirmation for each course within two business days.","سداد رسوم الجمعية":"Pay the SHA fee","الخطوة 1":"Step 1","الخطوة 2":"Step 2","بعد إتمام الخطوة 1":"After step 1","الدخول إلى موقع الجمعية":"Sign in to the SHA website","يُرجى إنشاء حساب جديد، أو تسجيل الدخول إن كان لديكم حساب مسبق":"Create an account or sign in if you already have one","فتح موقع الجمعية":"Open the SHA website","الضغط على أيقونة القائمة":"Tap the menu icon","أعلى الصفحة بعد تسجيل الدخول":"At the top of the page after signing in","اختيار المحفظة ثم شراء رصيد":"Choose Wallet, then Purchase Balance","وإكمال عملية السداد بمبلغ":"and complete a payment of","رقم المشترك":"Participant ID","إرفاق صورة الشاشة بعد السداد":"Attach a screenshot after payment","إيصال التحويل":"Transfer receipt","إرفاق إيصال التحويل بعد التحويل":"Attach the transfer receipt","تم الإرفاق ✓":"Attached ✓","تم استلام الإيصال":"Receipt received","تم سداد الرسوم":"Fee payment submitted","تم السداد":"Payment submitted","ابدأ بسداد رسوم الجمعية، وبعدها حوّل باقي المبلغ":"Pay the SHA fee first, then transfer the remaining amount","بيانات الحساب":"Bank details","إخفاء الحساب":"Hide bank details","اسم صاحب الحساب":"Account holder","البنك":"Bank","بنك الإنماء":"Alinma Bank","رقم الحساب":"Account number","رقم الآيبان":"IBAN","نسخ":"Copy","تم النسخ":"Copied","محدد":"Selected","بانتظار السداد":"Awaiting receipt","إرسال الإيصال وطلب تأكيد الحجز":"Submit receipt & request booking confirmation","إرسال الإيصال والمتابعة للدورة التالية":"Submit receipt & continue to the next course","إرسال الطلب وإنهاء التسجيل":"Submit request & finish","إرسال الطلب والانتقال للدورة التالية":"Submit request & continue","جاري الإرسال…":"Submitting…","جارٍ الإرسال…":"Submitting…","إعادة المحاولة":"Retry","إلغاء الطلب الحالي وبدء تسجيل جديد":"Cancel the current request and start again","اكتمل سداد جميع الدورات":"All course receipts received","إجمالي المدفوع":"Total submitted","يُرجى الانضمام للمجموعة الخاصة بدورتك":"Please join your course group","دوراتك الصحية":"Your Health Courses","مجموعات خاصة بالمدربة روان السفياني":"Instructor Rawan Alsufyani’s groups","انضم":"Join","نسخة معاينة":"Preview only","تم نسخ البريد ✓":"Email copied ✓","جارٍ تجهيز الملف…":"Preparing the file…","مجموعة دوراتك الصحيّة":"Health Courses Group","المدرّبة روان السفياني":"Instructor Rawan Alsufyani","المدربة روان السفياني":"Instructor Rawan Alsufyani","المدرّب محمد العتيبي":"Instructor Mohammed Alotaibi","قروبات تطوعات مكة / جدة (زها)":"Makkah / Jeddah volunteering groups (Zaha)","صديق":"Friend","الواتس اب":"WhatsApp","وسائل التواصل الاجتماعي":"Social media","حضرت دورة سابقة":"Previously attended a course","جهة العمل / الدراسة":"Workplace / university","اختر من القائمة":"Select from the list","أساسيات دعم الحياة":"Basic Life Support","دعم الحياة القلبي المتقدم":"Advanced Cardiovascular Life Support","دعم الحياة القلبي الوعائي المتقدم":"Advanced Cardiovascular Life Support","دعم الحياة المتقدم للأطفال":"Pediatric Advanced Life Support","برنامج إنعاش حديثي الولادة":"Neonatal Resuscitation Program","إنعاش حديثي الولادة":"Neonatal Resuscitation Program","الإسعافات الأولية وإنعاش القلب":"Heartsaver First Aid","دعم الحياة المتقدم للإصابات":"Advanced Trauma Life Support","دعم الحياة المتقدم في التوليد":"Advanced Life Support in Obstetrics","دعم الحياة للإصابات قبل المستشفى":"Prehospital Trauma Life Support","مهارات الجراحة الأساسية":"Basic Operative Surgical Skills","تخطيط القلب الكهربائي":"Electrocardiogram","الموجات فوق الصوتية الإسعافية":"Point-of-Care Ultrasound","إدارة مجرى الهواء":"Airway Management","مهارات سحب الدم":"Phlebotomy Skills","قيّم دورتك واستلم شهادتك":"Rate your course & receive your certificate","رأيك يهمنا ويساعدنا نطوّر دوراتنا. بعد التقييم تقدر تحمّل شهادتك مباشرة.":"Your feedback helps us improve. After rating the course, you can download your certificate when it is ready.","اسم المتدرب":"Trainee name","(كما هو مسجل في موقع جمعية القلب السعودية)":"(As registered on the Saudi Heart Association website)","متابعة":"Continue","اختر الدورة اللي تبي تقيّمها أو تستلم شهادتها.":"Choose the course you want to rate or download its certificate.","تقييم الدورة":"Course feedback","التقييم العام للدورة":"Overall course rating","التقييم العام":"Overall rating","قيّم كل جانب":"Rate each aspect","المدربة":"Instructor","المحتوى والتطبيق العملي":"Content & practical training","المحتوى":"Content","التنظيم والمكان":"Organization & venue","هل تنصح غيرك بالدورة؟":"Would you recommend this course?","نعم 👍":"Yes 👍","لا":"No","كلمة عن تجربتك":"Tell us about your experience","(اختياري)":"(Optional)","وش أكثر شي استفدت منه؟ وش تحب نطوّره؟":"What helped you most? What could we improve?","أوافق على نشر كلمتي باسمي الأول في حسابات Rawan Hub":"I consent to publishing my feedback under my first name on Rawan Hub accounts","وش الدورة اللي تحب تاخذها بعدها؟":"Which course would you like to take next?","مثلاً ACLS أو الإسعافات الأولية":"For example, ACLS or first aid","إرسال التقييم واستلام الشهادة":"Submit feedback & receive certificate","شكراً لتقييمك 🌿":"Thank you for your feedback 🌿","شهادتك تحت التجهيز. ارجع لنفس الرابط واكتب اسمك أول ما نبلغك في القروب، وتطلع لك مباشرة بدون ما تعيد التقييم.":"Your certificate is being prepared. Once we notify you in the group, return to this link and enter your name to download it without rating again.","دورة ثانية":"Another course","للاستفسار عبر واتساب:":"For enquiries on WhatsApp:","جارٍ البحث…":"Searching…","صار خطأ في الاتصال، حاول مرة ثانية":"Connection error. Please try again.","تم التقييم":"Rated","قيّم الآن":"Rate now","ضعيف":"Poor","مقبول":"Fair","جيد":"Good","جيد جداً":"Very good","ممتاز":"Excellent","تحميل الشهادة":"Download certificate","الشهادة":"Certificate","يرجى اختيار التقييم العام أولاً":"Please choose an overall rating first","برنامج التسويق بالعمولة للدورات الصحية":"Health Course Affiliate Program","آلية احتساب العمولة":"How commission is calculated","استبعاد ضريبة القيمة المضافة":"Exclude VAT","أسعار الدورات شاملة الضريبة (":"Course prices include VAT (",")، وتُحتسب العمولة على السعر قبل الضريبة.":"); commission is calculated on the amount excluding VAT.","خصم رسوم جمعية القلب السعودية (":"Deduct the Saudi Heart Association fee (","يُطبّق على الدورات المعتمدة من جمعية القلب السعودية فقط.":"Applies only to Saudi Heart Association courses.","احتساب نسبة العمولة على المبلغ المتبقي":"Apply the commission rate to the remaining amount","بنسبة":"At a rate of","عن كل متدرب، وترتفع إلى ١٢٪ للدورات غير BLS عند بلوغ ١٠ متدربين للمسوق في موعد الدورة نفسه، وتشمل جميع متدربي ذلك الموعد.":"per trainee. For non-BLS courses, the rate becomes 12% at 10 trainees for the same affiliate and session, and applies to all trainees in that session.","الدورات والعمولة لكل متدرب":"Courses & commission per trainee","السعر":"Price","العمولة":"Commission","حاسبة العمولة":"Commission calculator","عدد متدربي BLS للمسوق خلال الشهر":"Affiliate’s BLS trainees this month","عدد المتدربين":"Number of trainees","ضريبة القيمة المضافة":"VAT","المبلغ الخاضع للعمولة":"Commissionable amount","العمولة عن المتدرب الواحد (":"Commission per trainee (","إجمالي العمولة عن هذه الدورة":"Total commission for this course","نسبة أعلى بعد ١٠ متدربين":"Higher rate from 10 trainees","متابعة العمولات":"Commission tracking","الكشف النهائي بعد إقفال الشهر واعتماد المنسقة":"Final statement after month-end and coordinator approval","تُقفل العمولات بنهاية كل شهر ميلادي، ثم يصلك الكشف المعتمد على بريدك بعد مراجعة المنسقة للتدريبات المكتملة.":"Commissions close at the end of each calendar month. The approved statement is emailed after the coordinator reviews completed training.","أسماء المتدربين المسجّلين":"Registered trainees’ names","الدورة وتاريخ انعقادها":"Course and date","المبلغ المدفوع لكل تسجيل":"Amount paid per registration","نسبة العمولة وقيمتها":"Commission rate and amount","نسب العمولة حسب عدد المتدربين":"Commission tiers by trainee count","يُحسب عدد المتدربين لكل مسوق وموعد دورة مستقل. شرط ٨٠ متدربًا شهريًا يخص BLS فقط.":"Counts are separate for each affiliate and session. The monthly threshold of 80 applies to BLS only.","طلب الانضمام إلى البرنامج":"Apply to join the program","يُرجى تعبئة البيانات التالية. بعد اعتماد الطلب يصل إلى البريد المسجّل الرابط الخاص بالمسوّق ورابط قروب المسوقين.":"Complete the form below. Once approved, your affiliate link and the affiliates’ group link will be emailed to you.","يصل إليه كشف العمولات الشهري المعتمد":"Approved monthly commission statements are sent to this address","الكود المطلوب":"Requested code","حروف إنجليزية وأرقام، من ٣ إلى ١٢ خانة. في حال كان الكود مستخدمًا سيتم التنسيق لاختيار كود بديل.":"Use 3–12 Latin letters or digits. If the code is taken, we will arrange an alternative.","إرسال الطلب":"Submit application","تم استلام الطلب":"Application received","سيتم مراجعة الطلب، وعند اعتماده يصل إلى بريدك الإلكتروني الرابط الخاص بك ورابط قروب المسوقين.":"We will review your application. Once approved, your affiliate link and the group link will be emailed to you.","نسخ البيانات":"Copy details","قروب المسوقين":"Affiliates’ group","يُرجى الانضمام لمتابعة التحديثات والعروض":"Join for updates and offers","انضمام":"Join","تُحدد لاحقًا":"To be confirmed","تُحدد لاحقاً":"To be confirmed","عند الإلغاء أو التحويل تُعلّق العمولة وتُكتب ملاحظة للمنسقة والمسوق، ولا تدخل في المستحقات حتى اكتمال الطلب واعتماد تنفيذ التدريب الفعلي. تُراجع الفروقات بعد الاعتماد، مع بقاء المبالغ المصروفة سابقًا محفوظة.":"On cancellation or transfer, commission is held with a note for the coordinator and affiliate. It is not payable until the order is complete and actual training is approved. Differences are reviewed after approval; amounts already paid remain recorded.","الأسعار قابلة للتحديث، وتُحتسب العمولة وفق السعر المعتمد وقت تسجيل المتدرب. تُقفل العمولات بنهاية كل شهر ميلادي ويصدر الكشف بعد اعتماد المنسقة.":"Prices may be updated. Commission uses the price approved at registration. Commissions close at each calendar month-end, and statements are issued after coordinator approval.","تسري السياسة على التسجيلات الجديدة من وقت تشغيل الرابط. يُمنح كل مشترك في البرنامج كودًا خاصًّا به، وتُحتسب له عمولة عن كل متدرب يسجّل في الدورات عبر رابطه الخاص أو بكتابة الكود في نموذج التسجيل. توضّح هذه الصفحة آلية الاحتساب وقيمة العمولة لكل دورة. لا تصبح العمولة مستحقة إلا بعد اكتمال الطلب واعتماد المنسقة لتنفيذ التدريب الفعلي.":"This policy applies to new registrations from activation of the updated link. Each affiliate receives a personal code and earns commission on trainees who register through their link or code. This page explains the rates and calculation. Commission becomes payable only after the order is complete and the coordinator approves actual training.","من":"of","مراحل التسجيل":"Registration steps","تُدفع رسوم الجمعية (":"The SHA fee (",") مباشرة عبر موقع جمعية القلب السعودية لإصدار الشهادة، وهي جزء من سعر الدورة وليست مبلغًا إضافيًا.":") is paid directly on the SHA website for your certificate. It is included in the course fee, not an extra charge.","إغلاق خدمة الطباعة":"Close licence printing","السابق Previous":"Back","التالي Next":"Next","الشهر Month":"Month","السنة Year":"Year","يناير":"January","فبراير":"February","مارس":"March","أبريل":"April","مايو":"May","يونيو":"June","يوليو":"July","أغسطس":"August","سبتمبر":"September","أكتوبر":"October","نوفمبر":"November","ديسمبر":"December","محرم":"Muharram","صفر":"Safar","ربيع الأول":"Rabi I","ربيع الآخر":"Rabi II","جمادى الأولى":"Jumada I","جمادى الآخرة":"Jumada II","رجب":"Rajab","شعبان":"Shaban","رمضان":"Ramadan","شوال":"Shawwal","ذو القعدة":"Dhul Qadah","ذو الحجة":"Dhul Hijjah","ح":"Sun","ن":"Mon","ث":"Tue","ر":"Wed","خ":"Thu","ج":"Fri","س":"Sat","طباعة الرخصة على بطاقة بلاستيكية":"Print your licence on a plastic card","خدمة اختيارية لدورات جمعية القلب السعودية: نطبع رخصتك على":"Optional service for Saudi Heart Association courses: print your licence on a","بطاقة بلاستيكية":"plastic card","متينة بـ":"for","ريال":"SAR","شامل الضريبة، والاستلام من المركز. تختار الخدمة في صفحة مراجعة الطلب، وتُضاف إلى طلبك عند الدفع.":"including VAT, for collection from the center. Choose this service separately for each licence during order review.","يُرجى تعبئة البيانات التالية.":"Please complete the form below.","للأعلى":"To top","تمت إعادة تطبيق الكود ✓ وفّرت":"Code reapplied ✓ You saved","الكود غير صحيح أو غير مفعّل":"The code is invalid or inactive","تعذّر التحقق من الكود، حاول مرة أخرى":"Could not check the code. Please try again.","يُرجى تأكيد بياناتك الشخصية قبل المتابعة":"Please confirm your personal details before continuing","اسم المتدرب Trainee Name":"Trainee name","تقييم الدورة واستلام الشهادة":"Course Feedback & Certificate","غير BLS: ١٢٪ من ١٠ متدربين في موعد الدورة نفسه. BLS: ١٠٪ من ٢٥ متدربًا في الموعد، أو ٨٠ متدرب BLS شهريًا للمسوق. تشمل النسبة الجديدة جميع المتدربين المطابقين للشرط. عمولة الطباعة: ٤ ريالات لأول ٢٠ عملية شهريًا، ثم ٧ ريالات من العملية ٢١ لكل مسوق.":"Non-BLS: 12% from 10 trainees in the same session. BLS: 10% from 25 trainees in a session, or 80 BLS trainees per affiliate per month. The new rate applies to all qualifying trainees. Printing commission: 4 SAR for the first 20 cards per month, then 7 SAR from card 21 for each affiliate.","ريالات":"SAR","يُرجى إدخال الاسم الكامل.":"Please enter your full name.","يُرجى إدخال بريد إلكتروني صحيح.":"Please enter a valid email address.","يُرجى إدخال رقم جوال يبدأ بـ 05 ومكوّن من ١٠ أرقام.":"Please enter a 10-digit mobile number starting with 05.","يُرجى إدخال كود من ٣ إلى ١٢ حرفًا إنجليزيًا أو رقمًا.":"Please enter a code of 3–12 Latin letters or digits.","طلب انضمام إلى برنامج التسويق":"Affiliate program application","يُرجى نسخ البيانات وإرسالها عبر واتساب إلى الرقم 0568587031 لاستكمال الطلب.":"Please copy these details and send them on WhatsApp to 0568587031 to complete your application.","اختر التقييم العام بالنجوم":"Please select the overall star rating","صار خطأ في الإرسال، حاول مرة ثانية":"Could not submit. Please try again.","ما لقينا تسجيل مؤكد بهذا الاسم. اكتب اسمك الكامل بالإنجليزي بنفس التهجئة المسجلة في موقع جمعية القلب السعودية، أو تواصل معنا عبر واتساب 0568587031":"We could not find a confirmed registration under this name. Enter your full name in English exactly as registered with the Saudi Heart Association, or contact us on WhatsApp at 0568587031.","تعذّر التحقق من بيانات التسجيل":"Could not verify the registration details","، كيف كانت دورة":", how was your course","دورة":"Course","تحميل":"Download","تعذّر تحميل المدن، يُرجى تحديث الصفحة":"Could not load cities. Please refresh the page."},dictionary=new Map(Object.entries(entries)),reverse=new Map();
+ var textCache=new WeakMap(),attributeCache=new WeakMap(),language='ar',scheduled=false,originalTitle=document.title;
+ var protectedSelector='script,style,textarea,input,svg,[contenteditable],[data-l10n-preserve],#siteLanguage,.cc,.code,.refno,#refno,#mailTxt,.person-mini,#reviewPerson .rv-m b';
+ var hasArabic=function(t){return /[\u0600-\u06ff]/.test(t)};
+ var trim=function(t){return String(t||'').replace(/\s+/g,' ').trim()};
+ function add(ar,en){ar=trim(ar);en=trim(en);if(ar&&en&&hasArabic(ar)&&!hasArabic(en)&&!dictionary.has(ar))dictionary.set(ar,en)}
+ function rawNode(node){var current=node.nodeValue||'',old=textCache.get(node);return old&&old.last===current?old.raw:current}
+ function addPairs(){
+  if(typeof CATALOG!=='undefined'&&CATALOG&&CATALOG.items)CATALOG.items.forEach(function(c){add(c.ar,c.en)});
+  if(typeof NATIONALITIES!=='undefined')NATIONALITIES.forEach(function(v){var p=v.split('|');add(p[0],p[1])});
+  if(typeof HEARD!=='undefined')HEARD.forEach(function(v){var p=v.split('|');if(p[1])add(p[0],p[1])});
+  if(typeof POLICY!=='undefined'&&typeof POLICY_EN!=='undefined')POLICY.forEach(function(sec,i){var en=POLICY_EN[i];if(!en)return;add(sec[0],en[0]);sec[1].forEach(function(line,j){if(en[1][j])add(line,en[1][j])})});
+  document.querySelectorAll('span.en,span.en2,span.h1-en,span.sub-en,span.en-t,span.en-s,span.nc-en,.ss-en,.gt>small,.card h2>small,.nm>small,.course .nm>i,.pv>i,.band-sub>span,.umbrella>span,.rail .s>small,.cert-tag>small,.acc-i .ct>small,.sha-steps small[dir="ltr"]').forEach(function(en){
+   if(en.closest('#siteLanguage')||hasArabic(en.textContent))return;
+   var parent=en.parentElement,originalEnglish=trim(en.textContent),direct=Array.from(parent.childNodes).filter(function(n){return n.nodeType===3&&hasArabic(rawNode(n))&&trim(rawNode(n))});
+   var arabicElements=Array.from(parent.children).filter(function(child){return child!==en&&hasArabic(child.textContent)&&!child.matches('.req')});
+   if(direct.length===1&&!arabicElements.length){add(rawNode(direct[0]),originalEnglish);en.setAttribute('data-locale-dup','');return}
+   var primary=parent.querySelector(':scope>b,:scope>.t,:scope>.nm>b');
+   if(primary&&parent.matches('.nm,.pv,.at,h2')){var names=Array.from(primary.childNodes).filter(function(n){return n.nodeType===3&&hasArabic(rawNode(n))&&!/^\s*[\d٠-٩]/.test(rawNode(n))});if(names.length===1){add(rawNode(names[0]),originalEnglish);en.setAttribute('data-locale-dup','');return}}
+   if(direct.length||arabicElements.length)en.setAttribute('data-locale-dup','');
+  });
+  document.querySelectorAll('.pol-en').forEach(function(el){el.setAttribute('data-locale-dup','')});
+  reverse.clear();dictionary.forEach(function(en,ar){if(!reverse.has(en))reverse.set(en,ar)});
+ }
+ var weekdays={'الأحد':'Sunday','الاثنين':'Monday','الثلاثاء':'Tuesday','الأربعاء':'Wednesday','الخميس':'Thursday','الجمعة':'Friday','السبت':'Saturday'};
+ var courseCodes=['BLS','ACLS','PALS','NRP','HSFA','ATLS','ALSO','PHTLS','BOSS','ECG','POCUS','Airway','Phlebotomy','SHA','NAEMT','IBAN'];
+ function asciiDigits(t){return t.replace(/[٠-٩]/g,function(d){return '٠١٢٣٤٥٦٧٨٩'.indexOf(d)}).replace(/[۰-۹]/g,function(d){return '۰۱۲۳۴۵۶۷۸۹'.indexOf(d)})}
+ function translate(value){
+  var leading=(value.match(/^\s*/)||[''])[0],trailing=(value.match(/\s*$/)||[''])[0],text=trim(value);if(!text)return value;
+  var answer=text;
+  var subtotal=text.match(/^قبل الخصم · Subtotal ([\d٠-٩۰-۹]+) ·$/);if(subtotal)return leading+(language==='en'?'Subtotal '+asciiDigits(subtotal[1]):'قبل الخصم '+subtotal[1])+' ·'+trailing;
+  if(/^·\s*Course \d+ of \d+$/.test(text))return '';
+  if(text==='صورة أو PDF · Image or PDF · 10 MB max')return leading+(language==='en'?'Image or PDF · 10 MB max':'صورة أو PDF · 10 ميجابايت كحد أقصى')+trailing;
+  if(language==='ar'){
+   var parts=text.split(' · '),leftNumbers=asciiDigits(parts[0]).match(/\d+/g)||[],rightNumbers=asciiDigits(parts[1]||'').match(/\d+/g)||[],preservesNumbers=rightNumbers.every(function(n){return leftNumbers.indexOf(n)>=0});
+   if(parts.length===2&&hasArabic(parts[0])&&!hasArabic(parts[1])&&/[A-Za-z]/.test(parts[1])&&!/^[A-Z\d_-]{1,10}$/.test(parts[1])&&preservesNumbers)answer=parts[0];
+   else if(reverse.has(text)&&!hasArabic(text))answer=reverse.get(text);
+   var dual=text.match(/^(.+?[\u0600-\u06ff])\s+([A-Za-z][A-Za-z ]+)$/);if(dual&&dictionary.has(dual[1]))answer=dual[1];
+   answer=answer.replace(/ر\.س\s+SAR/g,'ر.س').replace(/(الرياض|مكة|جدة|الطائف|الخبر|الدمام) · (Riyadh|Makkah|Jeddah|Taif|Khobar|Dammam)/g,'$1').replace(/\(قريباً · Soon\)/g,'(قريباً)');
+  }else{
+   if(dictionary.has(text))answer=dictionary.get(text);
+   else{
+    var bilingual=text.split(' · '),right=bilingual.slice(1).join(' · ');
+    if(bilingual.length===2&&hasArabic(bilingual[0])&&!hasArabic(right)&&/[A-Za-z]/.test(right)&&!/^([A-Z\d_-]{1,10}|\d+[/:\d ]*)$/.test(right)){
+     var keepCodes=courseCodes.some(function(code){return bilingual[0].indexOf(code)>=0&&right.indexOf(code)<0});
+     answer=keepCodes||/^خصم كود/.test(text)?translate(bilingual[0]).trim():right;
+    }
+    else{
+     var loose=text.match(/^(.+?[\u0600-\u06ff])\s+([A-Za-z][A-Za-z ]+)$/);
+     if(loose&&dictionary.has(loose[1]))answer=loose[2];
+     else{
+      answer=answer.replace(/^أهلاً\s+/,'Hello ').replace(/^مرحباً\s+/,'Hello ');
+      Array.from(dictionary.entries()).sort(function(a,b){return b[0].length-a[0].length}).forEach(function(pair){if(pair[0].length>=3&&answer.indexOf(pair[0])>=0)answer=answer.split(pair[0]).join(pair[1])});
+      Object.keys(weekdays).forEach(function(day){answer=answer.split(day).join(weekdays[day])});
+     }
+    }
+   }
+   answer=asciiDigits(answer).replace(/ر\.س(?:\s+SAR)?/g,'SAR').replace(/\bSAR\s+SAR\b/g,'SAR').replace(/(Jeddah|Makkah|Riyadh|Taif|Khobar|Dammam) · \1/g,'$1').replace(/\(Coming soon · Soon\)/g,'(Coming soon)').replace(/،/g,',').replace(/٫/g,'.').replace(/٬/g,',').replace(/٪/g,'%');
+   answer=answer.replace(/^من (\d+) إلى (\d+) متدربين$/,'$1–$2 trainees').replace(/^من (\d+) متدربًا فأكثر$/,'$1 or more trainees');
+   answer=answer.replace(/(\d+) من (\d+)/g,'$1 of $2').replace(/هـ(?=\s|$)/g,'AH').replace(/\sص(?=\s|$)/g,' AM').replace(/\sم(?=\s|$)/g,' PM').replace(/؟/g,'?');
+  }
+  return leading+answer+trailing;
+ }
+ var style=document.createElement('style');style.id='siteLanguageStyle';style.textContent=`
+ #siteLanguage{position:fixed;top:max(12px,env(safe-area-inset-top));right:max(12px,env(safe-area-inset-right));z-index:10050;display:inline-flex;align-items:center;justify-content:center;gap:7px;min-width:66px;min-height:42px;padding:8px 12px;border:1px solid #b8c6b1;border-radius:24px;background:#fafcf8;color:#2f3a33;box-shadow:0 2px 10px #2f3a3310;font:600 13px Tahoma,Arial,sans-serif;cursor:pointer;direction:ltr}
+ #siteLanguage:hover{background:#e9efe5}#siteLanguage:focus-visible{outline:3px solid #c4553d;outline-offset:3px}#siteLanguage svg{flex:none;width:19px;height:19px}
+ html[lang][data-site-lang] [data-locale-dup]{display:none!important}
+ html[data-site-lang="en"] .app,html[data-site-lang="en"] main{direction:ltr}
+ html[data-site-lang="en"] .app,html[data-site-lang="en"] main,html[data-site-lang="en"] .pol-in{font-family:"IBM Plex Sans Arabic","Segoe UI",Arial,sans-serif}
+ html[data-site-lang="en"] :is(.ltr,.hint,.en2,.sub-en,.rv-m,.nm,.pv,.acc-i,.cal-i,.rowq){text-align:left}
+ html[data-site-lang="en"] :is(.card h2,.card h2 small,.cert-tag,.acc-i .ct,.f label.q,.band-sub span){text-align:left}
+ html[data-site-lang="en"] .pol-in{direction:ltr}html[data-site-lang="en"] .pol-in :is(ul,ol){padding-left:20px;padding-right:0}
+ html[data-site-lang="en"] .bankpop b:not([id]){direction:ltr!important}html[data-site-lang="en"] .brand,html[data-site-lang="en"] .tag{direction:ltr}
+ @media(max-width:440px){#siteLanguage{top:max(8px,env(safe-area-inset-top));right:10px;min-width:60px;min-height:40px;padding:7px 10px}}
+ `;
+ document.head.appendChild(style);
+ var button=document.createElement('button');button.id='siteLanguage';button.type='button';button.setAttribute('aria-pressed','false');button.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 4 6 4 9s-1 6-4 9c-3-3-4-6-4-9s1-6 4-9Z"/></svg><span>EN</span>';document.body.appendChild(button);
+ var observer=new MutationObserver(function(mutations){if(mutations.some(function(m){return !m.target.parentElement||!m.target.parentElement.closest('#siteLanguage')}))schedule()});
+ function observe(){observer.observe(document.body,{subtree:true,childList:true,characterData:true,attributes:true,attributeFilter:['aria-label','title','placeholder','alt']})}
+ function apply(){
+  scheduled=false;observer.disconnect();addPairs();
+  document.documentElement.lang=language;document.documentElement.dir=language==='ar'?'rtl':'ltr';document.documentElement.dataset.siteLang=language;
+  document.title=translate(originalTitle);
+  document.querySelectorAll('main,.app').forEach(function(el){el.dir=language==='ar'?'rtl':'ltr';el.lang=language});
+  var walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT),node;
+  while((node=walker.nextNode())){var parent=node.parentElement;if(!parent||parent.closest(protectedSelector)||parent.closest('[data-locale-dup]'))continue;var raw=rawNode(node),translated=translate(raw);textCache.set(node,{raw:raw,last:translated});if(node.nodeValue!==translated)node.nodeValue=translated}
+  document.querySelectorAll('[aria-label],[title],[placeholder],img[alt]').forEach(function(el){if(el.closest('#siteLanguage'))return;var cache=attributeCache.get(el)||{};['aria-label','title','placeholder','alt'].forEach(function(key){if(!el.hasAttribute(key))return;var value=el.getAttribute(key),old=cache[key],raw=old&&old.last===value?old.raw:value,next=translate(raw);cache[key]={raw:raw,last:next};if(value!==next)el.setAttribute(key,next)});attributeCache.set(el,cache)});
+  button.querySelector('span').textContent=language==='ar'?'EN':'عربي';button.title=button.getAttribute('aria-label')||'';button.setAttribute('aria-label',language==='ar'?'التبديل إلى الإنجليزية':'Switch to Arabic');button.title=language==='ar'?'English':'العربية';button.setAttribute('aria-pressed',String(language==='en'));
+  observe();
+ }
+ function schedule(){if(scheduled)return;scheduled=true;Promise.resolve().then(apply)}
+ button.addEventListener('click',function(){language=language==='ar'?'en':'ar';try{sessionStorage.setItem('rawan-site-language',language)}catch(e){}apply()});
+ try{if(sessionStorage.getItem('rawan-site-language')==='en')language='en'}catch(e){}
+ apply();
+})();
+
 </script>
 </body>
 </html>
