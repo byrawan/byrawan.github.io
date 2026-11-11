@@ -75,9 +75,7 @@ function rhDone() {
 rhPhase(document.getElementById("rh-ld"));
 var KEEP = document.getElementById("rh-css").outerHTML + document.getElementById("rh-hd").outerHTML +
   '<div id="rh-sp"></div>' + document.getElementById("rh-ld").outerHTML;
-var HEADLINKS = '<link rel="preconnect" href="https://script.google.com" crossorigin>
-<link rel="preconnect" href="https://script.googleusercontent.com" crossorigin>
-<link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f6e9d9">';
+var HEADLINKS = '<link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f6e9d9">';
 
 function legacy() {
   document.body.insertAdjacentHTML("beforeend", '<iframe id="rh-fr" title="Rawan Courses" allow="clipboard-write" src="' + EXEC + location.search + '"></iframe>');
