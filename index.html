@@ -131,6 +131,32 @@ var MOUNT = "(" + function (KEEP, HEADLINKS, rhPhase, rhDone) {
     mf.style.height = Math.max(0, r.top + sy + 30 - top) + "px";
   }
   window.addEventListener("resize", rhJoin);
+  // يشيل البوب أب الإعلاني (أي نافذة عائمة فيها صور rawan-hub-card) بدون ما يلمس بقية النموذج
+  var RHPOP = /rawan-hub-card-/;
+  function rhNoPopup() {
+    if (!document.body) return;
+    var hit = document.body.querySelectorAll("img,source,picture,[style*='rawan-hub-card-']");
+    for (var i = 0; i < hit.length; i++) {
+      var n = hit[i], s = (n.currentSrc || n.src || "") + " " + (n.getAttribute("srcset") || "") + " " + (n.getAttribute("style") || "");
+      if (!RHPOP.test(s)) continue;
+      var top = null;
+      for (var e = n; e && e !== document.body; e = e.parentElement) {
+        var cs = getComputedStyle(e);
+        if (cs.position === "fixed" || e.tagName === "DIALOG") top = e;
+      }
+      if (top) {
+        top.style.setProperty("display", "none", "important");
+        if (top.close) try { top.close(); } catch (er) {}
+        [document.documentElement, document.body].forEach(function (b) { if (getComputedStyle(b).overflow === "hidden") b.style.setProperty("overflow", "auto", "important"); });
+      }
+    }
+  }
+  document.addEventListener("DOMContentLoaded", function () {
+    rhNoPopup();
+    var po = new MutationObserver(rhNoPopup);
+    po.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ["class", "style", "open"] });
+    setTimeout(function () { po.disconnect(); }, 60000);
+  });
   document.addEventListener("DOMContentLoaded", rhJoin);
   window.addEventListener("load", rhJoin);
   window.addEventListener("load", rhDone);
