@@ -354,6 +354,53 @@ img{-webkit-user-drag:none;user-select:none;-webkit-touch-callout:none}
 .pick[aria-pressed="true"]{background:var(--deep);color:#F3F6F1;border-color:var(--deep)}
 :root[data-theme="dark"] .pick[aria-pressed="true"]{background:var(--sage);color:var(--deep);border-color:var(--sage)}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .pick[aria-pressed="true"]{background:var(--sage);color:var(--deep);border-color:var(--sage)}}
+/* «نبذة عني» card (about page only) */
+.about .bio.bio-me{--bio-beige:#D9C4A3;--bio-mark:#F5ECDD;margin-top:18px;display:block;background:var(--card);border:1px solid var(--sage);border-radius:28px;padding:26px 26px 24px;color:var(--deep);text-align:start;box-shadow:none}
+.bio-me .bio-h{display:flex;align-items:center;gap:10px;padding-bottom:12px;margin-bottom:14px;position:relative}
+.bio-me .bio-h::after{content:"";position:absolute;inset-inline-start:0;bottom:0;width:72px;height:2px;border-radius:2px;background:var(--bio-beige)}
+.bio-me h3{margin:0;font-size:20px;font-weight:800;color:var(--deep)}
+.bio-me .bio-orn{width:40px;height:16px;fill:none;stroke:var(--bio-beige);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.bio-me .bio-orn circle{fill:var(--bio-beige);stroke:none}
+.bio-me p{margin:0;font-size:16px;line-height:2;color:var(--deep)}
+.bio-me mark{background:var(--bio-mark);color:inherit;border-radius:8px;padding:1px 8px;font-weight:700;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+@media (max-width:760px){.about .bio.bio-me{border-radius:22px;padding:20px 18px}.bio-me p{font-size:15px;line-height:1.95}}
+:root[data-theme="dark"] .bio-me,:root[data-theme="dark"] .bio-me h3,:root[data-theme="dark"] .bio-me p{color:var(--ink)}
+:root[data-theme="dark"] .about .bio.bio-me{border-color:var(--line);--bio-mark:#3A3327}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .bio-me,:root:not([data-theme="light"]) .bio-me h3,:root:not([data-theme="light"]) .bio-me p{color:var(--ink)}:root:not([data-theme="light"]) .about .bio.bio-me{border-color:var(--line);--bio-mark:#3A3327}}
+/* print card — flips between front and back */
+.print .pprice{display:inline-flex;align-items:baseline;gap:4px;margin-inline-start:8px;vertical-align:middle;font-weight:800;font-size:13px;color:#F3F6F1}
+.print .pprice b{font-size:22px;line-height:1;font-variant-numeric:tabular-nums}
+.print .pprice span{color:#C9D4C7}
+.print .cflip{position:relative;display:block;width:118px;aspect-ratio:1.435;padding:0;border:0;background:transparent;cursor:pointer;perspective:700px;direction:ltr}
+.cturn{position:relative;display:block;width:100%;height:100%;transform-style:preserve-3d;transition:transform .8s cubic-bezier(.4,.2,.2,1)}
+.cface{position:absolute;inset:0;display:block;overflow:hidden;border-radius:8px;background:#fff;backface-visibility:hidden;-webkit-backface-visibility:hidden;box-shadow:0 6px 16px rgba(0,0,0,.28)}
+.cface img{display:block;width:100%;height:100%;object-fit:fill}
+.cback{transform:rotateY(180deg)}
+.cflip.on .cturn{transform:rotateY(180deg)}
+.ccue{position:absolute;right:-6px;bottom:-6px;width:22px;height:22px;border-radius:50%;background:var(--pink);color:var(--deep);font:700 14px/22px Arial;text-align:center;pointer-events:none}
+.cflip:focus-visible{outline:2px solid var(--pink);outline-offset:4px}
+@media (max-width:760px){.print{grid-template-areas:'pic card' 'txt txt' 'btn btn'!important}.print .cflip{grid-area:card;width:112px;justify-self:end;margin-inline-end:6px}}
+@media (prefers-reduced-motion:reduce){.cturn{transition:none}}
+/* one-minute challenge */
+button.door{font:inherit;text-align:start;cursor:pointer;width:100%}
+.chal{display:grid;gap:12px}
+.chal .h2{font-size:24px;margin:0}
+.ch-top{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-inline-end:52px;min-height:40px;font-weight:700;font-size:13px;color:var(--muted)}
+.ch-time{font-variant-numeric:tabular-nums;color:var(--red);font-size:15px;font-weight:800}
+.ch-bar{height:6px;border-radius:99px;background:var(--soft);overflow:hidden}
+.ch-bar i{display:block;height:100%;background:var(--red);transition:width 1s linear}
+.ch-opts{display:grid;gap:8px}
+.ch-opt{min-height:48px;padding:10px 14px;border-radius:14px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);font:inherit;font-weight:700;font-size:15px;text-align:start;cursor:pointer;line-height:1.5}
+.ch-opt:disabled{cursor:default}
+.ch-opt.ok{background:#E3F1E7;border-color:#3E8E5A;color:#1F5A33}
+.ch-opt.no{background:#FBEEE9;border-color:var(--red);color:#8A2E1C}
+.ch-res{border-radius:18px;background:var(--soft);padding:18px;text-align:center;display:grid;gap:6px}
+.ch-res .big{font-size:44px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums}
+.ch-res .tag{font-size:20px;font-weight:800}
+.ch-ans{font-size:14px;line-height:1.8}
+.ch-ans summary{cursor:pointer;font-weight:800}
+.ch-ans ol{margin:8px 0 0;padding-inline-start:20px}
+.ch-ans li.x{color:var(--red)}
 .result{margin-top:14px;border-radius:14px;background:var(--soft);padding:14px;display:grid;gap:8px}
 .result b.code{font-family:var(--latin);font-size:24px}
 .list{display:grid;gap:10px;margin-top:20px}
@@ -664,6 +711,28 @@ footer{margin-bottom:0}
 .wsw{display:inline-flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border:1.5px solid var(--red);border-radius:999px;background:#fff;color:var(--deep);text-decoration:none;font-weight:800;font-size:13px;white-space:nowrap;margin-inline-start:auto}
 .wsw .wav{position:relative;display:block;width:44px;height:44px;border-radius:50%;overflow:hidden;flex:0 0 auto;background:#E4EEEA;box-shadow:0 0 0 2px #fff,0 0 0 3.5px #DFB072}.wsw .wav img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;display:block}.wsw{min-height:52px;padding:3px 16px 3px 4px;gap:10px}
 @media(max-width:560px){.top .logo .hublogo{height:36px}.wsw{font-size:12px;padding:3px 10px 3px 3px}.wsw .wav{width:40px;height:40px}.wsw{min-height:48px}}
+/* 2026-11-16: EN button always to the left of the switch button, in Arabic and English */
+html[lang="en"] .top #lang{order:1;margin-inline-start:auto}
+html[lang="en"] .top .wseg{order:2;margin-inline-start:8px}
+/* 2026-11-16: two-sided switch (profile | studio) — current side filled */
+.wseg{display:inline-flex;align-items:center;gap:2px;padding:4px;border-radius:999px;background:var(--card);border:1px solid var(--line);box-shadow:0 2px 8px -4px rgba(47,59,51,.18);white-space:nowrap;margin-inline-start:auto}
+.wseg>*{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;font-weight:800;font-size:13px;text-decoration:none;transition:background .2s,color .2s}
+.wseg-o{color:var(--muted)}
+.wseg-o:hover{background:var(--soft);color:var(--ink)}
+.wseg-on{background:var(--red);color:#fff}
+@media(max-width:560px){.wseg>*{min-height:40px;padding:0 11px;font-size:12px}}
+/* 2026-11-16: switch + EN share one size set (height 48/42, 1px border, full radius, same padding and shadow) */
+.top .wseg,.top #lang{box-sizing:border-box;height:48px;border:1px solid var(--line);border-radius:999px;background:var(--card);box-shadow:0 2px 8px -4px rgba(47,59,51,.18)}
+.top .wseg{padding:4px}
+.top .wseg>*{box-sizing:border-box;height:38px;min-height:0;padding:0 16px;font-size:13px;font-weight:800}
+.top #lang{min-width:48px;min-height:0;padding:0 16px;font-size:13px;font-weight:800;display:inline-grid;place-items:center}
+@media(max-width:560px){.top .wrap:has(> .wseg){column-gap:8px}.top .wseg,.top #lang{height:42px}.top .wseg>*{height:32px;padding:0 12px;font-size:12px}.top #lang{min-width:42px;padding:0 12px;font-size:12px}}
+/* 2026-11-16: bigger, clearer logo */
+.top .logo .hublogo{height:60px}
+@media(max-width:560px){.top .logo .hublogo{height:48px}}
+/* 2026-11-16: taller switch button */
+.wsw{min-height:62px;padding:4px 18px 4px 5px}.wsw .wav{width:52px;height:52px}
+@media(max-width:560px){.wsw{min-height:56px;padding:4px 12px 4px 4px}.wsw .wav{width:46px;height:46px}}
 
 .hero{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr)!important;align-items:stretch!important}
 .hero>div:first-child{align-self:center}
@@ -706,6 +775,7 @@ html,body{overflow-x:clip}
 .ccat-bars i.done::after,.ccat-bars i.on::after{content:"";position:absolute;inset:0;background:var(--red);transform-origin:right}
 .ccat-bars i.on::after{animation:ccatBar var(--dur,3.6s) linear forwards}
 .ccat.paused .ccat-bars i.on::after{animation-play-state:paused}
+.ccat-bars i.on::after{animation:none}
 @keyframes ccatBar{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 .ccat-slide{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:12px;padding:10px 22px 4px}
 .ccat-tx{display:grid;gap:6px;justify-items:start;min-width:0}
@@ -813,7 +883,12 @@ html,body{overflow-x:clip}
   .hero .row .btn{flex:1 1 120px}
   .hero .kpis span{white-space:nowrap}
   .hero .row .btn{white-space:nowrap;padding-inline:14px}
-}</style>
+}
+/* 2026-11-16: tabs sit lower, on their own white row under the logo, aligned right (start) */
+.top .wrap:has(> .pills){flex-wrap:wrap!important;row-gap:0}
+.top .pills.wrap{order:10;flex:0 0 100%!important;width:100%!important;max-width:none!important;margin:8px 0 0!important;padding:4px 0 2px!important;background:transparent!important;justify-content:flex-start!important;overflow-x:auto}
+@media (max-width:760px){.top .pills.wrap{flex:0 0 calc(100% + 32px)!important;width:calc(100% + 32px)!important;margin:8px -16px 0!important;padding:2px 16px 4px!important;justify-content:flex-start!important}}
+</style>
 
 <header class="top">
   <div class="wrap">
@@ -826,7 +901,7 @@ html,body{overflow-x:clip}
     <a href="https://byrawan.github.io/courses/" class="r"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg><span data-t="nReg">التسجيل</span></a>
     <span class="spike" id="spike" aria-hidden="true"><svg viewBox="0 0 56 14"><path d="M0 10 H18 L22 10 L25 2 L29 13 L32 6 L34 10 H56"/></svg></span>
   </nav>
-    <a class="wsw" href="/" target="_blank" rel="noopener" aria-label="الملف المهني" data-t-aria="toMain"><i class="wav" aria-hidden="true"><img src="img/image-06.webp" alt=""></i><span data-t="toMain">الملف المهني</span></a><button type="button" class="lang" id="lang" aria-label="Language">EN</button>
+    <div class="wseg" role="group" aria-label="Rawan Hub"><a class="wseg-o" href="/" target="_blank" rel="noopener" data-t="toMain">الملف المهني</a><span class="wseg-on" aria-current="page" data-t="brand">استوديو روان</span></div><button type="button" class="lang" id="lang" aria-label="Language">EN</button>
   </div>
   
 </header>
@@ -841,11 +916,10 @@ html,body{overflow-x:clip}
         <p class="hello"><span id="greet"></span> · <span data-t="helloName">أهلًا بك في مساحتي</span></p>
                 <p class="lead" data-t="heroIntro">أدرّب الكوادر الصحية والمجتمع على مهارات إنقاذ الحياة، بأسلوب عملي وتقنيات تدريب حديثة.</p>
         <div class="row" style="margin-top:20px">
-          <a class="btn cta brush" href="https://byrawan.github.io/courses/" data-t="ctaReg">سجّل في دورة</a>
-          <a class="btn ghost" href="#courses" data-t="ctaCourses">شوف الدورات</a>
+          <a class="btn cta brush" href="#courses" data-t="ctaExplore">استكشف الدورات</a>
         </div>
         
-        <div class="kpis"><div><b class="lat">+4000</b><span data-t="pzK1">متدرب ومتدربة</span></div><div><b class="lat">+5</b><span data-t="pzK2">سنوات في التدريب</span></div></div>
+        <div class="kpis"><div><b class="lat">+4000</b><span data-t="pzK1">متدرب ومتدربة</span></div><div><b class="lat">+5</b><span data-t="pzK2">سنوات في مجال التدريب</span></div></div>
         <button type="button" class="voice" id="voice" hidden><i><svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg></i><span data-t="voiceB">اسمع روان</span><span class="bars" aria-hidden="true"><span></span><span></span><span></span><span></span></span></button>
         <audio id="voice-a" preload="none"></audio>
       </div>
@@ -861,19 +935,33 @@ html,body{overflow-x:clip}
   <div class="hsec">
   <div class="shead"><p class="eyebrow" data-t="hsEy">ابدأ من هنا</p><h2 class="h2" data-t="hsH">وش تحتاج اليوم؟</h2></div>
   <div class="doors">
-    <a class="card door" href="#courses"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span><span class="txt"><b data-t="d1t">الدورات المعتمدة</b><span class="lat" data-t="d1p">BLS · ACLS · PALS · NRP · HSFA</span></span><span class="arrow" data-t="go">←</span></a>
+    <button type="button" class="card door" data-sheet="sh-chal" id="chal-open"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="13.5" r="7.5"/><path d="M12 9.5v4l2.5 2M10 3h4M12 3v3"/></svg></span><span class="txt"><b data-t="d1t">تحدّي الدقيقة</b><span data-t="d1p">5 مواقف في 60 ثانية: تقدر تنقذ حياة؟</span></span><span class="arrow" data-t="go">←</span></button>
     <a class="card door" href="#learn"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/><path d="M6 12h3l1.5-2.5 2 5 1.5-2.5h4"/></svg></span><span class="txt"><b data-t="d2t">تعلّم وجرّب بنفسك</b><span data-t="d2p">أدوات تفاعلية للإنعاش والإسعافات</span></span><span class="arrow" data-t="go">←</span></a>
-    <a class="card door" href="https://byrawan.github.io/courses/"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1.2-3.8 4-5.5 7.5-5.5s6.3 1.7 7.5 5.5"/></svg></span><span class="txt"><b data-t="d3t">سجّل في دورة</b><span data-t="d3p">اختر المدينة والموعد واحجز مقعدك</span></span><span class="arrow" data-t="go">←</span></a>
+    <a class="card door" id="free-org" href="https://wa.me/966568587031" target="_blank" rel="noopener"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="9" width="17" height="11" rx="2"/><path d="M2.5 9h19M12 9v11M12 9c-1.5-3.5-5.5-4-5.5-1.5S10 9 12 9Zm0 0c1.5-3.5 5.5-4 5.5-1.5S14 9 12 9Z"/></svg></span><span class="txt"><b data-t="d3t">دورة مجانية لجهتك</b><span data-t="d3p">«الثمان الأولى» في الإسعافات الأولية</span></span><span class="arrow" data-t="go">←</span></a>
   </div>
 </div>
+<div class="sheet-bg" id="sh-chal" hidden><div class="sheet-panel" role="dialog" aria-modal="true" aria-labelledby="chal-h"><button type="button" class="sheet-x" data-close aria-label="close">×</button><div class="chal" id="chal"></div></div></div>
 <div class="hsec">
   <div class="shead"><p class="eyebrow" data-t="svEy">خدمة حصرية</p><h2 class="h2" data-t="svH">بطاقتك جاهزة فورًا</h2></div>
   <div class="card print">
       <img loading="lazy" class="pic" src="img/image-08.webp" alt="" width="748" height="652">
-      <div><span class="tag" data-t="prTag">حصري</span><h3 data-t="prH">طباعة بطاقة رخصة الدورة فورًا</h3><p data-t="prP">خدمة طباعة فورية وحصرية. اطلبها على الواتساب وتستلمها بسرعة.</p></div>
-      <div class="price"><b class="pr-price">35</b><span data-t="prCur">ريال</span></div>
+      <div><span class="tag" data-t="prTag">حصري</span><span class="pprice"><b class="pr-price lat">35</b> <span data-t="prCur">ريال</span></span><h3 data-t="prH">طباعة بطاقة رخصة الدورة فورًا</h3><p data-t="prP">خدمة طباعة فورية وحصرية. اطلبها على الواتساب وتستلمها بسرعة.</p></div>
+      <button type="button" class="cflip" id="cflip" aria-label="اقلب البطاقة" data-t-aria="prFlip"><span class="cturn"><span class="cface"><img loading="lazy" src="img/card-front.jpg" alt="" width="860" height="599"></span><span class="cface cback"><img loading="lazy" src="img/card-back.jpg" alt="" width="860" height="534"></span></span><span class="ccue" aria-hidden="true">↻</span></button>
       <a class="btn" id="pr-send" href="https://wa.me/966568587031" target="_blank" rel="noopener" data-t="prB">اطلب الطباعة عبر واتساب</a>
     </div>
+</div>
+<div class="hsec" id="home-rv">
+  <div class="shead"><p class="eyebrow" data-t="vEy">آراء المتدربين</p><h2 class="h2" data-t="vShareH">شاركني رأيك</h2></div>
+  <div class="reviews one">
+    <form class="card" id="rv-form" novalidate>
+      <div class="field"><span class="lbl" id="l-stars" data-t="vStars">تقييمك</span><div class="stars" id="stars" role="group" aria-labelledby="l-stars"></div></div>
+      <div class="field"><label for="rv-course" data-t="vCourse">الدورة</label><select id="rv-course"></select></div>
+      <div class="field"><label for="rv-name" data-t="vName">اسمك (اختياري)</label><input type="text" id="rv-name"></div>
+      <div class="field"><label for="rv-text" data-t="vText">رأيك</label><textarea id="rv-text"></textarea></div>
+      <p class="err" id="rv-err" hidden></p>
+      <a class="btn" id="rv-send" href="https://wa.me/966568587031" target="_blank" rel="noopener" data-t="vSend">أرسل رأيك عبر واتساب</a>
+    </form>
+  </div>
 </div>
 <div class="stats" id="stats" hidden></div>
   <div id="home-reviews"></div>
@@ -1017,7 +1105,10 @@ html,body{overflow-x:clip}
       <p class="eyebrow" data-t="aEy">عن روان</p>
       <h2 class="h2" data-t="aH">روان السفياني</h2>
       <svg class="scribble" viewBox="0 0 110 16" aria-hidden="true"><path d="M3 9 C 24 4, 54 3, 82 4 S 104 4, 108 6 C 107 10, 104 12, 100 12 C 70 13, 36 14, 6 13 C 2 12, 1 10, 3 9 Z"/><path d="M8 13 C 30 12, 52 12, 70 11 L 70 13 C 50 14, 28 14, 8 14 Z"/></svg>
-      <div class="bio" style="margin-top:14px"><b data-t="bioT">النبذة</b><p class="muted" data-t="bioP">ممارسة صحية ومدربة ومديرة تدريب ومستشارة. تحب التطوع والمبادرات المجتمعية ونشر المعرفة الصحية.</p></div>
+      <div class="bio bio-me">
+        <div class="bio-h"><h3 data-t="bioT">نبذة عني</h3><svg class="bio-orn" viewBox="0 0 40 16" aria-hidden="true"><path d="M2 8h14"/><path d="M24 8l4-4 4 4-4 4z"/><circle cx="38" cy="8" r="1.6"/></svg></div>
+        <p><span data-t="bioP0">أؤمن أن المعرفة تكتسب قيمتها حين نشاركها.</span><br><span data-t="bioP1">مدربة معتمدة، أجد شغفي في تبسيط المعلومة وتحويلها إلى تجربة عملية ممتعة، تجمع بين التعلم والتفاعل، </span><mark data-t="bioP2">وتترك أثرًا يتجاوز قاعة التدريب</mark>.</p>
+      </div>
       <div class="creds">
         <div class="cred"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="var(--sage)"/><path d="M7 12.5 10.5 16 17 8.5" fill="none" stroke="var(--deep)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-t="cr1">مدربة معتمدة من جمعية القلب السعودية</span></div>
         <div class="cred"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="var(--sage)"/><path d="M7 12.5 10.5 16 17 8.5" fill="none" stroke="var(--deep)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-t="cr2">مدربة معتمدة من الهيئة السعودية للتخصصات الصحية</span></div>
@@ -1042,20 +1133,6 @@ html,body{overflow-x:clip}
   </div>
   </div>
 
-  <div class="sec">
-    <p class="eyebrow" data-t="vEy">آراء المتدربين</p>
-    <h3 class="h2" data-t="vShareH">شاركني رأيك</h3>
-  </div>
-  <div class="reviews one">
-    <form class="card" id="rv-form" novalidate>
-      <div class="field"><span class="lbl" id="l-stars" data-t="vStars">تقييمك</span><div class="stars" id="stars" role="group" aria-labelledby="l-stars"></div></div>
-      <div class="field"><label for="rv-course" data-t="vCourse">الدورة</label><select id="rv-course"></select></div>
-      <div class="field"><label for="rv-name" data-t="vName">اسمك (اختياري)</label><input type="text" id="rv-name"></div>
-      <div class="field"><label for="rv-text" data-t="vText">رأيك</label><textarea id="rv-text"></textarea></div>
-      <p class="err" id="rv-err" hidden></p>
-      <a class="btn" id="rv-send" href="https://wa.me/966568587031" target="_blank" rel="noopener" data-t="vSend">أرسل رأيك عبر واتساب</a>
-    </form>
-  </div>
 </section>
 
 <!-- REGISTER -->
@@ -1090,8 +1167,7 @@ html,body{overflow-x:clip}
 
 <footer>
   <div class="foot-top">
-    <div class="foot-brand"><b data-t="brand">استوديو روان</b><p data-t="pzFt">تدريب صحي معتمد في الإنعاش والإسعافات الأولية.</p></div>
-    <nav class="foot-nav" aria-label="footer"><a href="#home" data-t="nHome">الرئيسية</a><a href="#about" data-t="nAbout">عن روان</a><a href="#courses" data-t="nCourses">الدورات</a><a href="#learn" data-t="nLearn">تعلّم</a><a href="https://byrawan.github.io/courses/" data-t="nReg">التسجيل</a></nav>
+    <div class="foot-brand"><b data-t="brand">استوديو روان</b><p data-t="pzFt">المعرفة أحلى لما نشاركها</p></div>
     <div class="social" aria-label="contact"><a href="https://wa.me/966568587031" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.6-.3Z"/></svg></a><a href="tel:+966568587031" target="_blank" rel="noopener" aria-label="Call" title="Call"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1Z"/></svg></a><a href="https://www.tiktok.com/@byrawan_co" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.6 5.8a4.8 4.8 0 0 1-1.1-3.1h-3.3v13.2a2.8 2.8 0 1 1-2-2.7V9.8a6.1 6.1 0 1 0 5.3 6V9.1a8 8 0 0 0 4.6 1.5V7.3a4.8 4.8 0 0 1-3.5-1.5Z"/></svg></a><a href="https://x.com/byrawan_co" target="_blank" rel="noopener" aria-label="X" title="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.8 3h3.1l-6.8 7.7L22 21h-6.2l-4.9-6.4L5.3 21H2.2l7.2-8.3L2 3h6.4l4.4 5.9L17.8 3Zm-1.1 16.2h1.7L7.4 4.7H5.6l11.1 14.5Z"/></svg></a><a href="#" target="_blank" rel="noopener" aria-label="Email" title="Email" id="s-mail" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M3 6h18v12H3z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m3.5 6.5 8.5 7 8.5-7"/></svg></a></div>
   </div>
   <p data-t="foot">المحتوى في هذا الموقع توعوي وتعليمي، ولا يغني عن الاستشارة الطبية أو الاتصال بالطوارئ.</p>
@@ -1152,7 +1228,7 @@ const T = {
 
   helloName:["أهلًا بك في مساحتي","Welcome to my space"],
   nextEy:["الدورة القادمة","Next course"], nextSoon:["مواعيد الدورات الجاية متاحة الحين","Upcoming course dates are open"], nextAsk:["اختر المدينة والموعد اللي يناسبك واحجز مقعدك","Pick your city and date and book your seat"], nextBook:["احجز مقعدك","Book your seat"], nextAskB:["شوف المواعيد","See dates"], soonBadge:["قريبًا","Soon"],
-  pzK1:["متدرب ومتدربة","trainees"], pzK2:["سنوات في التدريب","years training"], pzK3:["جهات اعتماد","accrediting bodies"], pzAcc:["مدربة معتمدة من","Accredited trainer with"], pzA1:["جمعية القلب السعودية","Saudi Heart Association"], pzA2:["الهيئة السعودية للتخصصات الصحية","Saudi Commission for Health Specialties"], pzA3:["وزارة الصحة","Ministry of Health"], pzFt:["تدريب صحي معتمد في الإنعاش والإسعافات الأولية.","Accredited health training in resuscitation and first aid."], hsEy:["ابدأ من هنا","Start here"], hsH:["وش تحتاج اليوم؟","What do you need today?"], svEy:["خدمة حصرية","Exclusive service"], svH:["بطاقتك جاهزة فورًا","Your course card, printed instantly"], teaseT:["جرّب: كم سرعة ضغطاتك؟","Try it: how fast are your compressions?"], teaseP:["اضغط على القلب بإيقاعك وشوف إذا هو صحيح","Tap the heart to your rhythm and see if it's right"],
+  pzK1:["متدرب ومتدربة","trainees"], pzK2:["سنوات في مجال التدريب","years in training"], pzK3:["جهات اعتماد","accrediting bodies"], pzAcc:["مدربة معتمدة من","Accredited trainer with"], pzA1:["جمعية القلب السعودية","Saudi Heart Association"], pzA2:["الهيئة السعودية للتخصصات الصحية","Saudi Commission for Health Specialties"], pzA3:["وزارة الصحة","Ministry of Health"], pzFt:["المعرفة أحلى لما نشاركها","Knowledge is sweeter when we share it"], hsEy:["ابدأ من هنا","Start here"], hsH:["وش تحتاج اليوم؟","What do you need today?"], svEy:["خدمة حصرية","Exclusive service"], svH:["بطاقتك جاهزة فورًا","Your course card, printed instantly"], teaseT:["جرّب: كم سرعة ضغطاتك؟","Try it: how fast are your compressions?"], teaseP:["اضغط على القلب بإيقاعك وشوف إذا هو صحيح","Tap the heart to your rhythm and see if it's right"],
   trustEy:["ليش تتدرب معي","Why train with me"], tr1t:["اعتماد رسمي","Official accreditation"], tr1p:["مدربة معتمدة من جمعية القلب السعودية والهيئة السعودية للتخصصات الصحية ووزارة الصحة","Certified by the Saudi Heart Association, the Saudi Commission for Health Specialties and the Ministry of Health"],
   tr2t:["تطبيق عملي","Hands-on practice"], tr2p:["أغلب وقت الدورة على المجسمات، مو محاضرة وبس","Most of the course is practice on manikins, not just lectures"],
   tr3t:["للأفراد والجهات","For individuals and teams"], tr3p:["دورات عامة، وتدريب للمدارس والشركات والمنشآت في مقرها","Public courses plus on-site training for schools, companies and facilities"],
@@ -1160,12 +1236,21 @@ const T = {
   nHome:["الرئيسية","Home"], nCourses:["الدورات","Courses"], nLearn:["تعلّم","Learn"], nAbout:["عن روان","About"], nReg:["التسجيل","Register"],
   heroH:["دورات BLS وACLS والإسعافات الأولية معتمدة","Accredited BLS, ACLS and first aid courses"],
   heroP:["تدريب عملي بشرح واضح وتقنيات تفاعلية وتطبيق حقيقي على المجسمات، للممارسين الصحيين وعامة الناس.","Hands-on training with clear explanations, interactive technology and real practice on manikins, for healthcare providers and the public."],
-  ctaReg:["سجّل في دورة","Register for a course"], ctaCourses:["شوف الدورات","View courses"],
+  ctaReg:["سجّل في دورة","Register for a course"], ctaCourses:["شوف الدورات","View courses"], ctaExplore:["استكشف الدورات","Explore courses"],
   accLine:["معتمدة من جمعية القلب السعودية","Accredited by the Saudi Heart Association"],
   altHero:["رسمة روان المدربة تلوّح بيدها","Illustration of Rawan the trainer waving"], altAbout:["رسمة روان المدربة تحمل لوح ملاحظات","Illustration of Rawan holding a clipboard"],
-  d1t:["الدورات","Courses"], d1p:["BLS · ACLS · PALS · NRP · HSFA","BLS · ACLS · PALS · NRP · HSFA"],
+  d1t:["تحدّي الدقيقة","The one-minute challenge"], d1p:["5 مواقف في 60 ثانية: تقدر تنقذ حياة؟","5 situations in 60 seconds: could you save a life?"],
+  chEy:["تحدّي الدقيقة","One-minute challenge"], chH:["تقدر تنقذ حياة؟","Could you save a life?"], chP:["5 مواقف سريعة، وعندك 60 ثانية. اختر وش تسوي في كل موقف.","5 quick situations and 60 seconds. Pick what you'd do in each one."],
+  chGo:["ابدأ التحدي","Start the challenge"], chQ:["الموقف","Situation"], chOf:["من","of"], chSec:["ث","s"], chUp:["خلص الوقت!","Time's up!"],
+  chScore:["نتيجتك","Your score"], chR5:["منقذ جاهز 💚","Ready to save a life 💚"], chR3:["قريب تكون منقذ 👏","Almost there 👏"], chR0:["تحتاج دورة 😅","You need a course 😅"],
+  chP5:["عرفت الصح في كل المواقف. ثبّتها بالتدريب العملي، لأن اليد تنسى إذا ما تدربت.","You got every one right. Lock it in with hands-on practice, because hands forget without training."],
+  chP3:["عندك أساس كويس. دورة BLS تخليك واثق وقت الموقف الحقيقي.","You have a good base. A BLS course makes you confident when it really happens."],
+  chP0:["عادي، أغلب الناس ما يعرفونها. في دورة BLS تتعلمها بيدك خطوة بخطوة.","That's normal, most people don't know this. In a BLS course you learn it hands-on, step by step."],
+  chAns:["الإجابات الصحيحة","Correct answers"], chShare:["تحدّى صديقك","Challenge a friend"], chAgain:["أعد التحدي","Try again"], chBls:["سجّل في BLS","Register for BLS"],
+  chMsg:["جبت {s} من 5 في «تحدّي الدقيقة: تقدر تنقذ حياة؟» 🫀\nتقدر تغلبني؟ 👇","I scored {s}/5 on \"The one-minute challenge: could you save a life?\" 🫀\nCan you beat me? 👇"],
   d2t:["جرّب بنفسك","Try it yourself"], d2p:["اختبر إيقاع ضغطاتك، وتعلّم وش تسوي في الطوارئ","Test your compression rhythm and learn what to do in an emergency"],
-  d3t:["سجّل في دورة","Register for a course"], d3p:["اختر المدينة والموعد واحجز مقعدك","Pick your city and date and book"],
+  d3t:["دورة مجانية لجهتك","A free course for your organization"], d3p:["«الثمان الأولى» في الإسعافات الأولية","\"The First Eight\" in first aid"],
+  d3m:["السلام عليكم، أبغى أطلب دورة «الثمان الأولى» المجانية في الإسعافات الأولية لجهتنا\nاسم الجهة: \nالمدينة: \nعدد المتدربين التقريبي: ","Hello, I'd like to request the free \"First Eight\" first aid course for our organization\nOrganization: \nCity: \nApprox. number of trainees: "],
   go:["←","→"], factL:["معلومة اليوم","Fact of the day"],
   cEy:["الدورات المعتمدة","Accredited courses"], cH:["اختر الدورة اللي تناسبك","Find the right course for you"],
   orgT:["تدريب الجهات والمنشآت","Training for organizations"], orgP:["مدارس، شركات، مستشفيات، ومراكز صحية. أجي لكم في مقركم، وأرتب الموعد حسب عددكم.","Schools, companies, hospitals and health centers. I come to your site and schedule around your team."], orgB:["اطلب تدريب لجهتك","Request team training"],
@@ -1183,7 +1268,10 @@ const T = {
   s2t:["خرافة أو حقيقة","Myth or fact"], s2p:["نصحح المعلومات الشائعة الغلط","Correcting common misconceptions"],
   s3t:["دقيقة إسعاف","One-minute first aid"], s3p:["مهارة وحدة في دقيقة","One skill in one minute"],
   tt:["تيك توك","TikTok"], xx:["تويتر","X"],
-  aEy:["عن روان","About"], aH:["روان السفياني","Rawan Alsofyani"], bioT:["النبذة","Bio"],
+  aEy:["عن روان","About"], aH:["روان السفياني","Rawan Alsofyani"], bioT:["نبذة عني","About me"],
+  bioP0:["أؤمن أن المعرفة تكتسب قيمتها حين نشاركها.","I believe knowledge gains its value when we share it."],
+  bioP1:["مدربة معتمدة، أجد شغفي في تبسيط المعلومة وتحويلها إلى تجربة عملية ممتعة، تجمع بين التعلم والتفاعل، ","As an accredited trainer, my passion is simplifying information and turning it into a practical, enjoyable experience that blends learning and interaction, "],
+  bioP2:["وتترك أثرًا يتجاوز قاعة التدريب","and leaves an impact that reaches beyond the training room"],
   bioP:["ممارسة صحية ومدربة ومديرة تدريب ومستشارة. تحب التطوع والمبادرات المجتمعية ونشر المعرفة الصحية.","Health practitioner, trainer, training manager and consultant, with a love for volunteering, community initiatives and sharing health knowledge."],
   cr1:["مدربة معتمدة من جمعية القلب السعودية","Certified trainer, Saudi Heart Association"], cr2:["مدربة معتمدة من الهيئة السعودية للتخصصات الصحية","Certified trainer, Saudi Commission for Health Specialties"], cr3:["مدربة معتمدة من وزارة الصحة","Certified trainer, Ministry of Health"],
   partners:["الدورات تُقدَّم بالشراكة مع جهات تدريبية معتمدة، والشهادة تصدر منها.","Courses are delivered in partnership with accredited training providers, who issue the certificates."],
@@ -1204,7 +1292,7 @@ const T = {
   cityPh:["اختر المدينة","Choose a city"], otherPh:["اكتب اسم المدينة","Type the city name"],
   accLbl:["الاعتماد","Accreditation"], accVal:["جمعية القلب السعودية","Saudi Heart Association"], priceLbl:["السعر","Price"], priceVal:["يُعلن قريبًا","Coming soon"],
   durLbl:["المدة","Duration"], durVal:["تُحدد عند التسجيل","Shared at registration"], regThis:["سجّل في هذي الدورة","Register for this course"],
-  prTag:["حصري","Exclusive"], prH:["طباعة بطاقة رخصة الدورة فورًا","Instant course card printing"], prP:["اطبع رخصة دورتك (BLS وACLS وغيرها) كبطاقة بتصميم حصري، وتستلمها فورًا. اطلبها على الواتساب.","Get your course certificate (BLS, ACLS and more) printed as a card with an exclusive design, ready right away. Order on WhatsApp."], prCur:["ريال","SAR"], prB:["اطلب الطباعة عبر واتساب","Order printing on WhatsApp"],
+  prTag:["حصري","Exclusive"], prH:["طباعة بطاقة رخصة الدورة فورًا","Instant course card printing"], prP:["اطبع رخصة دورتك (BLS وACLS وغيرها) كبطاقة بجودة عالية، وتستلمها فورًا. اطلبها على الواتساب.","Get your course certificate (BLS, ACLS and more) printed as a high-quality card, ready right away. Order on WhatsApp."], prFlip:["اقلب البطاقة","Flip the card"], prCur:["ريال","SAR"], prB:["اطلب الطباعة عبر واتساب","Order printing on WhatsApp"],
   qStart:["وش الدورة اللي تناسبك؟ جاوب سؤالين","Which course fits you? Answer two questions"], qAgain:["أعد الأسئلة","Start over"], qPick:["اختر هذي الدورة وسجّل","Choose it and register"], qFits:["الأنسب لك:","Best fit for you:"]
 };
 const COURSES = [
@@ -1324,7 +1412,7 @@ function applyLang(){
   if (rc) $("rv-course").value = rc;
   const pm = encodeURIComponent(L ? "Hello, I'd like to order a printed course card (35 SAR)\nCourse: \nName on card: " : "السلام عليكم، أبغى أطلب طباعة بطاقة رخصة الدورة (٣٥ ريال)\nالدورة: \nالاسم على البطاقة: ");
   ["pr-send","pr-send2"].filter(id => $(id)).forEach(id => $(id).href = `https://wa.me/${PHONE}?text=${pm}`);
-  renderHome(); startRot(); renderSeason(); renderCourses(); renderQuiz(); renderFlips(); renderRenew(); renderPlace(); renderMF(); paintCount && $("count") && paintCount(); setTimeout(() => moveSpike(false), 0); renderFaq(); greet(); fact(); updateMsg(); updateReview(); paintVerdict();
+  renderHome(); renderChal(); startRot(); renderSeason(); renderCourses(); renderQuiz(); renderFlips(); renderRenew(); renderPlace(); renderMF(); paintCount && $("count") && paintCount(); setTimeout(() => moveSpike(false), 0); renderFaq(); greet(); fact(); updateMsg(); updateReview(); paintVerdict();
 }
 $("lang").addEventListener("click", () => { L = 1 - L; try { localStorage.setItem("lang", L ? "en" : "ar"); } catch(e){} applyLang(); });
 
@@ -1337,9 +1425,18 @@ function route(){
   PAGES.forEach(x => $("p-" + x).classList.toggle("on", x === p));
   document.querySelectorAll(".pills a").forEach(a => a.setAttribute("aria-current", a.getAttribute("href") === "#" + p ? "page" : "false"));
   moveSpike(true);
-  window.scrollTo(0, 0);
+  if (RESTORE_Y !== null) { const y = RESTORE_Y; RESTORE_Y = null; restoreY(y); } else window.scrollTo(0, 0);
 }
 window.addEventListener("hashchange", route);
+// 2026-11-16: Back (or returning to the page) puts you at the exact spot you left, not the top
+var RESTORE_Y = (history.state && history.state.y) || null;
+try { history.scrollRestoration = "manual"; } catch(e){}
+let USER_MOVED = false; ["wheel", "touchstart", "keydown"].forEach(e => window.addEventListener(e, () => { USER_MOVED = true; }, { passive: true }));
+function restoreY(y){ if (!y) return window.scrollTo(0, 0); USER_MOVED = false; let n = 0; const f = () => { if (USER_MOVED) return; window.scrollTo(0, y); if (Math.abs(window.scrollY - y) > 2 && n++ < 60) setTimeout(f, 100); }; setTimeout(f, 0); }
+window.addEventListener("popstate", e => { RESTORE_Y = (e.state && e.state.y) || 0; });
+(() => { let tm; const save = () => { try { history.replaceState({ y: Math.round(window.scrollY) }, ""); } catch(e){} };
+  window.addEventListener("scroll", () => { clearTimeout(tm); tm = setTimeout(save, 120); }, { passive: true });
+  window.addEventListener("pagehide", save); document.addEventListener("click", save, true); })();
 function moveSpike(anim){
   const a = document.querySelector('.pills a[aria-current="page"]'), sp = $("spike"); if (!a) return;
   sp.style.left = (a.offsetLeft + a.offsetWidth / 2 - 28) + "px";
@@ -1372,7 +1469,7 @@ function renderHome(){
   $("stats").hidden = !STATS.length;
   $("stats").innerHTML = STATS.map(x => `<div><b>${x[0]}</b><span>${x[1][L]}</span></div>`).join("");
   const avg = REVIEWS.length ? (REVIEWS.reduce((a,r) => a + r.stars, 0) / REVIEWS.length) : 0;
-  $("home-reviews").innerHTML = `<div class="rv-head"><div><p class="eyebrow">${tr("vEy")}</p>${REVIEWS.length ? `<p class="rv-avg"><b class="lat">${avg.toFixed(1)}</b><span class="s">${"★".repeat(Math.round(avg))}</span><small>${REVIEWS.length} ${tr("vCount")}</small></p>` : ""}</div><a class="btn sm ghost" href="#about" data-goreview="1">${tr("vShare")}</a></div>` +
+  $("home-reviews").innerHTML = `<div class="rv-head"><div><p class="eyebrow">${tr("vEy")}</p>${REVIEWS.length ? `<p class="rv-avg"><b class="lat">${avg.toFixed(1)}</b><span class="s">${"★".repeat(Math.round(avg))}</span><small>${REVIEWS.length} ${tr("vCount")}</small></p>` : ""}</div><a class="btn sm ghost" href="#home" data-goreview="1">${tr("vShare")}</a></div>` +
     (REVIEWS.length ? `<div class="card rv rot" id="rv-rot"></div>`
       : `<div class="card rv-empty"><img class="pic" src="img/image-31.webp" alt="" loading="lazy"><div><b>${tr("vFirstT")}</b><p class="muted" style="font-size:14px">${tr("vFirstP")}</p></div></div>`);
 }
@@ -1469,6 +1566,74 @@ function renderQuiz(){
     renderQuiz();
   });
 }
+
+// print card flip: turns by itself every 3.5s; a tap flips it and pauses the auto-turn for a while
+(() => {
+  const c = $("cflip"); if (!c) return;
+  const still = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let hold = 0;
+  c.addEventListener("click", () => { c.classList.toggle("on"); hold = Date.now() + 8000; });
+  if (!still) setInterval(() => { if (Date.now() > hold && !document.hidden) c.classList.toggle("on"); }, 3500);
+})();
+
+// one-minute challenge — 5 مواقف، 60 ثانية. الخيار الأول في كل سؤال هو الصحيح (تتلخبط عند العرض)
+const CHAL = [
+  {q:["شخص طاح قدامك وما يتحرك. وش أول شي تسويه؟","Someone collapses in front of you and isn't moving. What do you do first?"],
+   a:[["تتأكد إن المكان آمن، وتناديه وتربت على كتفه","Make sure the area is safe, then call out and tap their shoulder"],["ترش عليه ماي عشان يصحى","Splash water on them to wake them up"],["ترفع رجوله وتنتظر","Raise their legs and wait"]]},
+  {q:["ما يرد عليك وما يتنفس طبيعي. وش تسوي؟","They don't respond and aren't breathing normally. What do you do?"],
+   a:[["تتصل على 997 وتبدأ ضغطات الصدر فورًا","Call 997 and start chest compressions right away"],["تنتظر الإسعاف بدون ما تلمسه","Wait for the ambulance without touching them"],["تحاول تجلسه وتعطيه ماي","Try to sit them up and give them water"]]},
+  {q:["وين تحط يدينك لضغطات الصدر؟","Where do you place your hands for chest compressions?"],
+   a:[["في وسط الصدر، على النصف السفلي من عظمة القص","In the center of the chest, on the lower half of the breastbone"],["على الجهة اليسار فوق القلب","On the left side, over the heart"],["على أعلى البطن","On the upper belly"]]},
+  {q:["وصل جهاز AED (الصادم الكهربائي). وش تسوي؟","An AED (defibrillator) arrives. What do you do?"],
+   a:[["تشغّله وتتبع تعليماته الصوتية","Turn it on and follow its voice prompts"],["ما تستخدمه إلا إذا وصل طبيب","Don't use it unless a doctor arrives"],["توقف الإنعاش وتنتظر وصول الإسعاف","Stop CPR and wait for the ambulance"]]},
+  {q:["طفل عمره 5 سنوات يختنق، وما يقدر يتكلم ولا يكح. وش تسوي؟","A 5-year-old is choking and can't speak or cough. What do you do?"],
+   a:[["ضغطات على البطن من الخلف (مناورة هايمليك)","Abdominal thrusts from behind (Heimlich maneuver)"],["تعطيه ماي يشربه","Give them water to drink"],["تدخل إصبعك في فمه تدور على الشي","Sweep your finger blindly in their mouth"]]}
+];
+const CH = {i:-1, score:0, left:60, timer:0, picks:[], order:[]};
+function chStop(){ clearInterval(CH.timer); CH.timer = 0; }
+function chIntro(){
+  chStop(); CH.i = -1;
+  $("chal").innerHTML = `<p class="eyebrow">${tr("chEy")}</p><h3 class="h2" id="chal-h">${tr("chH")}</h3><p class="muted" style="font-size:15px">${tr("chP")}</p>
+    <div class="row"><button type="button" class="btn cta" id="ch-go">${tr("chGo")} ⏱️</button></div>`;
+  $("ch-go").onclick = chStart;
+}
+function chStart(){
+  CH.i = 0; CH.score = 0; CH.left = 60; CH.picks = [];
+  CH.order = CHAL.map(q => q.a.map((_, k) => k).sort(() => Math.random() - .5));
+  chStop(); CH.timer = setInterval(() => { CH.left--; chTick(); if (CH.left <= 0) chEnd(true); }, 1000);
+  chQ();
+}
+function chTick(){ const t = $("ch-time"), b = $("ch-bar"); if (t) t.textContent = CH.left + " " + tr("chSec"); if (b) b.style.width = (CH.left / 60 * 100) + "%"; }
+function chQ(){
+  const q = CHAL[CH.i];
+  $("chal").innerHTML = `<div class="ch-top"><span>${tr("chQ")} ${CH.i + 1} ${tr("chOf")} ${CHAL.length}</span><span class="ch-time" id="ch-time"></span></div>
+    <div class="ch-bar"><i id="ch-bar"></i></div><p class="qq" id="chal-h">${q.q[L]}</p>
+    <div class="ch-opts">${CH.order[CH.i].map(k => `<button type="button" class="ch-opt" data-k="${k}">${q.a[k][L]}</button>`).join("")}</div>`;
+  chTick();
+  $("chal").querySelectorAll(".ch-opt").forEach(b => b.onclick = () => {
+    const k = +b.dataset.k; CH.picks[CH.i] = k; if (k === 0) CH.score++;
+    $("chal").querySelectorAll(".ch-opt").forEach(x => { x.disabled = true; if (+x.dataset.k === 0) x.classList.add("ok"); else if (x === b) x.classList.add("no"); });
+    setTimeout(() => { if (!CH.timer) return; CH.i++; if (CH.i < CHAL.length) chQ(); else chEnd(false); }, 900);
+  });
+}
+function chEnd(timeUp){
+  chStop();
+  const s = CH.score, key = s === 5 ? "5" : s >= 3 ? "3" : "0";
+  const msg = tr("chMsg").replace("{s}", s) + "\nhttps://byrawan.github.io/studio/?challenge=1";
+  $("chal").innerHTML = `${timeUp ? `<p class="qq" style="color:var(--red)">${tr("chUp")}</p>` : ""}
+    <div class="ch-res"><small class="muted" style="font-weight:700">${tr("chScore")}</small><span class="big lat" id="chal-h">${s}/5</span><span class="tag">${tr("chR" + key)}</span><p class="muted" style="font-size:15px">${tr("chP" + key)}</p></div>
+    <div class="row" style="justify-content:center"><a class="btn cta" target="_blank" rel="noopener" href="https://wa.me/?text=${encodeURIComponent(msg)}">${tr("chShare")} 📲</a>${s < 5 ? `<button type="button" class="btn ghost" data-pick="BLS">${tr("chBls")}</button>` : ""}<button type="button" class="btn ghost" id="ch-again">${tr("chAgain")}</button></div>
+    <details class="ch-ans"><summary>${tr("chAns")}</summary><ol>${CHAL.map((q, i) => `<li class="${CH.picks[i] === 0 ? "" : "x"}"><b>${q.q[L]}</b><br>${q.a[0][L]}</li>`).join("")}</ol></details>`;
+  $("ch-again").onclick = chStart;
+}
+function renderChal(){
+  const f = $("free-org"); if (f) f.href = `https://wa.me/${PHONE}?text=${encodeURIComponent(tr("d3m"))}`;
+  if (CH.i === -1) chIntro();
+}
+$("chal-open").addEventListener("click", () => { if (!CH.timer) chIntro(); });
+document.addEventListener("click", e => { if (e.target.closest("#sh-chal [data-close]") || e.target.id === "sh-chal") chStop(); });
+document.addEventListener("keydown", e => { if (e.key === "Escape") chStop(); });
+try { if (new URLSearchParams(location.search).get("challenge")) setTimeout(() => { chIntro(); openSheet("sh-chal"); }, 600); } catch(e){}
 
 // flip cards
 function renderFlips(){
@@ -1773,7 +1938,8 @@ document.fonts && document.fonts.ready.then(() => moveSpike(false));
     const bar = $c("ccatBars").children[i]; void bar.offsetWidth; bar.className = "on";
     const sl = $c("ccatSlide"); sl.classList.remove("in"); void sl.offsetWidth; if (anim !== false) sl.classList.add("in");
   }
-  function tick(){ clearTimeout(timer); timer = setTimeout(() => { if (!paused && document.getElementById("p-courses").classList.contains("on")) show(i + 1); tick(); }, DUR); }
+  // بدون تقليب تلقائي: الكتالوج ما يتحرك إلا لما المتدرب يضغط الأسهم أو يسحب
+  function tick(){ clearTimeout(timer); }
   function go(d){ show(i + d); tick(); }
   $c("ccatNext").onclick = () => go(1); $c("ccatPrev").onclick = () => go(-1);
   const st = $c("ccatStage");
@@ -1803,5 +1969,5 @@ document.fonts && document.fonts.ready.then(() => moveSpike(false));
   document.getElementById("lang").addEventListener("click", () => setTimeout(() => show(i, false), 0));
 })();
 </script>
-
+<script src="/ribbon.js" data-logo="/studio/img/image-05.webp" data-target=".top .logo .hublogo"></script>
 </body></html>
