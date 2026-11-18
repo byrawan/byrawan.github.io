@@ -126,7 +126,7 @@ html[dir=ltr] .hero-art img{transform:scaleX(-1)}
 .faq-list details+details{border-top:1px solid var(--line)}.faq-list summary{cursor:pointer;font-weight:700;padding:13px 0;min-height:44px}.faq-list p{color:var(--muted);padding:0 0 13px}
 
 /* طلب الانضمام */
-.joinbox{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);gap:25px;align-items:start;padding:clamp(18px,3vw,28px);background:#fff;border:1px solid var(--line2);border-radius:20px;box-shadow:0 12px 30px -26px rgba(4,38,31,.5)}
+.joinbox{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);gap:25px;align-items:start;padding:clamp(18px,3vw,28px);background:#f2f9f4;border:1px solid #d6eadc;border-radius:20px;box-shadow:0 12px 30px -26px rgba(4,38,31,.5)}
 .section-title{font-size:clamp(1.15rem,2.6vw,1.45rem);color:var(--green)}.section-title::after{display:block;content:"";height:3px;width:38px;background:var(--gold);margin-top:12px}
 .joinbox form{display:grid;grid-template-columns:1fr 1fr;gap:14px;width:100%}
 .joinbox .q{display:flex;flex-direction:column;gap:5px;font-weight:700;font-size:.9rem;min-width:0}
@@ -182,7 +182,16 @@ html[lang=en] h1,html[lang=en] h2,html[lang=en] h3{font-family:"Montserrat",syst
 .calc>summary:hover{background:var(--soft)}
 .calc-body{padding:0 18px 20px;border-top:1px solid var(--line2)}.calc[open] .calc-body{animation:accIn .35s ease}/* ===== أيقونة الحاسبة بجانب عنوان الآلية ===== */
 .blk-head{display:flex;align-items:center;gap:14px;min-height:46px}.blk-head .ic{display:grid;place-items:center;width:42px;height:42px;flex:none;border-radius:12px;background:#eef3ee;color:var(--green)}.blk-head .ic svg{width:22px;height:22px}
-.calc-ic{display:inline-flex;align-items:center;gap:8px;min-height:46px;padding:6px 16px 6px 8px;border-radius:999px;background:var(--green);color:#F4D7A3;text-decoration:none;font:700 .9rem var(--body);box-shadow:0 8px 18px -12px rgba(7,58,47,.8);transition:transform .2s}
+summary.blk-head{list-style:none;cursor:pointer;margin:-18px clamp(-26px,-3vw,-16px) 0;padding:18px clamp(16px,3vw,26px);border-radius:20px}
+details[open]>summary.blk-head{padding-bottom:6px}
+summary.blk-head::-webkit-details-marker{display:none}
+summary.blk-head:hover{background:#fafcf9}
+.blk-head .chev{width:34px;height:34px;flex:none;display:grid;place-items:center;border-radius:50%;border:1px solid var(--line2);color:var(--green);transition:transform .3s}
+.blk-head .chev svg{width:16px;height:16px}
+details[open]>summary.blk-head .chev{transform:rotate(180deg)}
+details.hw:not([open]),details.mech:not([open]){padding-bottom:0}
+details[open]>.blk-body{animation:accIn .35s ease}
+.calc-ic{margin-inline-start:auto;display:inline-flex;align-items:center;gap:8px;min-height:46px;padding:6px 16px 6px 8px;border-radius:999px;background:var(--green);color:#F4D7A3;text-decoration:none;font:700 .9rem var(--body);box-shadow:0 8px 18px -12px rgba(7,58,47,.8);transition:transform .2s}
 html[dir=rtl] .calc-ic{padding:6px 8px 6px 16px}
 .calc-ic svg{width:30px;height:30px;padding:5px;border-radius:50%;background:rgba(244,215,163,.16)}
 .calc-ic:hover{transform:translateY(-1px)}
@@ -222,6 +231,18 @@ html[dir=rtl] .calc-ic{padding:6px 8px 6px 16px}
 .cs-price:focus-within{outline:3px solid var(--gold-d);outline-offset:2px}
 .cs-price span{color:var(--muted);font-size:.78rem}
 .cs-auto{grid-column:1/-1;color:#8a958c;font-size:.75rem}
+.cs-count-h{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.cs-count-h output{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--green);color:#fff;font-weight:700;font-size:.9rem}
+.cs-count input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:3px;min-height:0!important;padding:0!important;border:0!important;margin:16px 0 10px;border-radius:999px;cursor:pointer;
+ background:linear-gradient(to left,var(--green) var(--fill,0%),#e1e7e0 var(--fill,0%));outline-offset:8px}
+html[dir=ltr] .cs-count input[type=range]{background:linear-gradient(to right,var(--green) var(--fill,0%),#e1e7e0 var(--fill,0%))}
+.cs-count input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--green);border:3px solid #fff;box-shadow:0 0 0 1px var(--green),0 2px 6px -1px rgba(4,38,31,.4)}
+.cs-count input[type=range]::-moz-range-thumb{width:12px;height:12px;border-radius:50%;background:var(--green);border:3px solid #fff;box-shadow:0 0 0 1px var(--green)}
+.cs-count input[type=range]::-moz-range-track{background:transparent}
+.cs-ticks{position:relative;display:block;height:18px;margin:0 9px}
+.cs-ticks i{position:absolute;top:0;transform:translateX(50%);font-style:normal;font-size:.72rem;color:#8a958c}
+html[dir=ltr] .cs-ticks i{transform:translateX(-50%)}
+.cs-price input::placeholder{color:#a3ada5;font-weight:500;font-size:.82rem}
 .cs-sale{grid-column:1/-1;display:flex;align-items:center;gap:8px;font-size:.8rem;color:var(--muted)}
 .cs-sale input{width:96px;min-height:34px;padding:4px 8px;border:1px solid #a9b6a9;border-radius:8px;font:inherit}
 .calc-sum .split .big{border-bottom:0;padding-top:9px;font-weight:700;color:var(--green);font-size:.98rem}
@@ -234,10 +255,7 @@ html[dir=rtl] .calc-ic{padding:6px 8px 6px 16px}
 .multi-d{display:block;margin-top:3px;color:#1f7a55;font-size:.74rem;font-weight:600;white-space:normal}
 .comm-c .comm-d{display:block;color:#8a958c;font-size:.74rem;white-space:normal}
 #calcBody:not([hidden]){display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px 24px;align-items:start}
-#calcBody>.cs-lines,#calcBody>#calcTotals{grid-column:1}
-#calcBody>.fields,#calcBody>.result,#calcBody>#breakdown,#calcBody>.note,#calcBody>.cs-clear{grid-column:2}
-#calcBody>.cs-lines{grid-row:1}#calcBody>#calcTotals{grid-row:2/span 4}
-#calcBody>.fields{grid-row:1/3;margin-top:0}#calcBody>.result{grid-row:3;margin:4px 0 0}
+.cs-right .fields{margin-top:0}.cs-right .result{margin:12px 0 0}
 @media(max-width:760px){#calcBody:not([hidden]){display:block}}
 .cs-bar{display:none}
 @media(max-width:860px){
@@ -302,9 +320,9 @@ html[lang=en] .hw-n{font-family:"Montserrat",sans-serif}
 <main id="main">
 <section class="hero"><div class="wrap hero-grid">
 <div>
-<span class="badge">برنامج شركاء روان هب</span>
-<h1><span>شراكتك تصنع فرقًا،</span><span>وكل تسجيل يفتح فرصة</span></h1>
-<p class="lead">انضم إلى شركاء روان هب، وشارك الدورات الصحية المعتمدة من خلال رابطك أو رمزك الخاص، واستفد من عمولات التسجيلات المؤهلة.</p>
+<span class="badge">شركاء روان هب</span>
+<h1><span>شارك فرصة التعلّم،</span><span>واكسب مع كل تسجيل.</span></h1>
+<p class="lead">انضم إلى برنامج شركاء روان هب، وساهم في التعريف بالدورات الصحية المعتمدة من خلال رابطك أو رمزك الخاص، واحصل على عمولة مقابل كل تسجيل مؤكد.</p>
 <div class="actions">
 <a class="btn primary" href="#join-section"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="10" cy="8" r="3.6"/><path d="M3.5 20c.6-3.6 3.2-5.6 6.5-5.6 1.4 0 2.6.3 3.6.9M18 14v6M15 17h6"/></svg>انضم إلى الشركاء</a>
 <a class="btn secondary" href="#calc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M8 7.5h8M8.5 12h.01M12 12h.01M15.5 12h.01M8.5 15.5h.01M12 15.5h.01M15.5 15.5h.01"/></svg>احسب أرباحك</a>
@@ -320,46 +338,46 @@ html[lang=en] .hw-n{font-family:"Montserrat",sans-serif}
 </div>
 
 <div class="sections">
-<section class="hw" id="how">
-<div class="blk-head"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h11M9 12h11M9 18h11"/><path d="M4 6h.01M4 12h.01M4 18h.01"/></svg></span><h2 class="blk-title">كيف تبدأ شراكتك؟</h2></div>
+<details class="hw" id="how">
+<summary class="blk-head"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h11M9 12h11M9 18h11"/><path d="M4 6h.01M4 12h.01M4 18h.01"/></svg></span><h2 class="blk-title">كيف تبدأ شراكتك؟</h2><span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="blk-body">
 <ol class="hw-list">
 <li><span class="hw-n">01</span><h3>انضم</h3><p>أكمل طلب الانضمام، وبعد الموافقة يصلك رابطك وكودك الخاص على بريدك الإلكتروني.</p></li>
 <li><span class="hw-n">02</span><h3>شارك رابطك أو كودك</h3><p>شارك الدورات مع المهتمين، ووجّههم للتسجيل عبر رابطك أو باستخدام كودك الخاص.</p></li>
 <li><span class="hw-n">03</span><h3>تابع عمولاتك</h3><p>بعد اكتمال التدريب واعتماده، تُضاف التسجيلات المؤهلة إلى كشف عمولاتك الشهري.</p></li>
 </ol>
-</section>
+</div></details>
 
-<section class="mech" id="mechanism">
-<div class="blk-head"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M19 5 5 19"/><circle cx="7" cy="7" r="2.5"/><circle cx="17" cy="17" r="2.5"/></svg></span><h2 class="blk-title">آلية احتساب العمولة</h2><a class="calc-ic" href="#calc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M8 7.5h8M8.5 12h.01M12 12h.01M15.5 12h.01M8.5 15.5h.01M12 15.5h.01M15.5 15.5h.01"/></svg><span>حاسبة العمولة</span></a></div>
+<details class="mech" id="mechanism">
+<summary class="blk-head"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M19 5 5 19"/><circle cx="7" cy="7" r="2.5"/><circle cx="17" cy="17" r="2.5"/></svg></span><h2 class="blk-title">آلية احتساب العمولة</h2><a class="calc-ic" href="#calc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M8 7.5h8M8.5 12h.01M12 12h.01M15.5 12h.01M8.5 15.5h.01M12 15.5h.01M15.5 15.5h.01"/></svg><span>حاسبة العمولة</span></a><span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="blk-body">
 <ol class="mech-list">
 <li><span class="mech-n">١</span><div><h3>استبعاد ضريبة القيمة المضافة</h3><p>أسعار الدورات شاملة الضريبة (١٥٪)، وتُحتسب العمولة على السعر قبل الضريبة.</p></div></li>
 <li><span class="mech-n">٢</span><div><h3>خصم رسوم جمعية القلب السعودية (٥٠ ر.س)</h3><p>يُطبّق على الدورات المعتمدة من جمعية القلب السعودية فقط.</p></div></li>
 <li><span class="mech-n">٣</span><div><h3>احتساب نسبة العمولة على المبلغ المتبقي</h3><p>بنسبة ٨٪ عن كل متدرب، وترتفع إلى ١٢٪ للدورات غير BLS عند بلوغ ١٠ متدربين للمسوق في موعد الدورة نفسه، وتشمل جميع متدربي ذلك الموعد.</p></div></li>
 </ol>
-</section>
+</div></details>
 
 
 
-<details class="acc" id="prices" open>
+<details class="acc" id="prices">
 <summary><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 12.5 11 5h7.5v7.5L11 20z"/><circle cx="15" cy="9" r="1.3"/></svg></span><h2>الدورات والأسعار</h2><span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></span></summary>
 <div class="acc-body">
 <p class="intro">اختر دورة أو أكثر لعرض السعر الإجمالي وعمولتك التقديرية. الأسعار من صفحة التسجيل، و<span class="was">السعر المشطوب</span> هو السعر الأساسي و<span class="now">السعر الأخضر</span> بعد كود الخصم. <span>عند اختيار أكثر من دورة يُطبّق خصم الدورات المتعددة تلقائيًا كما في صفحة التسجيل.</span></p>
 <div class="pc-stack">
 <div class="pc-table"><table class="price-table"><thead><tr><th scope="col" class="pick-col"><span class="sr">اختيار</span></th><th scope="col">الدورة</th><th scope="col">السعر</th><th scope="col" class="comm-h">عمولتك لكل متدرّب<small>بعد استبعاد ضريبة ١٥٪ · نسبة ٨٪</small></th></tr></thead><tbody id="courseTable" data-calculated></tbody></table></div>
-<details class="calc-sum" id="calc" open>
+<details class="calc-sum" id="calc">
 <summary class="cs-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M8 7.5h8M8.5 12h.01M12 12h.01M15.5 12h.01M8.5 15.5h.01M12 15.5h.01M15.5 15.5h.01"/></svg><div class="cs-ttl"><h3>حاسبة الأسعار والعمولة</h3><small id="liveNote" data-calculated></small></div><span class="cs-mini" id="calcMini" data-calculated></span><span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="cs-in" aria-live="polite">
 <label class="cs-add"><span class="sr">إضافة دورة</span><select id="calcAdd" data-calculated></select></label>
 <p class="cs-empty" id="calcEmpty">اختر دورة من القائمة أو من الجدول.</p>
 <div id="calcBody" hidden>
-<ul class="cs-lines" id="calcLines" data-calculated></ul>
-<dl class="split" id="calcTotals" data-calculated></dl>
-<div class="fields">
-<label class="field wide" id="countField">عدد المتدرّبين<input id="count" type="text" inputmode="numeric" value="1"></label>
+<div class="cs-left"><ul class="cs-lines" id="calcLines" data-calculated></ul>
+<dl class="split" id="calcTotals" data-calculated></dl></div>
+<div class="cs-right"><div class="fields">
+<label class="field wide cs-count" id="countField"><span class="cs-count-h">عدد المتدرّبين<output id="countOut" data-calculated>١</output></span><input id="count" type="range" min="1" max="50" step="1" value="1"><span class="cs-ticks" aria-hidden="true" data-calculated><i>1</i><i>10</i><i>25</i><i>50</i></span></label>
 </div>
 <div class="result"><span>العمولة التقديرية الإجمالية</span><b id="total" data-calculated></b></div>
 <dl id="breakdown" data-calculated class="split"></dl>
 <p class="note" id="calcNote" data-calculated></p>
-<button type="button" class="cs-clear" id="calcClear">مسح الاختيار</button>
+<button type="button" class="cs-clear" id="calcClear">مسح الاختيار</button></div>
 </div>
 </div></details>
 </div>
@@ -460,10 +478,10 @@ const labels = new Map(Object.entries({
  "الدورات والأسعار":"Courses & prices","الأسئلة":"FAQ",
  "الانضمام":"Apply",
  "معاينة · يمكنك تجربة الحاسبة والنموذج دون إرسال طلب.":"Preview · Try the calculator and form without sending an application.",
- "برنامج شركاء روان هب":"Rawan Hub Partner Program",
- "شراكتك تصنع فرقًا،":"Your partnership makes a difference,",
- "وكل تسجيل يفتح فرصة":"and every registration opens a door",
- "انضم إلى شركاء روان هب، وشارك الدورات الصحية المعتمدة من خلال رابطك أو رمزك الخاص، واستفد من عمولات التسجيلات المؤهلة.":"Join Rawan Hub’s partners, share accredited healthcare courses using your personal link or code, and earn commission on qualifying registrations.",
+ "برنامج شركاء روان هب":"Rawan Hub Partner Program","شركاء روان هب":"Rawan Hub Partners",
+ "شارك فرصة التعلّم،":"Share the chance to learn,",
+ "واكسب مع كل تسجيل.":"and earn with every registration.",
+ "انضم إلى برنامج شركاء روان هب، وساهم في التعريف بالدورات الصحية المعتمدة من خلال رابطك أو رمزك الخاص، واحصل على عمولة مقابل كل تسجيل مؤكد.":"Join the Rawan Hub partner program, help introduce accredited healthcare courses through your personal link or code, and earn a commission on every confirmed registration.",
  "انضم إلى الشركاء":"Become a partner","احسب أرباحك":"Estimate your earnings",
  "دورات معتمدة":"Accredited courses","بمحتوى تدريبي موثوق":"Trusted training content","وشهادات معتمدة.":"and accredited certificates.",
  "دعم مستمر":"Ongoing support","نرافقك في كل خطوة":"We’re with you","من رحلتك.":"every step of the way.",
@@ -588,7 +606,7 @@ const accs=[...document.querySelectorAll(".acc")];
 if(matchMedia("(max-width:560px)").matches) accs.forEach(a=>{ if(a.id!=="how") a.open=false; });
 document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener("click",()=>{
  const t=document.getElementById(a.getAttribute("href").slice(1));
- const d=t&&t.closest("details"); if(d) d.open=true;
+ for(let d=t&&t.closest("details");d;d=d.parentElement&&d.parentElement.closest("details")) d.open=true;
 }));
 const navLinks=[...document.querySelectorAll(".nav a")];
 const spy=new IntersectionObserver(entries=>{
@@ -733,13 +751,18 @@ function calculate(keepLines) {
  $("calcBar").hidden=!any;
  if(!any){ $("calcMini").textContent=""; return; }
  const count=Math.max(1,whole($("count").value));
+ $("countOut").textContent=number(count);
+ $("count").style.setProperty("--fill",((count-1)/49*100)+"%");
+ const ticks=$("countField").querySelector(".cs-ticks");
+ if(!ticks.dataset.done){ ticks.innerHTML=[1,10,25,50].map(v=>'<i style="inset-inline-start:'+((v-1)/49*100)+'%">'+number(v)+'</i>').join(""); ticks.dataset.done=language; }
+ else if(ticks.dataset.done!==language){ ticks.dataset.done=""; }
  // سطور الدورات: الدورة من قائمة منسدلة + السعر يُكتب يدويًا
  if(!keepLines) $("calcLines").innerHTML=lines.map(l=>{
   const k=keyOf(l.c), v=SALE[k]!=null?SALE[k]:l.withCode;
   return '<li><select class="cs-course" data-k="'+k+'" aria-label="'+localized("الدورة","Course")+'">'+courseOptions(k)+'</select>'
-   +'<label class="cs-price"><input inputmode="numeric" data-sale="'+k+'" value="'+v+'" aria-label="'+localized("السعر","Price")+'"><span>'+localized("ر.س","SAR")+'</span></label>'
+   +'<label class="cs-price"><input inputmode="numeric" data-sale="'+k+'" value="'+(SALE[k]!=null?SALE[k]:"")+'" placeholder="'+localized("اكتب السعر","Type price")+'" aria-label="'+localized("السعر","Price")+'"><span>'+localized("ر.س","SAR")+'</span></label>'
    +'<button type="button" class="cs-x" data-k="'+k+'" aria-label="'+localized("إزالة","Remove")+'">×</button>'
-   +'<small class="cs-auto">'+localized("السعر بعد الخصومات: ","Price after discounts: ")+sar(l.withCode,0)+'</small></li>';
+   +'<small class="cs-auto">'+localized("السعر بعد الخصومات "+sar(l.withCode,0)+"، ويُستخدم إذا تركت الخانة فاضية","Price after discounts "+sar(l.withCode,0)+", used if left empty")+'</small></li>';
  }).join("");
  const paidOf=l=>{ const v=SALE[keyOf(l.c)]; return v!=null?v:l.withCode; };
  const sum=(f)=>lines.reduce((s,l)=>s+f(l),0);
