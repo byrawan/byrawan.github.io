@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>روان السفياني | بطاقتي</title>
+<meta name="description" content="تطوير الأعمال والشراكات الصحية · إدارة البرامج التدريبية">
+<meta name="theme-color" content="#073a2f">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;500;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap">
+<style>
+:root{--green:#0a4436;--green-d:#073a2f;--green-x:#04271f;--gold:#d9b47a;--gold-l:#f4d7a3;--gold-d:#a87b3e;--hair:rgba(217,180,122,.35);
+--display:"Alexandria","IBM Plex Sans Arabic",Tahoma,sans-serif;--body:"IBM Plex Sans Arabic",Tahoma,sans-serif}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%}
+body{background:radial-gradient(120% 70% at 50% 0%,#0d4f3f 0%,#062f26 55%,#03201a 100%) fixed;color:#fff;font-family:var(--body);line-height:1.6;display:flex;justify-content:center;padding:calc(28px + env(safe-area-inset-top,0px)) 16px calc(28px + env(safe-area-inset-bottom,0px))}
+a{color:inherit;text-decoration:none}
+.wrap{width:100%;max-width:400px;display:flex;flex-direction:column;align-items:center;text-align:center}
+.logo{height:46px;opacity:.95}
+.ph{width:118px;height:118px;border-radius:50%;margin-top:22px;padding:3px;background:conic-gradient(from 200deg,var(--gold-l),var(--gold-d),var(--gold-l),var(--gold),var(--gold-l))}
+.ph img{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:50% 18%;background:#e9efe5;display:block;border:3px solid var(--green-d)}
+.en{font-family:var(--display);font-weight:300;letter-spacing:.24em;font-size:11px;color:var(--gold-l);direction:ltr;margin-top:16px;text-transform:uppercase}
+h1{font-family:var(--display);font-weight:700;font-size:26px;margin:2px 0 0}
+.ti{font-size:13.5px;color:rgba(255,255,255,.75);margin:4px 0 0}
+.ti span{color:var(--gold);margin:0 6px}
+.line{width:56px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:16px auto}
+.val{font-size:14px;color:rgba(255,255,255,.88);max-width:320px;margin:0}
+.stats{display:flex;gap:10px;margin-top:18px;width:100%}
+.st{flex:1;border:1px solid var(--hair);border-radius:16px;padding:10px 6px;background:rgba(255,255,255,.04)}
+.st b{display:block;font-family:var(--display);font-weight:500;font-size:20px;color:var(--gold-l);direction:ltr}
+.st span{font-size:11.5px;color:rgba(255,255,255,.7)}
+.acts{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;width:100%;margin-top:18px}
+.act{display:flex;flex-direction:column;align-items:center;gap:5px;font-size:11.5px;border:1px solid var(--hair);border-radius:14px;padding:11px 2px;background:rgba(255,255,255,.05);transition:.2s;cursor:pointer;color:#fff;font-family:inherit}
+.act:hover{background:rgba(244,215,163,.1)}
+.act svg{width:21px;height:21px;color:var(--gold-l)}
+.save{margin-top:14px;width:100%;height:50px;border-radius:25px;border:0;background:linear-gradient(135deg,var(--gold-l),var(--gold) 55%,var(--gold-d));color:var(--green-x);font:inherit;font-weight:600;font-size:14.5px;display:flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 10px 24px rgba(0,0,0,.25)}
+.save svg{width:20px;height:20px}
+.links{display:grid;gap:8px;width:100%;margin-top:16px}
+.lk{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:14px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03);font-size:13.5px;text-align:right}
+.lk small{display:block;font-size:11.5px;color:rgba(255,255,255,.55)}
+.lk .ar{margin-inline-start:auto;color:var(--gold)}
+.lk i{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--hair);color:var(--gold-l);flex:none;font-style:normal}
+.lk i svg{width:18px;height:18px}
+.ft{margin-top:22px;font-size:11px;letter-spacing:.2em;color:rgba(244,215,163,.5);direction:ltr}
+.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,20px);opacity:0;background:#fff;color:var(--green-x);font-size:13px;padding:8px 16px;border-radius:20px;transition:.3s;pointer-events:none}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.in{animation:in .7s cubic-bezier(.2,.8,.2,1) both}
+@keyframes in{from{opacity:0;transform:translateY(14px)}}
+@media (prefers-reduced-motion:reduce){.in{animation:none}}
+</style>
+</head>
+<body>
+<main class="wrap in">
+  <img class="logo" src="/rh-logo-green.svg" alt="Rawan Hub">
+  <div class="ph"><img src="/pf-portrait.webp" alt="روان السفياني" width="112" height="112"></div>
+  <div class="en">Rawan Alsufyani</div>
+  <h1>روان السفياني</h1>
+  <p class="ti">تطوير الأعمال والشراكات الصحية<span>|</span>إدارة البرامج التدريبية</p>
+  <div class="line"></div>
+  <p class="val">أحوّل الأفكار التدريبية إلى برامج قائمة، والعلاقات المهنية إلى شراكات مستدامة.</p>
+  <div class="stats">
+    <div class="st"><b>+4000</b><span>متدرب ومتدربة</span></div>
+    <div class="st"><b>7</b><span>سنوات في القطاع الصحي</span></div>
+  </div>
+  <div class="acts">
+    <a class="act" href="https://wa.me/966568587031" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 20.5 5 16a8.5 8.5 0 1 1 3.2 3.1Z"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.6-2.1-1-1 .9a5 5 0 0 1-2.7-2.7l.9-1-1-2.1Z"/></svg>واتساب</a>
+    <a class="act" href="tel:+966568587031"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h3l1.5 4.5-2 1.3a11 11 0 0 0 6.7 6.7l1.3-2L20 16v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg>اتصال</a>
+    <a class="act" href="mailto:byrawan.co@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M4 7l8 6 8-6"/></svg>الإيميل</a>
+    <a class="act" href="https://www.linkedin.com/in/ralsufyani/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 10.5V16M8 7.5v.01M12 16v-3.2a2.3 2.3 0 0 1 4.6 0V16M12 10.5V16"/></svg>لينكدإن</a>
+  </div>
+  <button class="save" type="button" id="save"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="9.5" cy="8" r="3.5"/><path d="M3 20c.7-3.4 3.3-5.5 6.5-5.5s5.8 2.1 6.5 5.5"/><path d="M19 8v6M16 11h6"/></svg>حفظ جهة الاتصال</button>
+  <div class="links">
+    <a class="lk" href="https://byrawan.github.io/"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5.5 9v11h13V9"/></svg></i><span>الملف المهني<small>الخبرات والشراكات</small></span><span class="ar">←</span></a>
+    <a class="lk" href="https://byrawan.github.io/courses/"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 18h16M6 18V8l6-4 6 4v10M10 18v-5h4v5"/></svg></i><span>التسجيل في الدورات<small>BLS · ACLS · PALS وغيرها</small></span><span class="ar">←</span></a>
+  </div>
+  <div class="ft">RAWAN HUB · JEDDAH</div>
+</main>
+<div class="toast" id="toast"></div>
+<script>
+document.getElementById('save').addEventListener('click',function(){
+  var v=['BEGIN:VCARD','VERSION:3.0','N:Alsufyani;Rawan;;;','FN:روان السفياني | Rawan Alsufyani','ORG:Rawan Hub','TITLE:تطوير الأعمال والشراكات الصحية · إدارة البرامج التدريبية','TEL;TYPE=CELL:+966568587031','EMAIL;TYPE=INTERNET:byrawan.co@gmail.com','URL:https://byrawan.github.io/','URL:https://www.linkedin.com/in/ralsufyani/','ADR;TYPE=WORK:;;;جدة;;;المملكة العربية السعودية','END:VCARD'].join('\r\n');
+  var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([v],{type:'text/vcard;charset=utf-8'}));a.download='Rawan-Alsufyani.vcf';document.body.appendChild(a);a.click();
+  setTimeout(function(){URL.revokeObjectURL(a.href);a.remove()},500);
+  var t=document.getElementById('toast');t.textContent='تم تجهيز جهة الاتصال ✓';t.classList.add('on');setTimeout(function(){t.classList.remove('on')},1800);
+});
+</script>
+</body>
+</html>
