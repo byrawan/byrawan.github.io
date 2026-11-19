@@ -116,6 +116,41 @@ html[dir=ltr] .hero-art img{transform:scaleX(-1)}
 .now{color:var(--green);font-weight:700}
 .lock{display:inline-flex;align-items:center;gap:5px;color:#8a958c;font-size:.8rem}.lock svg{width:14px;height:14px}
 .min{color:#9a6a2f;font-weight:700}
+.mp{position:relative;display:block;margin-top:6px}
+.partner{margin:18px 0}
+.pt-box,.pt-card{border:1px solid var(--line2);border-radius:18px;background:#fbfcfa;padding:20px}
+.pt-head{display:flex;gap:14px;align-items:flex-start;margin-bottom:12px}.pt-head .ic{display:grid;place-items:center;width:44px;height:44px;flex:none;border-radius:12px;background:var(--green);color:#F4D7A3}.pt-head .ic svg{width:22px;height:22px}
+.pt-head h2{font:700 1.15rem var(--display);color:var(--green);margin:0}.pt-head p{margin:2px 0 0;color:var(--muted);font-size:.9rem}
+.pt-login{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:end}.pt-login .q{display:grid;gap:4px;font-weight:600}.pt-login input,.pt-forgot input{min-height:46px;font:inherit;padding:8px 12px;border:1px solid #a9b6a9;border-radius:10px;background:#fff}
+.pt-login .btn{min-height:46px}
+.pt-link{background:none;border:0;color:var(--gold-d);font:600 .86rem var(--body);cursor:pointer;padding:6px 0;margin-top:6px;text-decoration:underline;text-underline-offset:3px}
+.pt-forgot{display:grid;gap:8px;margin-top:6px}.pt-forgot .q{display:grid;gap:4px;font-weight:600}.pt-msg{color:var(--green);font-size:.88rem;margin:0}
+.pt-hi{font-size:1.02rem;margin:0 0 8px}.pt-hi b{color:var(--green)}
+.pt-tx{background:#fff;border:1px solid var(--line2);border-radius:12px;padding:6px 14px 12px;margin:10px 0 14px;font-size:.9rem;line-height:1.75}
+.pt-ids{display:grid;grid-template-columns:auto 1fr;gap:10px;margin:6px 0 12px}.pt-ids>div{background:#fff;border:1px solid var(--line2);border-radius:12px;padding:8px 12px;display:grid;gap:2px;min-width:0}
+.pt-ids small{color:var(--muted);font-size:.76rem}.pt-ids b{color:var(--green);font-size:1rem;overflow-wrap:anywhere}.pt-lnk{font-size:.84rem!important;font-weight:600}
+.pt-copy{justify-self:start;border:1px solid var(--line2);background:var(--soft);border-radius:999px;padding:2px 12px;font:600 .78rem var(--body);color:var(--green);cursor:pointer}
+.pt-grp{display:inline-flex;background:#1f8f50!important;border-color:#1f8f50!important;color:#fff!important}
+.pt-tdet{margin-top:12px}.pt-tdet summary{cursor:pointer;font-weight:700;color:var(--green)}
+.pt-tease{margin:6px 0 10px;color:var(--gold-d);font-weight:600}
+html[lang=en] .pt-ar{display:none}html:not([lang=en]) .pt-en{display:none}.pt-en{text-align:left}
+#ptArea{margin-top:16px}
+@media(max-width:560px){.pt-login{grid-template-columns:1fr}.pt-ids{grid-template-columns:1fr}}
+.minbtn{display:inline-flex;align-items:center;gap:5px;border:1px solid #d9c49c;background:#fbf6ec;color:#6b4c1d;border-radius:999px;padding:2px 10px 2px 8px;font:600 .74rem var(--body);cursor:pointer;white-space:nowrap}
+.minbtn svg{width:13px;height:13px}.mp.on .minbtn{background:#073a2f;color:#F4D7A3;border-color:#073a2f}
+.mp-pop{position:absolute;inset-inline-start:0;top:calc(100% + 8px);z-index:20;width:min(300px,82vw);white-space:normal;background:linear-gradient(150deg,#0d4f3f,#04271f);color:#fff;border-radius:16px;padding:14px;border:1px solid rgba(217,180,122,.4);box-shadow:0 18px 40px rgba(4,39,31,.35);font-size:.84rem;line-height:1.6}
+.mp-t{display:flex;align-items:center;gap:6px;color:#F4D7A3;font-weight:700}.mp-t .code{margin:0}
+.mp-n{font:700 1.4rem var(--display);color:#F4D7A3;margin:2px 0}
+.mp-s{color:rgba(255,255,255,.75);margin:4px 0 0}.mp-s b{color:#F4D7A3}
+.mp-c{margin:8px 0 0}.mp-c>div{display:flex;justify-content:space-between;gap:8px;border-bottom:1px solid rgba(217,180,122,.18);padding:4px 0}.mp-c dd{margin:0;white-space:nowrap}
+.mp-f{display:grid;gap:6px;margin-top:8px}.mp-f input{min-height:38px;font:inherit;font-size:.84rem;border:1px solid rgba(217,180,122,.35);background:rgba(255,255,255,.07);color:#fff;border-radius:10px;padding:6px 10px}
+.mp-f button{min-height:38px;border:0;border-radius:10px;background:linear-gradient(135deg,#F4D7A3,#d9b47a);color:#04271f;font:700 .84rem var(--body);cursor:pointer}
+.mp-err{color:#ffd2c7;margin:6px 0 0}
+.mp-warn{margin:10px 0 0;padding:8px 10px;border-radius:10px;background:rgba(244,215,163,.14);border:1px solid rgba(244,215,163,.45);color:#F4D7A3;font-weight:600;font-size:.8rem}
+.mp-who{margin:8px 0 0;font-size:.74rem;color:rgba(255,255,255,.6)}
+.calc-sum .split .warn-l dt,.calc-sum .split .warn-l dd{color:#9a5b12;font-weight:700}
+.mp-note{margin:10px 0 0;padding-top:8px;border-top:1px solid rgba(217,180,122,.25);color:rgba(255,255,255,.72);font-size:.76rem}
+.cs-codeopt{display:flex;align-items:center;gap:8px;font-size:.88rem;margin:4px 0 6px;cursor:pointer}.cs-codeopt input{width:18px;height:18px;accent-color:var(--green)}
 .unlock{display:grid;grid-template-columns:1fr 1fr auto;gap:10px;align-items:end;margin-top:18px;padding:16px;border:1px dashed #d7c7ae;border-radius:14px;background:var(--ivory)}
 .unlock p{grid-column:1/-1;font-size:.88rem;color:var(--muted)}.unlock p b{color:var(--green)}
 .unlock label{display:grid;gap:4px;font-size:.85rem;font-weight:700}
@@ -314,7 +349,7 @@ html[lang=en] .hw-n{font-family:"Montserrat",sans-serif}
 <div class="hctl"><button id="siteLanguage" class="language" type="button" lang="en" aria-label="التبديل إلى الإنجليزية">EN</button>
 <a class="hbtn hbtn-on" href="https://byrawan.github.io/courses/">التسجيل</a><a class="hbtn" href="https://byrawan.github.io/#hub">الصفحة الرئيسية</a></div>
 </div>
-<div class="wrap"><nav class="nav" aria-label="أقسام برنامج المسوّقين"><a href="#how">كيف تبدأ؟</a><a href="#calc">حاسبة العمولة</a><a href="#prices">الدورات والأسعار</a><a href="#faq">الأسئلة</a><a href="#join-section">الانضمام</a></nav></div>
+<div class="wrap"><nav class="nav" aria-label="أقسام برنامج المسوّقين"><a href="#how">كيف تبدأ؟</a><a href="#partner">منطقة الشركاء</a><a href="#faq">الأسئلة</a><a href="#join-section">الانضمام</a></nav></div>
 </header>
 <div class="draft" id="previewBanner" hidden><div class="wrap">معاينة · يمكنك تجربة الحاسبة والنموذج دون إرسال طلب.</div></div>
 <main id="main">
@@ -325,7 +360,7 @@ html[lang=en] .hw-n{font-family:"Montserrat",sans-serif}
 <p class="lead">انضم إلى برنامج شركاء روان هب، وساهم في التعريف بالدورات الصحية المعتمدة من خلال رابطك أو رمزك الخاص، واحصل على عمولة مقابل كل تسجيل مؤكد.</p>
 <div class="actions">
 <a class="btn primary" href="#join-section"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="10" cy="8" r="3.6"/><path d="M3.5 20c.6-3.6 3.2-5.6 6.5-5.6 1.4 0 2.6.3 3.6.9M18 14v6M15 17h6"/></svg>انضم إلى الشركاء</a>
-<a class="btn secondary" href="#calc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M8 7.5h8M8.5 12h.01M12 12h.01M15.5 12h.01M8.5 15.5h.01M12 15.5h.01M15.5 15.5h.01"/></svg>احسب أرباحك</a>
+<a class="btn secondary" href="#partner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="8" cy="15" r="3.5"/><path d="M10.5 12.5 19 4M16 7l2.5 2.5M14 9l2 2"/></svg>دخول الشركاء</a>
 </div>
 </div>
 <div class="hero-art"><img src="mk-hero.webp" alt="" width="432" height="470"></div>
@@ -333,7 +368,7 @@ html[lang=en] .hw-n{font-family:"Montserrat",sans-serif}
 
 <div class="wrap">
 <div class="why">
-<div><span class="badge">لماذا الانضمام؟</span><h2>فرصة حقيقية للنمو معاً</h2><p>كن جزءًا من مجتمع شركاء روان هب، وكن سببًا في وصول المعرفة الصحية إلى أكبر عدد ممكن من المستفيدين.</p><a class="more" href="#how">تعرف على المزيد <span aria-hidden="true">←</span></a></div>
+<div><span class="badge">لماذا الانضمام؟</span><h2>فرصة حقيقية للنمو معاً</h2><p>كن جزءًا من مجتمع شركاء روان هب، وكن سببًا في وصول المعرفة الصحية إلى أكبر عدد ممكن من المستفيدين.</p><p class="pt-tease">عمولة على كل تسجيل مؤكد، وتصلك تفاصيلها مع طريقة العمل بعد اعتماد طلبك.</p><a class="more" href="#how">تعرف على المزيد <span aria-hidden="true">←</span></a></div>
 <img src="mk-leaf.webp" alt="" width="240" height="200">
 </div>
 
@@ -341,50 +376,23 @@ html[lang=en] .hw-n{font-family:"Montserrat",sans-serif}
 <details class="hw" id="how">
 <summary class="blk-head"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h11M9 12h11M9 18h11"/><path d="M4 6h.01M4 12h.01M4 18h.01"/></svg></span><h2 class="blk-title">كيف تبدأ شراكتك؟</h2><span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="blk-body">
 <ol class="hw-list">
-<li><span class="hw-n">01</span><h3>انضم</h3><p>أكمل طلب الانضمام، وبعد الموافقة يصلك رابطك وكودك الخاص على بريدك الإلكتروني.</p></li>
+<li><span class="hw-n">01</span><h3>انضم</h3><p>أكمل طلب الانضمام، وبعد المراجعة يصلك على بريدك رمز الدخول وطريقة العمل. وافق على الطريقة ليتفعّل كودك ويصلك قروب الشركاء.</p></li>
 <li><span class="hw-n">02</span><h3>شارك رابطك أو كودك</h3><p>شارك الدورات مع المهتمين، ووجّههم للتسجيل عبر رابطك أو باستخدام كودك الخاص.</p></li>
 <li><span class="hw-n">03</span><h3>تابع عمولاتك</h3><p>بعد اكتمال التدريب واعتماده، تُضاف التسجيلات المؤهلة إلى كشف عمولاتك الشهري.</p></li>
 </ol>
 </div></details>
 
-<details class="mech" id="mechanism">
-<summary class="blk-head"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M19 5 5 19"/><circle cx="7" cy="7" r="2.5"/><circle cx="17" cy="17" r="2.5"/></svg></span><h2 class="blk-title">آلية احتساب العمولة</h2><a class="calc-ic" href="#calc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M8 7.5h8M8.5 12h.01M12 12h.01M15.5 12h.01M8.5 15.5h.01M12 15.5h.01M15.5 15.5h.01"/></svg><span>حاسبة العمولة</span></a><span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="blk-body">
-<ol class="mech-list">
-<li><span class="mech-n">١</span><div><h3>استبعاد ضريبة القيمة المضافة</h3><p>أسعار الدورات شاملة الضريبة (١٥٪)، وتُحتسب العمولة على السعر قبل الضريبة.</p></div></li>
-<li><span class="mech-n">٢</span><div><h3>خصم رسوم جمعية القلب السعودية (٥٠ ر.س)</h3><p>يُطبّق على الدورات المعتمدة من جمعية القلب السعودية فقط.</p></div></li>
-<li><span class="mech-n">٣</span><div><h3>احتساب نسبة العمولة على المبلغ المتبقي</h3><p>بنسبة ٨٪ عن كل متدرب، وترتفع إلى ١٢٪ للدورات غير BLS عند بلوغ ١٠ متدربين للمسوق في موعد الدورة نفسه، وتشمل جميع متدربي ذلك الموعد.</p></div></li>
-</ol>
-</div></details>
-
-
-
-<details class="acc" id="prices">
-<summary><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 12.5 11 5h7.5v7.5L11 20z"/><circle cx="15" cy="9" r="1.3"/></svg></span><h2>الدورات والأسعار</h2><span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></span></summary>
-<div class="acc-body">
-<p class="intro">اختر دورة أو أكثر لعرض السعر الإجمالي وعمولتك التقديرية. الأسعار من صفحة التسجيل، و<span class="was">السعر المشطوب</span> هو السعر الأساسي و<span class="now">السعر الأخضر</span> بعد كود الخصم. <span>عند اختيار أكثر من دورة يُطبّق خصم الدورات المتعددة تلقائيًا كما في صفحة التسجيل.</span></p>
-<div class="pc-stack">
-<div class="pc-table"><table class="price-table"><thead><tr><th scope="col" class="pick-col"><span class="sr">اختيار</span></th><th scope="col">الدورة</th><th scope="col">السعر</th><th scope="col" class="comm-h">عمولتك لكل متدرّب<small>بعد استبعاد ضريبة ١٥٪ · نسبة ٨٪</small></th></tr></thead><tbody id="courseTable" data-calculated></tbody></table></div>
-<details class="calc-sum" id="calc">
-<summary class="cs-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M8 7.5h8M8.5 12h.01M12 12h.01M15.5 12h.01M8.5 15.5h.01M12 15.5h.01M15.5 15.5h.01"/></svg><div class="cs-ttl"><h3>حاسبة الأسعار والعمولة</h3><small id="liveNote" data-calculated></small></div><span class="cs-mini" id="calcMini" data-calculated></span><span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="cs-in" aria-live="polite">
-<label class="cs-add"><span class="sr">إضافة دورة</span><select id="calcAdd" data-calculated></select></label>
-<p class="cs-empty" id="calcEmpty">اختر دورة من القائمة أو من الجدول.</p>
-<div id="calcBody" hidden>
-<div class="cs-left"><ul class="cs-lines" id="calcLines" data-calculated></ul>
-<dl class="split" id="calcTotals" data-calculated></dl></div>
-<div class="cs-right"><div class="fields">
-<label class="field wide cs-count" id="countField"><span class="cs-count-h">عدد المتدرّبين<output id="countOut" data-calculated>١</output></span><input id="count" type="range" min="1" max="50" step="1" value="1"><span class="cs-ticks" aria-hidden="true" data-calculated><i>1</i><i>10</i><i>25</i><i>50</i></span></label>
+<section id="partner" class="partner">
+<div class="pt-box" id="ptBox">
+<div class="pt-head"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="8" cy="15" r="3.5"/><path d="M10.5 12.5 19 4M16 7l2.5 2.5M14 9l2 2"/></svg></span><div><h2>منطقة الشركاء</h2><p>للشركاء المعتمدين: طريقة العمولة، والأسعار، والحاسبة، وأقل سعر ممكن.</p></div></div>
+<form class="pt-login" id="ptLogin" novalidate><label class="q" for="ptCode">رمز الدخول<span class="hint">يصلك في إيميل اعتماد طلبك، وهو بداية بريدك الإلكتروني قبل @</span><input id="ptCode" dir="ltr" class="ltr" autocomplete="username" autocapitalize="off" spellcheck="false" placeholder="name"></label><button class="btn" id="ptBtn" type="submit">دخول</button></form>
+<p class="err" id="ptErr" role="alert" hidden></p>
+<button type="button" class="pt-link" id="ptForgotT">نسيت رمز الدخول؟</button>
+<form class="pt-forgot" id="ptForgot" hidden novalidate><label class="q" for="ptEmail">بريدك المسجّل<input id="ptEmail" type="email" dir="ltr" class="ltr" autocomplete="email"></label><button class="btn ghost" type="submit">أرسل الرمز</button><p class="pt-msg" id="ptForgotMsg" hidden></p></form>
 </div>
-<div class="result"><span>العمولة التقديرية الإجمالية</span><b id="total" data-calculated></b></div>
-<dl id="breakdown" data-calculated class="split"></dl>
-<p class="note" id="calcNote" data-calculated></p>
-<button type="button" class="cs-clear" id="calcClear">مسح الاختيار</button></div>
-</div>
-</div></details>
-</div>
-<div class="cs-bar" id="calcBar" hidden><span id="calcBarTx" data-calculated></span><a href="#calc">عرض الحساب</a></div>
-
-</div>
-</details>
+<div id="ptView" hidden></div>
+<div id="ptArea" hidden></div>
+</section>
 
 <details class="acc" id="faq">
 <summary><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M9.6 9.3a2.5 2.5 0 1 1 3.4 2.4c-.7.3-1 .8-1 1.5v.4M12 16.8h.01"/></svg></span><h2>أسئلة قبل ما تنضم</h2><span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></span></summary>
@@ -394,13 +402,12 @@ html[lang=en] .hw-n{font-family:"Montserrat",sans-serif}
 <details><summary>ماذا يصير لو المتدرّب ألغى التسجيل أو تحوّل لموعد آخر؟</summary><p>تُعلّق العمولة إلى حين اكتمال الطلب واعتماد تنفيذ التدريب الفعلي. تُدوّن ملاحظة للمنسقة والمسوّق وتُراجع الفروقات بعد الاعتماد، وتبقى المبالغ المصروفة سابقًا محفوظة.</p></details>
 <details><summary>متى تُعتمد العمولة ويُرسل الكشف؟</summary><p>تُعتمد العمولة بعد اكتمال الطلب وتأكيد المنسقة تنفيذ التدريب. تُقفل العمولات بنهاية الشهر الميلادي، ثم يُرسل الكشف المعتمد إلى بريدك. يشمل أسماء المتدرّبين والدورة وموعدها والمبلغ المدفوع ونسبة العمولة وقيمتها.</p></details>
 <details><summary>متى تُصرف العمولة؟</summary><p>تصبح العمولة مستحقة بعد اكتمال الطلب واعتماد التدريب الفعلي. السياسة الحالية لا تحدد يومًا ثابتًا للتحويل. للاستفسار عن دفعتك، تواصلي مع المنسقة.</p></details>
-<details><summary>كيف حُسبت عمولة BLS في المثال؟</summary><p>طريقة الحاسبة المنشورة حاليًا: يُطرح ٥٠ ريالًا من سعر الدورة المعتمدة من جمعية القلب السعودية، ثم يُقسم الباقي على ١٫١٥، وتُطبق نسبة العمولة. في المثال: (٢٣٠ − ٥٠) ÷ ١٫١٥ × ٨٪ ≈ ١٢٫٥٢ ريال. تُحسب عمولة كل المجموعة قبل التقريب النهائي.</p></details>
 </div>
 </div>
 </details>
 
 <section id="join-section"><div class="joinbox">
-<div><h2 class="section-title">طلب الانضمام</h2><p class="intro">بعد اعتماد طلبك يصلك الرابط الخاص بك ورابط قروب المسوّقين على البريد الذي تسجّل به.</p></div>
+<div><h2 class="section-title">طلب الانضمام</h2><p class="intro">بعد مراجعة طلبك يصلك على بريدك رمز الدخول وطريقة العمل، وبعد موافقتك عليها يتفعّل كودك ويظهر لك قروب الشركاء.</p></div>
 <form id="join" novalidate>
       <label class="q" for="fName">الاسم الكامل<input id="fName" autocomplete="name"></label>
       <label class="q" for="fEmail">البريد الإلكتروني<span class="hint">يصل إليه التقرير الدوري حسب اختيارك</span><input id="fEmail" type="email" class="ltr" dir="ltr" autocomplete="email"></label>
@@ -412,7 +419,7 @@ html[lang=en] .hw-n{font-family:"Montserrat",sans-serif}
     </form>
     <div class="done" id="done" aria-live="polite" hidden>
       <h3>تم استلام الطلب</h3>
-      <p id="doneMsg">سيتم مراجعة الطلب، وعند اعتماده يصل إلى بريدك الإلكتروني الرابط الخاص بك ورابط قروب المسوقين.</p>
+      <p id="doneMsg">سيتم مراجعة الطلب، وعند اعتماده يصلك على بريدك رمز الدخول وطريقة العمل.</p>
       <pre id="doneSum"></pre>
       <button class="ghost" id="copyBtn" type="button" hidden>نسخ البيانات</button>
       <a class="grp" id="grpLink" href="#" target="_blank" rel="noopener" hidden>
@@ -444,7 +451,7 @@ const CONFIG = {
   execFallback: "https://script.google.com/macros/s/AKfycbxvUBpwEXMsv_tICeW17V7eL4NaSgJjUkC87Sd3NTBoM7yO_fd3oukm_hDV0dsPBdRKzQ/exec"
 };
 /* قواعد التسعير نفسها في صفحة التسجيل. تُحدَّث تلقائياً من رابط التسجيل عند فتح الصفحة، وهذه قيم احتياطية فقط */
-const RULES = { AHA_PRICES:{BLS:450,ACLS:800,PALS:900}, AHA_OFF:{BLS:20,ACLS:50,PALS:50}, MULTI_TIERS:[[399,20],[599,30],[699,40],[799,50],[999,70],[1e9,100]], MULTI_MIN:2, PROMO_MAX:2 };
+const RULES = { AHA_PRICES:{BLS:450,ACLS:800,PALS:900}, AHA_OFF:{BLS:20,ACLS:50,PALS:50}, MULTI_TIERS:[[399,20],[599,30],[699,40],[799,50],[999,70],[1e9,100]], MULTI_MIN:2, PROMO_MAX:2, MULTI_TOTAL:150, CODE_DEFAULT:50, CODE_OFF:{BLS:20,PHLEBOTOMY:30}, HYBRID_FEE:20, HYB_CODES:["BLS","NRP","ACLS","PALS"] };
 /* [الكود، الاسم، الاعتماد، السعر بعد كود الخصم، السعر الأساسي]  الاعتماد: sha | aha | naemt | scfhs | att
    الأسعار من بيانات الدورات الحالية. أي سعر ناقص اكتبيه null ويظهر «يُحدد لاحقًا».
    الحد الأدنى غير موجود هنا: يُقرأ من تبويب «الحد الأدنى للأسعار» في الشيت، ويظهر للشريك المعتمد فقط. */
@@ -492,7 +499,7 @@ const labels = new Map(Object.entries({
  "كن جزءًا من مجتمع شركاء روان هب، وكن سببًا في وصول المعرفة الصحية إلى أكبر عدد ممكن من المستفيدين.":"Be part of the Rawan Hub partner community, and help healthcare knowledge reach as many people as possible.",
  "تعرف على المزيد":"Learn more",
  "مثال على عمولة متدرّب واحد":"Example for one trainee",
- "دورة BLS بسعر ٢٣٠ ر.س، عند نسبة ٨٪ وبحسب طريقة الحاسبة المنشورة حاليًا.":"BLS at SAR 230 and an 8% rate, using the current calculator method.",
+ 
  "كيف تبدأ شراكتك؟":"How to start your partnership","انضم":"Join",
  "أكمل طلب الانضمام، وبعد الموافقة يصلك رابطك وكودك الخاص على بريدك الإلكتروني.":"Complete the application. Once approved, you’ll receive your personal link and code by email.",
  "شارك الدورات مع المهتمين، ووجّههم للتسجيل عبر رابطك أو باستخدام كودك الخاص.":"Share the courses with people who are interested, and direct them to register through your link or with your code.",
@@ -502,7 +509,8 @@ const labels = new Map(Object.entries({
  "حاسبة الأسعار والعمولة":"Price & commission calculator","اختيار":"Select","السعر":"Price",
  "اختر دورة أو أكثر من الجدول.":"Select one or more courses from the table.",
  "اختر دورة أو أكثر لعرض السعر الإجمالي وعمولتك التقديرية. الأسعار من صفحة التسجيل، و":"Select one or more courses to see the total price and your estimated commission. Prices come from the registration page; the ",
- "السعر المشطوب":"struck-through price","هو السعر الأساسي و":"is the base price and the","السعر الأخضر":"green price","بعد كود الخصم.":"is with a discount code.","عند اختيار أكثر من دورة يُطبّق خصم الدورات المتعددة تلقائيًا كما في صفحة التسجيل.":"When you pick more than one course, the multi-course discount is applied automatically, just like on the registration page.",
+ "السعر المشطوب":"struck-through price","هو السعر الأصلي و":"is the original price and the","السعر الأخضر":"green price","سعر البوستر.":"is the offer price.","عند اختيار أكثر من دورة يُطبّق خصم الدورات المتعددة تلقائيًا كما في صفحة التسجيل، ولا يُجمع مع كود الخصم.":"When you pick more than one course, the multi-course discount is applied automatically, just like on the registration page; it does not combine with a discount code.",
+ "أقل سعر ممكن":"Lowest possible price","للشركاء المعتمدين فقط":"Approved partners only","أدخل كودك وبريدك المسجّل لعرض أقل سعر.":"Enter your code and registered email to see the lowest price.","عرض":"Show","المتدرّب استخدم كود خصم":"The trainee used a discount code","كود الشريك":"Partner code","البريد المسجّل":"Registered email","حضور هايبرد (+٢٠ ر.س لدورات BLS وACLS وPALS وNRP)":"Hybrid attendance (+SAR 20 for BLS, ACLS, PALS and NRP)",
  "عدد المتدرّبين":"Number of trainees","إضافة دورة":"Add a course","اختر دورة من القائمة أو من الجدول.":"Pick a course from the list or the table.","مسح الاختيار":"Clear selection","عرض الحساب":"View total",
  "احسب عمولتك التقديرية حسب الدورة وعدد المتدربين":"Estimate your commission by course and number of trainees",
  "استبعاد ضريبة القيمة المضافة":"VAT is removed",
@@ -510,7 +518,7 @@ const labels = new Map(Object.entries({
  "خصم رسوم جمعية القلب السعودية (٥٠ ر.س)":"Saudi Heart Association fee deducted (SAR 50)",
  "يُطبّق على الدورات المعتمدة من جمعية القلب السعودية فقط.":"Applies only to courses accredited by the Saudi Heart Association.",
  "احتساب نسبة العمولة على المبلغ المتبقي":"Commission rate applied to the remaining amount",
- "بنسبة ٨٪ عن كل متدرب، وترتفع إلى ١٢٪ للدورات غير BLS عند بلوغ ١٠ متدربين للمسوق في موعد الدورة نفسه، وتشمل جميع متدربي ذلك الموعد.":"8% per trainee, rising to 12% for non-BLS courses when an affiliate reaches 10 trainees in the same session, applied to all trainees in that session.",
+ 
  "١. اطلب الانضمام":"1. Apply to join",
  "أرسل طلبك واختر الكود اللي تفضّله. بعد الاعتماد يصلك رابطك الخاص ورابط قروب المسوّقين على بريدك.":"Apply with your preferred code. Once approved, you’ll receive your personal link and an invitation to the affiliates group by email.",
  "٢. شارك رابطك أو كودك":"2. Share your link or code",
@@ -523,7 +531,7 @@ const labels = new Map(Object.entries({
  "متدرّبوك في الموعد نفسه":"Your trainees in the same session",
  "إجمالي متدرّبي BLS خلال الشهر":"Your total BLS trainees this month",
  "العمولة التقديرية الإجمالية":"Estimated total commission",
- "الدورة":"Course","الاعتماد":"Accreditation","السعر الأساسي":"Base price","بعد كود الخصم":"With discount code","الحد الأدنى":"Minimum price","عمولتك لكل متدرّب":"Your commission per trainee","بعد استبعاد ضريبة ١٥٪ · نسبة ٨٪":"after removing 15% VAT · 8% rate",
+ "الدورة":"Course","الاعتماد":"Accreditation","السعر الأساسي":"Base price","بعد كود الخصم":"With discount code","الحد الأدنى":"Minimum price","عمولتك لكل متدرّب":"Your commission per trainee",
  "الحد الأدنى للأسعار للشركاء المعتمدين فقط.":"Minimum prices are for approved partners only.",
  "أدخل كودك وبريدك المسجّل لعرضه، وتقدر بعدها تختار سعر البيع ضمن الحدود في الحاسبة.":"Enter your code and registered email to view them, then choose a selling price within the limits in the calculator.",
  "كود الشريك":"Partner code","البريد المسجّل":"Registered email","عرض الحد الأدنى":"Show minimum prices",
@@ -536,8 +544,8 @@ const labels = new Map(Object.entries({
  "تُعتمد العمولة بعد اكتمال الطلب وتأكيد المنسقة تنفيذ التدريب. تُقفل العمولات بنهاية الشهر الميلادي، ثم يُرسل الكشف المعتمد إلى بريدك. يشمل أسماء المتدرّبين والدورة وموعدها والمبلغ المدفوع ونسبة العمولة وقيمتها.":"Commission is approved after the order is complete and the coordinator confirms the training took place. At the end of the calendar month, commissions close and the approved statement is emailed to you. It shows trainees, courses and dates, amounts paid, and commission rates and amounts.",
  "متى تُصرف العمولة؟":"When is commission paid?",
  "تصبح العمولة مستحقة بعد اكتمال الطلب واعتماد التدريب الفعلي. السياسة الحالية لا تحدد يومًا ثابتًا للتحويل. للاستفسار عن دفعتك، تواصلي مع المنسقة.":"Commission becomes payable once the order is complete and the training has been approved. The current policy does not specify a fixed payment date. Contact the coordinator about your payment.",
- "كيف حُسبت عمولة BLS في المثال؟":"How is the BLS example calculated?",
- "طريقة الحاسبة المنشورة حاليًا: يُطرح ٥٠ ريالًا من سعر الدورة المعتمدة من جمعية القلب السعودية، ثم يُقسم الباقي على ١٫١٥، وتُطبق نسبة العمولة. في المثال: (٢٣٠ − ٥٠) ÷ ١٫١٥ × ٨٪ ≈ ١٢٫٥٢ ريال. تُحسب عمولة كل المجموعة قبل التقريب النهائي.":"The current calculator deducts the SAR 50 Saudi Heart Association fee from an eligible course price, divides the remainder by 1.15, then applies the commission rate. Example: (230 − 50) ÷ 1.15 × 8% ≈ SAR 12.52. The group total is rounded at the end.",
+ 
+ 
  "طلب الانضمام":"Apply to join",
  "بعد اعتماد طلبك يصلك الرابط الخاص بك ورابط قروب المسوّقين على البريد الذي تسجّل به.":"Once your application is approved, we’ll email your personal link and the affiliates group invitation to the address you enter.",
  "الاسم الكامل":"Full name","البريد الإلكتروني":"Email address","رقم الجوال":"Mobile number","الكود المطلوب":"Preferred code",
@@ -557,7 +565,15 @@ const labels = new Map(Object.entries({
  "اكتمل التحقق من الحقول. هذه معاينة ولم يُرسل الطلب.":"The fields are valid. This is a preview and no application was sent.",
  "جارٍ الإرسال…":"Submitting…","تم النسخ":"Copied",
  "يُرجى نسخ البيانات وإرسالها عبر واتساب إلى الرقم 0568587031 لاستكمال الطلب.":"Copy your details and send them on WhatsApp to 0568587031 to complete your application.",
- "طلب انضمام إلى برنامج التسويق":"Affiliate program application","الاسم:":"Name:","البريد:":"Email:","الجوال:":"Mobile:","الكود المطلوب:":"Preferred code:","دورية التقارير:":"Report frequency:"
+ "طلب انضمام إلى برنامج التسويق":"Affiliate program application","الاسم:":"Name:","البريد:":"Email:","الجوال:":"Mobile:","الكود المطلوب:":"Preferred code:","دورية التقارير:":"Report frequency:",
+ "شارك رابطك أو كودك":"Share your link or code","تابع عمولاتك":"Track your commissions",
+ "منطقة الشركاء":"Partner area","دخول الشركاء":"Partner login","رمز الدخول":"Access code","دخول":"Sign in","نسيت رمز الدخول؟":"Forgot your access code?","بريدك المسجّل":"Your registered email","أرسل الرمز":"Send the code",
+ "للشركاء المعتمدين: طريقة العمولة، والأسعار، والحاسبة، وأقل سعر ممكن.":"For approved partners: commission method, prices, calculator and lowest prices.",
+ "يصلك في إيميل اعتماد طلبك، وهو بداية بريدك الإلكتروني قبل @":"Sent in your approval email: the part of your email before @",
+ "أكمل طلب الانضمام، وبعد المراجعة يصلك على بريدك رمز الدخول وطريقة العمل. وافق على الطريقة ليتفعّل كودك ويصلك قروب الشركاء.":"Complete the application. After review, you’ll receive your access code and the program terms by email. Accept the terms to activate your code and get the partners group.",
+ "بعد مراجعة طلبك يصلك على بريدك رمز الدخول وطريقة العمل، وبعد موافقتك عليها يتفعّل كودك ويظهر لك قروب الشركاء.":"After review, you’ll receive your access code and the program terms by email. Once you accept them, your code is activated and the partners group appears.",
+ "سيتم مراجعة الطلب، وعند اعتماده يصلك على بريدك رمز الدخول وطريقة العمل.":"We’ll review your application and email you your access code and the program terms once it’s approved.",
+ "عمولة على كل تسجيل مؤكد، وتصلك تفاصيلها مع طريقة العمل بعد اعتماد طلبك.":"A commission on every confirmed registration; details come with the program terms after approval."
 }));
 const originalText = new WeakMap();
 const $ = id => document.getElementById(id);
@@ -596,8 +612,8 @@ $("siteLanguage").addEventListener("click",()=>{
  language=localized("en","ar");
  try { sessionStorage.setItem("rawan-site-language",language); } catch (_) {}
  applyTranslations();
- renderCourses();
- calculate();
+ if(PT_LAST) ptRefresh();
+ if(PT_ON){ renderCourses(); calculate(); }
 });
 $("previewBanner").hidden=!previewMode;
 
@@ -612,7 +628,7 @@ const navLinks=[...document.querySelectorAll(".nav a")];
 const spy=new IntersectionObserver(entries=>{
  entries.forEach(e=>{ if(e.isIntersecting) navLinks.forEach(l=>l.classList.toggle("on",l.getAttribute("href")==="#"+e.target.id)); });
 },{rootMargin:"-45% 0px -50% 0px"});
-["how","mechanism","prices","faq","join-section"].forEach(id=>spy.observe($(id)));
+["how","partner","faq","join-section"].forEach(id=>spy.observe($(id)));
 
 /* ===== رابط الخادم ===== */
 async function execUrl(){
@@ -644,7 +660,7 @@ function validate(d){d.phone=latinDigits(d.phone);
 $('join').addEventListener('submit', async e => {
   e.preventDefault();
   const freq = (document.querySelector('input[name="freq"]:checked')||{}).value || 'شهري';
-  const d = { name:$('fName').value, email:$('fEmail').value.trim(), phone:$('fPhone').value, code:$('fCode').value, freq };
+  const d = { name:$('fName').value, email:$('fEmail').value.trim(), phone:$('fPhone').value, code:$('fCode').value, freq, lang:language };
   const err = validate(d);
   $('fErr').hidden = !err; $('fErr').textContent = err || '';
   if (err) { applyTranslations(); return; }
@@ -682,37 +698,47 @@ const nameOf=c=>localized(c[1],ENGLISH[c[0]]||c[1]);
 const SEL=new Set();
 const SALE={};          // سعر البيع لكل دورة (للشريك المعتمد فقط)
 let LIVE=false;
-function minOf(c){ const k=c[0].toUpperCase()+"|"+c[2]; return MINS&&MINS[k]!=null?MINS[k]:null; }
+function cdOf(c){ if(c[5]!=null) return c[5]; const k=String(c[0]).toUpperCase(); return c[2]==="aha"?0:(RULES.CODE_OFF[k]!=null?RULES.CODE_OFF[k]:RULES.CODE_DEFAULT); }
+function loOf(c){ return c[6]!=null?c[6]:c[3]; }   // أقل سعر عام (من الخادم)؛ بدونه ما فيه خصم
+// الحد الأدنى للشريك المعتمد (بعد التحقق فقط): سعر المجموعات عند تحقق شرط العدد
+function minOf(c,count){ const m=MINS&&MINS[c[0].toUpperCase()+"|"+c[2]]; if(!m) return null;
+ if(m.group!=null&&m.groupMin!=null&&count>=m.groupMin) return m.group; return m.floor!=null?m.floor:c[3]; }
 function tierOff(p){ for(const [max,off] of RULES.MULTI_TIERS){ if(p<=max) return off; } return 0; }
 function assocFee(c){ return c[2]==="sha"?CONFIG.shaFee:c[2]==="aha"?CONFIG.ahaFee:0; }
-function rateFor(code,trainees,month){ return code==="BLS"?(trainees>=25||month>=80?0.10:0.08):(trainees>=10?0.12:0.08); }
+function rateFor(code,trainees,month){ const R=PT_RATES; if(!R) return 0; return code==="BLS"?(trainees>=R.blsMin||month>=R.blsMonth?R.bls:R.base):(trainees>=R.hiMin?R.hi:R.base); }
 function line(label,value,cls) { return '<div'+(cls?' class="'+cls+'"':'')+'><dt>'+label+'</dt><dd>'+value+'</dd></div>'; }
-
-/* نفس حساب صفحة التسجيل: خصم الدورات المتعددة لكل دورة، والكود يلغي الزيادة لأعلى دورتين زيادة */
-function quoteOrder(){
- const list=COURSES.filter(c=>SEL.has(keyOf(c)));
- const multi=list.length>=RULES.MULTI_MIN;
- const lines=list.map(c=>{
-  const base=c[4]!=null?c[4]:c[3], orig=c[3], mk=Math.max(0,base-orig);
-  const off=multi?(c[2]==="aha"&&RULES.AHA_OFF[c[0]]!=null?RULES.AHA_OFF[c[0]]:tierOff(orig)):0;
-  return {c,base,orig,mk,off,pOff:0};
- });
- lines.filter(l=>l.mk>0).sort((a,b)=>b.mk-a.mk).slice(0,RULES.PROMO_MAX).forEach(l=>l.pOff=l.mk);
- lines.forEach(l=>{ l.noCode=l.base-l.off; l.withCode=l.base-l.off-l.pOff; });
- return lines;
+function allocate(lines,hasCode){
+ const res={map:{},mode:"none",mT:0,kT:0},M={},K={};
+ lines.forEach(l=>{M[l.code]=0;K[l.code]=0});
+ if(lines.length>=RULES.MULTI_MIN){
+  lines.forEach(l=>{ if(l.aha) M[l.code]=Math.max(0,Math.min(l.ahaOff||0,l.room)); });
+  const two=lines.filter(l=>!l.aha).sort((a,b)=>b.poster-a.poster).slice(0,2); let left=RULES.MULTI_TOTAL;
+  two.forEach(l=>{ const g=Math.max(0,Math.min(RULES.MULTI_TOTAL/2,l.room)); M[l.code]=g; left-=g; });
+  two.forEach(l=>{ if(left<=0) return; const g=Math.min(left,l.room-M[l.code]); if(g>0){ M[l.code]+=g; left-=g; } });
+ }
+ if(hasCode) lines.filter(l=>!l.aha).map(l=>({code:l.code,v:Math.max(0,Math.min(l.cd,l.room))})).sort((a,b)=>b.v-a.v).slice(0,RULES.PROMO_MAX).forEach(x=>{K[x.code]=x.v});
+ Object.keys(M).forEach(k=>{res.mT+=M[k];res.kT+=K[k]});
+ res.mode=hasCode&&res.kT>res.mT?"code":(res.mT>0?"multi":"none");
+ lines.forEach(l=>{res.map[l.code]={m:res.mode==="multi"?M[l.code]:0,k:res.mode==="code"?K[l.code]:0}});
+ return res;
 }
-function salePrice(l){
- if(!MINS) return l.withCode;
- const lo=minOf(l.c)!=null?Math.min(minOf(l.c),l.withCode):l.withCode, hi=l.noCode;
- const v=SALE[keyOf(l.c)];
- return v==null?l.withCode:Math.min(hi,Math.max(lo,v));
+/* نظام الأسعار v2: سعر البوستر، والمشطوب = السعر الأصلي. الكود وخصم الدورات المتعددة لا يُجمعان ويُطبَّق الأكبر */
+function quoteOrder(hasCode){
+ const list=COURSES.filter(c=>SEL.has(keyOf(c)));
+ const L=list.map(c=>{ const aha=c[2]==="aha", poster=c[3], off=aha?(RULES.AHA_OFF[c[0]]||0):0;
+  return {c,code:keyOf(c),aha,poster,base:c[4]!=null?c[4]:c[3],cd:cdOf(c),ahaOff:off,room:aha?off:Math.max(0,poster-loOf(c))}; });
+ const a=allocate(L,!!hasCode);
+ const hybOn=!!($("withHyb")&&$("withHyb").checked);
+ L.forEach(l=>{ const x=a.map[l.code]; l.hyb=hybOn&&l.c[2]==="sha"&&RULES.HYB_CODES.includes(l.c[0])?RULES.HYBRID_FEE:0; l.off=x.m; l.pOff=x.k; l.withCode=l.poster+l.hyb-x.m-x.k; l.noCode=l.withCode; });
+ L.mode=a.mode; L.mT=a.mT; L.kT=a.kT;
+ return L;
 }
 
 const lockCell=()=>'<span class="lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/></svg>'+localized("للشركاء المعتمدين","Approved partners")+'</span>';
 function renderCourses() {
  const later=localized("يُحدد لاحقًا","To be set");
  const hP=localized("السعر","Price"), hM=localized("عمولتك لكل متدرّب","Your commission per trainee");
- const ORDER={}; quoteOrder().forEach(l=>{ if(l.off) ORDER[keyOf(l.c)]=l; });
+ const ORDER={}; quoteOrder(false).forEach(l=>{ if(l.off) ORDER[keyOf(l.c)]=l; });
  $("courseTable").innerHTML=GROUPS.map(([g,ar,en])=>{
   const rows=COURSES.filter(c=>g==="other"?(c[2]!=="sha"&&c[2]!=="aha"):c[2]===g);
   if(!rows.length) return "";
@@ -721,9 +747,9 @@ function renderCourses() {
    // عند اختيار أكثر من دورة: السعر والعمولة بعد خصم الدورات المتعددة (نفس صفحة التسجيل)
    const q=ORDER[k], paid=q?q.withCode:disc;
    let price=disc==null?later:(base>paid?'<span class="now">'+sar(paid,0)+'</span> <span class="was">'+sar(base,0)+'</span>':'<span class="now">'+sar(paid,0)+'</span>');
-   if(q&&q.off) price+='<small class="multi-d">'+localized("خصم دورات متعددة −"+number(q.off),"multi-course −"+number(q.off))
-    +(q.pOff?localized(" + كود الخصم −"+number(q.pOff)," + code −"+number(q.pOff)):(q.mk?localized(" · الكود يشمل دورتين فقط"," · code covers 2 courses only"):""))+'</small>';
-   const fee=assocFee(c), commCell=disc==null?later:'<b class="comm">'+sar(Math.max(0,(paid-fee)/(1+CONFIG.vat))*0.08)+'</b><small class="comm-d">'+(fee?localized("على "+number(paid)+" − رسوم الجمعية "+number(fee),"on "+number(paid)+" − association fee "+number(fee)):localized("على "+number(paid)+" ر.س","on SAR "+number(paid)))+'</small>';
+   if(q&&q.off) price+='<small class="multi-d">'+localized("خصم دورات متعددة −"+number(q.off),"multi-course −"+number(q.off))+'</small>';
+   if(disc!=null) price+='<span class="mp" data-mp="'+k+'"><button type="button" class="minbtn" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/></svg>'+localized("أقل سعر ممكن","Lowest possible price")+'</button></span>';
+   const fee=assocFee(c), commCell=disc==null?later:'<b class="comm">'+sar(Math.max(0,(paid-fee)/(1+CONFIG.vat))*rateFor(c[0],1,0))+'</b><small class="comm-d">'+(fee?localized("على "+number(paid)+" − رسوم الجمعية "+number(fee),"on "+number(paid)+" − association fee "+number(fee)):localized("على "+number(paid)+" ر.س","on SAR "+number(paid)))+'</small>';
    return '<tr class="pick-row'+(on?' on':'')+'" data-k="'+k+'"><td class="pick-col"><input type="checkbox" class="pick" id="'+id+'" data-k="'+k+'"'+(on?' checked':'')+(disc==null?' disabled':'')+'></td>'
     +'<th scope="row"><label for="'+id+'"><bdi class="code">'+c[0]+'</bdi>'+nameOf(c)+'</label></th>'
     +'<td data-h="'+hP+'">'+price+'</td><td data-h="'+hM+'" class="comm-c">'+commCell+'</td></tr>';
@@ -745,7 +771,7 @@ function addCourse(k,replace){
  if(replace) delete SALE[replace];
 }
 function calculate(keepLines) {
- const lines=quoteOrder(), any=lines.length>0;
+ const count0=Math.max(1,whole($("count").value)), lines=quoteOrder($("withCode").checked), any=lines.length>0;
  $("calcAdd").innerHTML=courseOptions("",localized("+ إضافة دورة","+ Add a course"));
  $("calcEmpty").hidden=any; $("calcBody").hidden=!any;
  $("calcBar").hidden=!any;
@@ -762,15 +788,20 @@ function calculate(keepLines) {
   return '<li><select class="cs-course" data-k="'+k+'" aria-label="'+localized("الدورة","Course")+'">'+courseOptions(k)+'</select>'
    +'<label class="cs-price"><input inputmode="numeric" data-sale="'+k+'" value="'+(SALE[k]!=null?SALE[k]:"")+'" placeholder="'+localized("اكتب السعر","Type price")+'" aria-label="'+localized("السعر","Price")+'"><span>'+localized("ر.س","SAR")+'</span></label>'
    +'<button type="button" class="cs-x" data-k="'+k+'" aria-label="'+localized("إزالة","Remove")+'">×</button>'
-   +'<small class="cs-auto">'+localized("السعر بعد الخصومات "+sar(l.withCode,0)+"، ويُستخدم إذا تركت الخانة فاضية","Price after discounts "+sar(l.withCode,0)+", used if left empty")+'</small></li>';
+   +'<small class="cs-auto">'+localized("السعر بعد الخصم "+sar(l.withCode,0)+"، ويُستخدم إذا تركت الخانة فاضية"+(minOf(l.c,count0)!=null?" · أقل سعر "+sar(minOf(l.c,count0),0):""),"Price after discount "+sar(l.withCode,0)+", used if left empty"+(minOf(l.c,count0)!=null?" · lowest "+sar(minOf(l.c,count0),0):""))+'</small></li>';
  }).join("");
- const paidOf=l=>{ const v=SALE[keyOf(l.c)]; return v!=null?v:l.withCode; };
+ // سعر البيع المكتوب: ما ينزل عن أقل سعر (للشريك المعتمد بعد التحقق، وإلا أقل سعر في صفحة التسجيل) ولا يزيد عن سعر البوستر
+ const paidOf=l=>{ const v=SALE[keyOf(l.c)]; if(v==null) return l.withCode; const lo=minOf(l.c,count0)!=null?minOf(l.c,count0):Math.min(l.withCode,loOf(l.c)); return Math.min(l.poster+l.hyb,Math.max(lo+l.hyb,v)); };
  const sum=(f)=>lines.reduce((s,l)=>s+f(l),0);
  const base=sum(l=>l.base), off=sum(l=>l.off), pOff=sum(l=>l.pOff), auto=sum(l=>l.withCode), entered=sum(paidOf);
- $("calcTotals").innerHTML=line(localized("المجموع بالسعر الأساسي","Total at base price"),sar(base,0))
+ const poster=sum(l=>l.poster);
+ $("calcTotals").innerHTML=line(localized("المجموع بالسعر الأصلي","Total at original price"),'<s>'+sar(base,0)+'</s>')
+  +line(localized("المجموع بسعر البوستر","Total at offer price"),sar(poster,0))
+  +(sum(l=>l.hyb)?line(localized("حضور هايبرد","Hybrid attendance"),"+ "+sar(sum(l=>l.hyb),0)):"")
   +(off?line(localized("خصم الدورات المتعددة","Multi-course discount"),"− "+sar(off,0)):"")
   +(pOff?line(localized("خصم الكود","Code discount"),"− "+sar(pOff,0)):"")
-  +line(localized("الإجمالي بعد الخصومات","Total after discounts"),sar(auto,0),entered===auto?"big":"")
+  +($("withCode").checked&&lines.mode==="multi"&&lines.kT?line(localized("كود الخصم لا يُطبّق: خصم الدورات المتعددة أكبر","Code not applied: multi-course discount is higher"),""):"")
+  +line(localized("الإجمالي بعد الخصم","Total after discount"),sar(auto,0),entered===auto?"big":"")
   +(entered!==auto?line(localized("الإجمالي بالأسعار المدخلة","Total at the prices entered"),sar(entered,0),"big"):"");
  // العمولة على السعر المدخل لكل دورة
  let per=0;
@@ -781,12 +812,14 @@ function calculate(keepLines) {
  const total=per*count;
  $("total").textContent=sar(total);
  $("breakdown").innerHTML=parts.map(p=>line('<bdi class="code">'+p.l.c[0]+'</bdi>'+localized("عمولة ","commission ")+number(p.rate*100)+localized("٪","%"),sar(p.c))).join("")
+  +((()=>{ const autoC=lines.reduce((s,l)=>s+Math.max(0,(l.withCode-assocFee(l.c))/(1+CONFIG.vat))*rateFor(l.c[0],count,0),0); return per<autoC-0.004?line(localized("⚠ انخفاض العمولة بسبب سعر البيع المخفّض","⚠ Commission reduced by the lower selling price"),"− "+sar(autoC-per),"warn-l"):""; })())
   +line(localized("عمولة المتدرّب الواحد","Commission per trainee"),sar(per))
   +(count>1?line(localized("× عدد المتدرّبين","× trainees"),number(count)):"");
  $("calcNote").textContent=localized("لكل دورة: (السعر − رسوم الجمعية إن وُجدت) ÷ ١٫١٥ × النسبة. الإجمالي يُحسب قبل التقريب، والمستحق النهائي في الكشف بعد اكتمال التدريب واعتماده.","Per course: (price − association fee, if any) ÷ 1.15 × rate. Totals are rounded at the end; the final amount appears in your statement after training is completed and approved.");
  $("calcMini").textContent=localized(number(lines.length)+" دورة · عمولة "+sar(total),number(lines.length)+" course(s) · commission "+sar(total));
  $("calcBarTx").textContent=localized(number(lines.length)+" دورة · "+sar(entered,0)+" · عمولة "+sar(total),number(lines.length)+" course(s) · "+sar(entered,0)+" · commission "+sar(total));
 }
+function bindCalc(){
 $("courseTable").addEventListener("change",e=>{
  const box=e.target.closest(".pick"); if(!box) return;
  const k=box.dataset.k;
@@ -798,39 +831,132 @@ $("calcLines").addEventListener("click",e=>{ const x=e.target.closest(".cs-x"); 
 $("calcLines").addEventListener("change",e=>{ const s=e.target.closest(".cs-course"); if(!s) return; addCourse(s.value,s.dataset.k); renderCourses(); calculate(); });
 $("calcLines").addEventListener("input",e=>{ const i=e.target.closest("[data-sale]"); if(!i) return; i.value=latinDigits(i.value).replace(/[^0-9]/g,""); SALE[i.dataset.sale]=i.value===""?null:whole(i.value); calculate(true); });
 $("calcClear").addEventListener("click",()=>{ SEL.clear(); for(const k in SALE) delete SALE[k]; renderCourses(); calculate(); });
+$("withCode").addEventListener("change",()=>{ renderCourses(); calculate(); });
+$("withHyb").addEventListener("change",()=>{ renderCourses(); calculate(); });
 $("count").addEventListener("input",event=>{
  event.target.value=latinDigits(event.target.value).replace(/[^0-9]/g,"");
  calculate(true);
 });
+}
 
 /* الأسعار من رابط التسجيل (نفس الكتالوج وقواعد الخصم) */
 async function loadLivePrices(){
  try{
-  const url=await execUrl(); if(!url) return;
-  const txt=await (await fetch(url+"?raw=1",{cache:"no-store"})).text();
-  const m=txt.match(/window\.__CATALOG=(\{[\s\S]*?\});<\/script>/); if(!m) return;
-  const cat=JSON.parse(m[1]), seen={};
+  const cat=await callServer('getCourses',[]); const seen={};
   (cat.items||[]).forEach(it=>{
    const k=it.code+"|"+it.acc; if(seen[k]||!(Number(it.price)>0)) return; seen[k]=1;
    const row=COURSES.find(c=>c[0]===it.code&&c[2]===it.acc), base=Number(it.price)+(Number(it.markup)||0);
-   if(row){ row[3]=Number(it.price); row[4]=base; } else COURSES.push([it.code,it.ar,it.acc,Number(it.price),base]);
+   const cd=typeof it.cd==="number"?it.cd:null, lo=typeof it.lo==="number"?it.lo:null;
+   if(row){ row[3]=Number(it.price); row[4]=base; row[5]=cd; row[6]=lo; } else COURSES.push([it.code,it.ar,it.acc,Number(it.price),base,cd,lo]);
    if(!ENGLISH[it.code]&&it.en) ENGLISH[it.code]=it.en;
   });
-  const obj=(name)=>{ const x=txt.match(new RegExp(name+":\\s*(\\{[^}]*\\}|\\[[\\s\\S]*?\\]\\s*\\])")); if(!x) return null;
-   try{ return JSON.parse(x[1].replace(/Infinity/g,"1e9").replace(/([A-Za-z_]\w*)\s*:/g,'"$1":')); }catch(_){ return null; } };
-  const num=(name)=>{ const x=txt.match(new RegExp(name+":\\s*(\\d+)")); return x?Number(x[1]):null; };
-  const aha=obj("AHA_PRICES"), ahaOff=obj("AHA_OFF"), tiers=obj("MULTI_TIERS"), pmax=num("PROMO_MAX"), mmin=num("MULTI_MIN"), sha=num("SHA_FEE");
-  if(aha){ RULES.AHA_PRICES=aha; Object.keys(aha).forEach(code=>{ const row=COURSES.find(c=>c[0]===code&&c[2]==="aha"); if(row){ row[3]=aha[code]; row[4]=aha[code]; } }); }
-  if(ahaOff) RULES.AHA_OFF=ahaOff;
-  if(Array.isArray(tiers)&&tiers.length) RULES.MULTI_TIERS=tiers;
-  if(pmax) RULES.PROMO_MAX=pmax; if(mmin) RULES.MULTI_MIN=mmin; if(sha!=null) CONFIG.shaFee=sha;
+  const p=cat.pricing||{};
+  if(p.multiTotal!=null) RULES.MULTI_TOTAL=p.multiTotal; if(p.multiMin!=null) RULES.MULTI_MIN=p.multiMin; if(p.codeMax!=null) RULES.PROMO_MAX=p.codeMax;
   LIVE=true; renderCourses(); calculate();
  }catch(_){}
 }
+/* ===== «أقل سعر ممكن»: الأرقام ما توصل الصفحة إلا بعد تحقق الخادم من كود الشريك وبريده ===== */
+/* ===== منطقة الشركاء: الدخول برمز الدخول ===== */
+let PT_ON=false, PT_RATES=null, PT_CODE="", PT_LAST=null;
+const PT_KEY="rh-partner";
+function ptSave(c){ try{ localStorage.setItem(PT_KEY,JSON.stringify({c,t:Date.now()})); }catch(_){} }
+function ptSaved(){ try{ const v=JSON.parse(localStorage.getItem(PT_KEY)||"null"); if(v&&v.c&&Date.now()-v.t<30*864e5) return v.c; }catch(_){} return null; }
+function ptForget(){ try{ localStorage.removeItem(PT_KEY); }catch(_){} }
+const ptEsc=x=>String(x==null?"":x).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function ptErr(t){ $("ptErr").hidden=!t; $("ptErr").textContent=t||""; }
+function ptShow(html){ $("ptBox").hidden=true; $("ptView").hidden=false; $("ptView").innerHTML=html; applyTranslations(); }
+function ptOut(){ return '<button type="button" class="pt-link" id="ptLogout">'+localized("تسجيل الخروج","Sign out")+'</button>'; }
+async function ptLogin(code,quiet){
+ code=String(code||"").trim().toLowerCase(); if(!code){ ptErr(localized("اكتب رمز الدخول.","Enter your access code.")); return; }
+ $("ptBtn").disabled=true; ptErr("");
+ let r=null; try{ r=await callServer('partnerLogin',[code]); }catch(_){ r=null; }
+ $("ptBtn").disabled=false;
+ if(!r||!r.ok){ if(quiet){ ptForget(); return; } ptErr(r&&r.wait?localized("محاولات كثيرة، حاول بعد ربع ساعة.","Too many attempts. Try again in 15 minutes."):localized("رمز الدخول غير صحيح.","Incorrect access code.")); return; }
+ PT_CODE=code; ptSave(code); ptRender(r);
+}
+function ptTerms(r){ return '<div class="pt-ar">'+r.terms+'</div>'+(r.termsEn?'<div class="pt-en" dir="ltr">'+r.termsEn+'</div>':''); }
+// تغيير اللغة بعد الدخول: يعيد رسم البطاقة فقط (منطقة الأسعار تترجم نفسها)
+function ptRefresh(){ if(!PT_LAST) return; if(PT_LAST.state!=="active") return ptRender(PT_LAST); ptShow(ptCard(PT_LAST)); }
+function ptCard(r){
+ return '<div class="pt-card pt-active"><p class="pt-hi">'+localized("أهلًا ","Hi ")+'<b>'+ptEsc(r.name)+'</b></p><div class="pt-ids"><div><small>'+localized("كودك","Your code")+'</small><b dir="ltr">'+ptEsc(r.code)+'</b></div><div><small>'+localized("رابطك","Your link")+'</small><b dir="ltr" class="pt-lnk">'+ptEsc(r.link)+'</b><button type="button" class="pt-copy" data-copy="'+ptEsc(r.link)+'">'+localized("نسخ","Copy")+'</button></div></div>'
+  +'<a class="btn pt-grp" href="'+ptEsc(r.group)+'" target="_blank" rel="noopener">'+localized("قروب الشركاء على واتساب","Partners WhatsApp group")+'</a>'
+  +'<details class="pt-tdet"><summary>'+localized("طريقة العمل والعمولة","Program terms & commission")+'</summary><div class="pt-tx">'+ptTerms(r)+'</div></details>'+ptOut()+'</div>';
+}function ptRender(r){
+ PT_LAST=r;
+ const hi='<p class="pt-hi">'+localized("أهلًا ","Hi ")+'<b>'+ptEsc(r.name)+'</b></p>';
+ if(r.state==="review") return ptShow('<div class="pt-card">'+hi+'<p>'+localized("طلبك قيد المراجعة. يصلك إيميل بطريقة العمل بعد اعتماده.","Your application is under review. You’ll get the program terms by email once it’s approved.")+'</p>'+ptOut()+'</div>');
+ if(r.state==="activating") return ptShow('<div class="pt-card">'+hi+'<p>'+localized("تم استلام موافقتك ✓ جاري تفعيل كودك، ويصلك إيميل الترحيب ورابط القروب قريبًا.","Your acceptance was received ✓ Your code is being activated; the welcome email and group link will arrive shortly.")+'</p>'+ptOut()+'</div>');
+ if(r.state==="terms") return ptShow('<div class="pt-card pt-terms">'+hi+'<p>'+localized("راجع طريقة العمل، وإذا ناسبتك اضغط «أوافق» ليتفعّل كودك ويظهر لك قروب الشركاء.","Review the program terms. If they suit you, press “I agree” to activate your code and unlock the partners group.")+'</p><div class="pt-tx">'+ptTerms(r)+'</div><button type="button" class="btn" id="ptAgree">'+localized("أوافق على الطريقة","I agree to the terms")+'</button>'+ptOut()+'</div>');
+ // مفعّل: بطاقة الشريك + منطقة الأسعار والحاسبة من الخادم
+ PT_RATES=r.rates; MINS=r.mins||null; MK_WHO=r.name||"";
+ ptShow(ptCard(r));
+ const box=$("ptArea"); box.innerHTML=r.area; box.hidden=false;
+ const lj=box.querySelector("#ptLabels"); if(lj) try{ Object.entries(JSON.parse(lj.textContent)).forEach(([k,v])=>labels.set(k,v)); }catch(_){}
+ if(!PT_ON){ PT_ON=true; bindCalc(); bindMin(); }
+ applyTranslations(); renderCourses(); calculate(); loadLivePrices();
+}
+async function ptAgree(btn){
+ btn.disabled=true; btn.textContent=localized("جارٍ التأكيد…","Confirming…");
+ let r=null; try{ r=await callServer('partnerConfirm',[PT_CODE]); }catch(_){ r=null; }
+ if(r&&r.ok){ ptRender(r); return; }
+ btn.disabled=false; btn.textContent=localized("أوافق على الطريقة","I agree to the terms");
+}
+function ptInit(){
+ $("ptLogin").addEventListener("submit",e=>{ e.preventDefault(); ptLogin($("ptCode").value); });
+ $("ptForgotT").addEventListener("click",()=>{ $("ptForgot").hidden=!$("ptForgot").hidden; });
+ $("ptForgot").addEventListener("submit",async e=>{ e.preventDefault(); const m=$("ptForgotMsg"); try{ await callServer('partnerForgot',[$("ptEmail").value.trim()]); }catch(_){}
+  m.hidden=false; m.textContent=localized("إذا كان بريدك مسجّلًا ومعتمدًا، يصلك رمز الدخول خلال دقائق.","If your email is registered and approved, your access code will arrive within minutes."); });
+ $("ptView").addEventListener("click",e=>{
+  if(e.target.closest("#ptLogout")){ ptForget(); location.hash="#partner"; location.reload(); return; }
+  const a=e.target.closest("#ptAgree"); if(a){ ptAgree(a); return; }
+  const c=e.target.closest(".pt-copy"); if(c){ try{ navigator.clipboard.writeText(c.dataset.copy); c.textContent=localized("تم النسخ ✓","Copied ✓"); }catch(_){} }
+ });
+ let code=null;
+ try{ const q=new URLSearchParams(location.search); if(q.get("login")){ code=q.get("login"); q.delete("login"); history.replaceState(null,"",location.pathname+(q.toString()?"?"+q:"")+location.hash); } }catch(_){}
+ if(code){ $("ptCode").value=code; ptLogin(code); return; }
+ const saved=ptSaved(); if(saved) ptLogin(saved,true);
+}
+const MIN_NOTE_AR="هذه أسعار استثنائية يُلجأ إليها في أضيق الحالات لكسب المتدربين وتعزيز العلاقة معهم. تنخفض العمولة بحسب سعر البيع المعتمد، وتُحسب قيمتها الفعلية في حاسبة العمولة.";
+const MIN_NOTE_EN="These are exceptional prices, used only in limited cases to win trainees and strengthen the relationship with them. Commission decreases with the approved selling price; the actual amount is calculated in the commission calculator.";
+let MP_OPEN=null, MK_WHO="";
+function mpBody(k){
+ const c=COURSES.find(x=>keyOf(x)===k); if(!c) return "";
+ const note='<p class="mp-note">'+localized(MIN_NOTE_AR,MIN_NOTE_EN)+'</p>';
+ if(!MINS) return '<b class="mp-t">'+localized("للشركاء المعتمدين فقط","Approved partners only")+'</b><p class="mp-s">'+localized("افتحها مباشرة من رابطك الخاص اللي وصلك على البريد (مرة وحدة ويتذكرك الجهاز)، أو أدخل كودك وبريدك المسجّل:","Open it directly from the private link in your email (once, and this device remembers you), or enter your code and registered email:")+'</p>'
+  +'<form class="mp-f"><input name="code" autocomplete="off" placeholder="'+localized("كود الشريك","Partner code")+'" aria-label="'+localized("كود الشريك","Partner code")+'"><input name="email" type="email" autocomplete="email" placeholder="'+localized("البريد المسجّل","Registered email")+'" aria-label="'+localized("البريد المسجّل","Registered email")+'"><button type="submit">'+localized("عرض","Show")+'</button></form><p class="mp-err" hidden></p>'+note;
+ const m=MINS[c[0].toUpperCase()+"|"+c[2]], fl=m&&m.floor!=null?m.floor:c[3], fee=assocFee(c), comm=p=>sar(Math.max(0,(p-fee)/(1+CONFIG.vat))*rateFor(c[0],1,0));
+ let h='<b class="mp-t"><bdi class="code">'+c[0]+'</bdi>'+localized("أقل سعر ممكن","Lowest possible price")+'</b><div class="mp-n">'+sar(fl,0)+'</div>';
+ if(m&&m.group!=null) h+='<p class="mp-s">'+(m.groupMin!=null?localized("سعر المجموعات ("+number(m.groupMin)+(m.groupMin<=10?" متدربين":" متدربًا")+" فأكثر): ","Group price ("+number(m.groupMin)+"+ trainees): "):localized("سعر المجموعات: ","Group price: "))+'<b>'+sar(m.group,0)+'</b></p>';
+ const cv=p=>Math.max(0,(p-fee)/(1+CONFIG.vat))*rateFor(c[0],1,0), drop=cv(c[3])-cv(fl);
+ h+='<dl class="mp-c"><div><dt>'+localized("عمولتك عند سعر البوستر ","Your commission at offer price ")+sar(c[3],0)+'</dt><dd>'+comm(c[3])+'</dd></div><div><dt>'+localized("عمولتك عند أقل سعر ","Your commission at lowest price ")+sar(fl,0)+'</dt><dd>'+comm(fl)+'</dd></div></dl>';
+ if(drop>0) h+='<p class="mp-warn">'+localized("⚠ البيع بالسعر الاستثنائي يخفّض عمولتك من "+sar(cv(c[3]))+" إلى "+sar(cv(fl))+" لكل متدرب (أقل بـ "+sar(drop)+").","⚠ Selling at the exceptional price lowers your commission from "+sar(cv(c[3]))+" to "+sar(cv(fl))+" per trainee ("+sar(drop)+" less).")+'</p>';
+ if(MK_WHO) h+='<p class="mp-who">'+localized("مفتوح للشريك: ","Unlocked for: ")+'<bdi>'+MK_WHO.replace(/[<>&]/g,"")+'</bdi></p>';
+ return h+note;
+}
+function mpOpen(k){
+ document.querySelectorAll(".mp").forEach(x=>{ const on=x.dataset.mp===k; x.classList.toggle("on",on); const b=x.querySelector(".minbtn"); if(b) b.setAttribute("aria-expanded",on?"true":"false"); const old=x.querySelector(".mp-pop"); if(old) old.remove(); if(on) x.insertAdjacentHTML("beforeend",'<div class="mp-pop" role="dialog">'+mpBody(k)+'</div>'); });
+ MP_OPEN=k;
+}
+function bindMin(){
+$("courseTable").addEventListener("click",e=>{
+ const b=e.target.closest(".minbtn"); if(!b) return; e.preventDefault();
+ const k=b.closest(".mp").dataset.mp; if(MP_OPEN===k){ MP_OPEN=null; document.querySelectorAll(".mp").forEach(x=>{x.classList.remove("on");const p=x.querySelector(".mp-pop");if(p)p.remove()}); return; }
+ mpOpen(k);
+});
+$("courseTable").addEventListener("submit",async e=>{
+ const f=e.target.closest(".mp-f"); if(!f) return; e.preventDefault();
+ const err=f.parentNode.querySelector(".mp-err"), btn=f.querySelector("button");
+ btn.disabled=true; err.hidden=true;
+ try{ const r=await callServer('marketerPrices',[f.code.value.trim(),f.email.value.trim()]);
+  if(r&&r.ok&&r.mins){ MINS=r.mins; MK_WHO=r.name||""; renderCourses(); calculate(); if(MP_OPEN) mpOpen(MP_OPEN); return; }
+  err.textContent=r&&r.wait?localized("محاولات كثيرة، حاول بعد ربع ساعة.","Too many attempts. Try again in 15 minutes."):localized("الكود أو البريد غير مطابق لشريك معتمد.","Code or email does not match an approved partner."); err.hidden=false;
+ }catch(_){ err.textContent=localized("تعذّر التحقق الآن، حاول لاحقًا.","Could not verify right now."); err.hidden=false; }
+ btn.disabled=false;
+});
+}
+document.addEventListener("click",e=>{ if(MP_OPEN&&!e.target.closest(".mp")){ MP_OPEN=null; document.querySelectorAll(".mp").forEach(x=>{x.classList.remove("on");const p=x.querySelector(".mp-pop");if(p)p.remove()}); } });
 applyTranslations();
-renderCourses();
-calculate();
-loadLivePrices();
+ptInit();
 </script>
 </body>
 </html>
