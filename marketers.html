@@ -451,27 +451,27 @@ const CONFIG = {
   execFallback: "https://script.google.com/macros/s/AKfycbxvUBpwEXMsv_tICeW17V7eL4NaSgJjUkC87Sd3NTBoM7yO_fd3oukm_hDV0dsPBdRKzQ/exec"
 };
 /* قواعد التسعير نفسها في صفحة التسجيل. تُحدَّث تلقائياً من رابط التسجيل عند فتح الصفحة، وهذه قيم احتياطية فقط */
-const RULES = { AHA_PRICES:{BLS:450,ACLS:800,PALS:900}, AHA_OFF:{BLS:20,ACLS:50,PALS:50}, MULTI_TIERS:[[399,20],[599,30],[699,40],[799,50],[999,70],[1e9,100]], MULTI_MIN:2, PROMO_MAX:2, MULTI_TOTAL:150, CODE_DEFAULT:50, CODE_OFF:{BLS:20,PHLEBOTOMY:30}, HYBRID_FEE:20, HYB_CODES:["BLS","NRP","ACLS","PALS"] };
+const RULES = { AHA_PRICES:{BLS:450,ACLS:800,PALS:900}, AHA_OFF:{BLS:20,ACLS:50,PALS:50}, MULTI_TIERS:[[399,20],[599,30],[699,40],[799,50],[999,70],[1e9,100]], MULTI_MIN:2, PROMO_MAX:2, MULTI_TOTAL:150, CODE_DEFAULT:50, CODE_OFF:{BLS:20,PHLEBOTOMY:60}, HYBRID_FEE:20, HYB_CODES:["BLS","NRP","ACLS","PALS"] };
 /* [الكود، الاسم، الاعتماد، السعر بعد كود الخصم، السعر الأساسي]  الاعتماد: sha | aha | naemt | scfhs | att
    الأسعار من بيانات الدورات الحالية. أي سعر ناقص اكتبيه null ويظهر «يُحدد لاحقًا».
    الحد الأدنى غير موجود هنا: يُقرأ من تبويب «الحد الأدنى للأسعار» في الشيت، ويظهر للشريك المعتمد فقط. */
 const COURSES = [
-  ["BLS","أساسيات دعم الحياة","sha",230,280],
+  ["BLS","أساسيات دعم الحياة","sha",250,300],
   ["ACLS","دعم الحياة القلبي المتقدم","sha",690,810],
   ["PALS","دعم الحياة المتقدم للأطفال","sha",700,820],
   ["NRP","إنعاش حديثي الولادة","sha",650,770],
-  ["HSFA","الإسعافات الأولية وإنعاش القلب","sha",290,340],
-  ["ATLS","دعم الحياة المتقدم للإصابات","sha",1200,1330],
-  ["ALSO","دعم الحياة المتقدم في التوليد","sha",1200,1330],
+  ["HSFA","الإسعافات الأولية وإنعاش القلب","sha",290,400],
+  ["ATLS","دعم الحياة المتقدم للإصابات","sha",1200,1400],
+  ["ALSO","دعم الحياة المتقدم في التوليد","sha",1200,1400],
   ["BLS","أساسيات دعم الحياة","aha",450,450],
   ["ACLS","دعم الحياة القلبي المتقدم","aha",800,800],
   ["PALS","دعم الحياة المتقدم للأطفال","aha",900,900],
   ["PHTLS","دعم الحياة للإصابات قبل المستشفى","naemt",1200,1330],
-  ["BOSS","مهارات الجراحة الأساسية","scfhs",1200,1330],
+  ["BOSS","مهارات الجراحة الأساسية","scfhs",1200,1400],
   ["ECG","تخطيط القلب الكهربائي","att",350,420],
   ["POCUS","الموجات فوق الصوتية الإسعافية","att",500,570],
   ["Airway","إدارة مجرى الهواء","att",350,420],
-  ["Phlebotomy","مهارات سحب الدم","att",170,220]
+  ["Phlebotomy","مهارات سحب الدم","att",240,300]
 ];
 const ENGLISH = {BLS:"Basic Life Support",ACLS:"Advanced Cardiovascular Life Support",PALS:"Pediatric Advanced Life Support",NRP:"Neonatal Resuscitation Program",HSFA:"Heartsaver First Aid and CPR",ATLS:"Advanced Trauma Life Support",ALSO:"Advanced Life Support in Obstetrics",PHTLS:"Prehospital Trauma Life Support",BOSS:"Basic Surgical Skills",ECG:"Electrocardiography",POCUS:"Point-of-Care Ultrasound",Airway:"Airway Management",Phlebotomy:"Phlebotomy Skills"};
 const ACCN = {sha:["جمعية القلب السعودية","Saudi Heart Association"],aha:["جمعية القلب الأمريكية","American Heart Association"],naemt:["NAEMT","NAEMT"],scfhs:["الهيئة السعودية للتخصصات الصحية","Saudi Commission for Health Specialties"],att:["شهادة حضور","Certificate of attendance"]};
