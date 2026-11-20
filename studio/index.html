@@ -1184,7 +1184,7 @@ html,body{overflow-x:clip}
 // ===== تعديلاتك هنا مع الوقت =====
 // رابط جدول قوقل بعد «النشر على الويب» بصيغة CSV. إذا موجود، الموقع يقرأ منه الأسعار والدورة القادمة والأرقام والآراء
 const SHEET_URL = "";
-const PRICES = {BLS:["من 300 ر.س","From SAR 300"], ACLS:["من 810 ر.س","From SAR 810"], PALS:["من 820 ر.س","From SAR 820"], NRP:["من 770 ر.س","From SAR 770"], HSFA:["من 400 ر.س","From SAR 400"]}; // تتعبى تلقائي من الجدول
+const PRICES = {BLS:["من 250 ر.س","From SAR 250"], ACLS:["من 690 ر.س","From SAR 690"], PALS:["من 700 ر.س","From SAR 700"], NRP:["من 650 ر.س","From SAR 650"], HSFA:["من 290 ر.س","From SAR 290"]}; // تتعبى تلقائي من الجدول
 // الدورة القادمة: اكتبي البيانات، واتركيها فاضية لين يتحدد موعد
 const NEXT = {code:"", city:["",""], date:"", dateText:["",""]};   // مثال: {code:"BLS", city:["مكة المكرمة","Makkah"], date:"2026-11-12", dateText:["الخميس ١٢ نوفمبر","Thu 12 Nov"]}
 // أرقامك الحقيقية: تظهر فقط إذا عبيتيها
@@ -1449,8 +1449,9 @@ function moveSpike(anim){
 window.addEventListener("resize", () => moveSpike(false));
 
 // greeting + fact
+setInterval(() => { try { greet(); } catch (e) {} }, 60000);
 function greet(){
-  const h = +new Intl.DateTimeFormat("en-GB",{timeZone:"Asia/Riyadh",hour:"numeric",hourCycle:"h23"}).format(new Date());
+  const h = (new Date().getUTCHours() + 3) % 24; // توقيت الرياض (UTC+3) بنظام 24 ساعة
   $("greet").textContent = (h >= 4 && h < 12) ? (L ? "Good morning" : "صباح الخير") : (L ? "Good evening" : "مساء الخير");
 }
 function fact(){
@@ -1906,19 +1907,19 @@ document.fonts && document.fonts.ready.then(() => moveSpike(false));
   const POSES = {present:"img/image-32.webp",clip:"img/image-33.webp",thumbs:"img/image-34.webp",tablet:"img/image-35.webp",wave:"img/image-36.webp"};
   const SHA=["جمعية القلب السعودية","Saudi Heart Association"], SHAAHA=["جمعية القلب السعودية · الأمريكية","Saudi / American Heart Association"], ATT=["شهادة حضور","Certificate of attendance"];
   const CAT = [
-    {code:"BLS",ar:"أساسيات دعم الحياة",en:"Basic Life Support",hd:1,pose:"present",who:["للممارسين الصحيين وطلاب التخصصات الصحية. الإنعاش القلبي الرئوي للكبار والأطفال والرضع، واستخدام جهاز AED.","For healthcare providers and students. High-quality CPR for adults, children and infants, and AED use."],pr:{sha:[230,280],aha:[450,450]}},
+    {code:"BLS",ar:"أساسيات دعم الحياة",en:"Basic Life Support",hd:1,pose:"present",who:["للممارسين الصحيين وطلاب التخصصات الصحية. الإنعاش القلبي الرئوي للكبار والأطفال والرضع، واستخدام جهاز AED.","For healthcare providers and students. High-quality CPR for adults, children and infants, and AED use."],pr:{sha:[250,300],aha:[450,450]}},
     {code:"ACLS",ar:"دعم الحياة القلبي الوعائي المتقدم",en:"Advanced Cardiovascular Life Support",hd:1,pose:"clip",who:["للأطباء والتمريض والمسعفين في الطوارئ والعناية. التعامل المتقدم مع توقف القلب واضطرابات النظم.","For physicians, nurses and paramedics in emergency and critical care. Advanced cardiac arrest and arrhythmia management."],pr:{sha:[690,810],aha:[800,800]}},
     {code:"PALS",ar:"دعم الحياة المتقدم للأطفال",en:"Pediatric Advanced Life Support",hd:1,pose:"thumbs",who:["للعاملين في طوارئ ورعاية الأطفال. التقييم والإنعاش المتقدم للرضع والأطفال.","For pediatric emergency and care staff. Assessment and advanced resuscitation of infants and children."],pr:{sha:[700,820],aha:[900,900]}},
     {code:"NRP",ar:"برنامج إنعاش حديثي الولادة",en:"Neonatal Resuscitation Program",hd:1,pose:"tablet",who:["للعاملين في غرف الولادة وعناية المواليد. إنعاش المولود في الدقائق الأولى بعد الولادة.","For delivery room and newborn care staff. Resuscitating newborns in the first minutes after birth."],pr:{sha:[650,770]}},
-    {code:"HSFA",ar:"الإسعافات الأولية وإنعاش القلب",en:"Heartsaver First Aid",hd:1,pose:"wave",who:["لعامة الناس والمعلمين والموظفين. التصرف الصحيح مع الاختناق والنزيف والحروق والإغماء، والإنعاش.","For the public, teachers and staff. Handling choking, bleeding, burns and fainting, plus CPR."],pr:{sha:[290,340]}},
-    {code:"ATLS",ar:"دعم الحياة المتقدم للإصابات",en:"Advanced Trauma Life Support",pose:"clip",who:["للأطباء في الطوارئ والجراحة. التقييم والتعامل الأولي المنظم مع المصابين.","For emergency and surgical physicians. Structured initial assessment and management of trauma patients."],pr:{sha:[1200,1330]}},
-    {code:"ALSO",ar:"دعم الحياة المتقدم في التوليد",en:"Advanced Life Support in Obstetrics",pose:"present",who:["لأطباء وتمريض النساء والولادة. التعامل مع طوارئ الحمل والولادة.","For obstetric physicians and nurses. Managing pregnancy and delivery emergencies."],pr:{sha:[1200,1330]}},
+    {code:"HSFA",ar:"الإسعافات الأولية وإنعاش القلب",en:"Heartsaver First Aid",hd:1,pose:"wave",who:["لعامة الناس والمعلمين والموظفين. التصرف الصحيح مع الاختناق والنزيف والحروق والإغماء، والإنعاش.","For the public, teachers and staff. Handling choking, bleeding, burns and fainting, plus CPR."],pr:{sha:[290,400]}},
+    {code:"ATLS",ar:"دعم الحياة المتقدم للإصابات",en:"Advanced Trauma Life Support",pose:"clip",who:["للأطباء في الطوارئ والجراحة. التقييم والتعامل الأولي المنظم مع المصابين.","For emergency and surgical physicians. Structured initial assessment and management of trauma patients."],pr:{sha:[1200,1400]}},
+    {code:"ALSO",ar:"دعم الحياة المتقدم في التوليد",en:"Advanced Life Support in Obstetrics",pose:"present",who:["لأطباء وتمريض النساء والولادة. التعامل مع طوارئ الحمل والولادة.","For obstetric physicians and nurses. Managing pregnancy and delivery emergencies."],pr:{sha:[1200,1400]}},
     {code:"PHTLS",ar:"دعم الحياة للإصابات قبل المستشفى",en:"Prehospital Trauma Life Support",pose:"thumbs",who:["للمسعفين والعاملين قبل المستشفى. تقييم المصابين وعلاجهم في الميدان.","For paramedics and prehospital staff. Assessing and treating trauma patients in the field."],pr:{naemt:[1200,1330]}},
-    {code:"BOSS",ar:"مهارات الجراحة الأساسية",en:"Basic Operative Surgical Skills",pose:"tablet",who:["لأطباء الامتياز والمقيمين. الخياطة والعُقد والتعامل الآمن مع الأنسجة والأدوات.","For interns and residents. Suturing, knots and safe handling of tissue and instruments."],pr:{scfhs:[1200,1330]}},
+    {code:"BOSS",ar:"مهارات الجراحة الأساسية",en:"Basic Operative Surgical Skills",pose:"tablet",who:["لأطباء الامتياز والمقيمين. الخياطة والعُقد والتعامل الآمن مع الأنسجة والأدوات.","For interns and residents. Suturing, knots and safe handling of tissue and instruments."],pr:{scfhs:[1200,1400]}},
     {code:"ECG",ar:"تخطيط القلب الكهربائي",en:"Electrocardiogram",pose:"clip",who:["للممارسين الصحيين. قراءة تخطيط القلب والتعرف على الاضطرابات الشائعة.","For healthcare providers. Reading ECGs and recognising common abnormalities."],pr:{att:[350,420]}},
     {code:"POCUS",ar:"الموجات فوق الصوتية الإسعافية",en:"Point-of-Care Ultrasound / FAST",pose:"present",who:["للأطباء في الطوارئ. استخدام الموجات فوق الصوتية بجانب المريض وفحص FAST.","For emergency physicians. Bedside ultrasound and the FAST exam."],pr:{att:[500,570]}},
     {code:"Airway",ar:"إدارة مجرى الهواء",en:"Airway Management",pose:"thumbs",who:["للممارسين في الطوارئ والعناية. تقييم مجرى الهواء وأدوات وتقنيات تأمينه.","For emergency and critical care staff. Airway assessment and securing techniques."],pr:{att:[350,420]}},
-    {code:"Phlebotomy",ar:"مهارات سحب الدم",en:"Phlebotomy Skills",pose:"wave",who:["للممارسين وطلاب المختبرات والتمريض. سحب الدم الوريدي بطريقة آمنة وصحيحة.","For practitioners and lab and nursing students. Safe, correct venous blood collection."],pr:{att:[170,220]}}
+    {code:"Phlebotomy",ar:"مهارات سحب الدم",en:"Phlebotomy Skills",pose:"wave",who:["للممارسين وطلاب المختبرات والتمريض. سحب الدم الوريدي بطريقة آمنة وصحيحة.","For practitioners and lab and nursing students. Safe, correct venous blood collection."],pr:{att:[240,300]}}
   ];
   const ACCN = {sha:["جمعية القلب السعودية","Saudi Heart Association"], aha:["جمعية القلب الأمريكية","American Heart Association"], naemt:["NAEMT","NAEMT"], scfhs:["الهيئة السعودية للتخصصات الصحية","Saudi Commission for Health Specialties"], att:["شهادة حضور","Certificate of attendance"]};
   const REGC = "https://byrawan.github.io/courses/?city=%D8%AC%D8%AF%D8%A9&course=";
