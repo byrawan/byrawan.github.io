@@ -1,9 +1,50 @@
 <!doctype html><html lang="ar" dir="rtl"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}
 /* رسمة الاستوديو تبقى يسار في الإنجليزي مثل العربي */
 html[dir=ltr] .hero{direction:rtl}html[dir=ltr] .hero>*{direction:ltr}
-</style></head><body>
+</style><style id="rhr-css">
+.rhr{display:grid;gap:14px}
+.rhr-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.rhr-t{margin:0;font-size:clamp(20px,5vw,26px);line-height:1.3}
+.rhr-sum{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #ece6db;border-radius:14px;padding:8px 14px}
+.rhr-avg{font-size:30px;font-weight:800;line-height:1;direction:ltr}
+.rhr-sum small{display:block;font-size:12px;color:#7a7a7a;margin-top:2px}
+.rhr-st{display:inline-flex;gap:1px;font-size:16px;line-height:1}.rhr-st span{color:#e6dfd2}.rhr-st span.on{color:#f2a72e}
+.rhr-st.sm{font-size:13px}
+.rhr-strip{overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(to right,transparent,#000 5%,#000 95%,transparent)}
+.rhr-track{display:flex;gap:12px;width:max-content;padding:2px 0}
+.rhr-strip.loop .rhr-track{animation:rhrM var(--d,40s) linear infinite}
+html[dir=ltr] .rhr-strip.loop .rhr-track{animation-name:rhrML}
+.rhr-strip:hover .rhr-track,.rhr-strip:active .rhr-track{animation-play-state:paused}
+@keyframes rhrM{to{transform:translateX(50%)}}@keyframes rhrML{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.rhr-strip.loop .rhr-track{animation:none}.rhr-strip{overflow-x:auto}}
+.rhr-card{margin:0;width:250px;flex:none;background:#fff;border:1px solid #ece6db;border-radius:14px;padding:12px 14px;display:flex;flex-direction:column;gap:6px}
+.rhr-card blockquote{margin:0;font-size:14px;line-height:1.65;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.rhr-card figcaption{font-size:12.5px;color:#7a7a7a;font-weight:600;margin-top:auto}
+.rhr-box{background:#fff;border:1px solid #ece6db;border-radius:14px;padding:12px 14px;display:grid;gap:10px}
+.rhr-top{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.rhr-q{font-weight:700;font-size:15px}
+.rhr-pick{display:inline-flex;gap:2px}
+.rhr-pick button{border:0;background:none;font-size:30px;line-height:1;color:#e6dfd2;cursor:pointer;padding:0 2px;transition:transform .15s}
+.rhr-pick button.on{color:#f2a72e}.rhr-pick button:active{transform:scale(1.15)}
+.rhr-more{display:grid;gap:8px}
+.rhr-more textarea,.rhr-more input{font:inherit;font-size:15px;border:1px solid #ece6db;border-radius:10px;padding:10px 12px;background:#fcfbf8;width:100%;box-sizing:border-box;color:inherit}
+.rhr-row{display:flex;gap:8px;align-items:stretch}.rhr-row textarea{flex:1;min-width:0}
+.rhr-send{flex:none;background:var(--rhr-btn,#0a4436);color:#fff;border:0;border-radius:10px;padding:0 24px;font:inherit;font-weight:700;cursor:pointer}
+.rhr-send[disabled]{opacity:.6}
+.rhr-msg{margin:0;font-size:13px;color:#b04a32}
+.rhr-thanks{margin:0;padding:12px;border-radius:12px;background:#eef6f0;color:#0a4436;font-weight:600;text-align:center}
+</style>
+</head><body>
+<style>#pg-ld{position:fixed;inset:0;z-index:2147480000;background:#fbf7f1;display:grid;place-items:center;opacity:0;animation:pgIn .25s .2s forwards}#pg-ld img{width:120px;height:auto;animation:pgPulse 1.3s ease-in-out infinite}#pg-ld.out{opacity:0!important;animation:none;transition:opacity .45s;pointer-events:none}@keyframes pgIn{to{opacity:1}}@keyframes pgPulse{0%,100%{transform:scale(.94);opacity:.75}50%{transform:scale(1.04);opacity:1}}@media (prefers-reduced-motion:reduce){#pg-ld img{animation:none}}</style>
+<div id="pg-ld" aria-hidden="true"><img src="/studio/img/image-05.webp" alt=""></div>
+<script>(function(){var d=document.getElementById("pg-ld");function done(){if(!d||d.className)return;d.className="out";setTimeout(function(){d&&d.parentNode&&d.parentNode.removeChild(d)},500)}if(document.readyState==="complete")done();else addEventListener("load",done);setTimeout(done,3500)})();</script>
 <title>استوديو روان | Rawan Hub</title>
 <link rel="icon" href="/icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="description" content="استوديو روان: دورات الإنعاش والإسعافات الأولية بأسلوب عملي وتقنيات تدريب حديثة.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="استوديو روان | Rawan Hub">
+<meta property="og:url" content="https://byrawan.github.io/studio/">
+<meta property="og:image" content="https://byrawan.github.io/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Outfit:wght@500;700;800&display=swap">
@@ -647,7 +688,7 @@ h1,h2,h3,.h1,.h2{font-weight:700!important;letter-spacing:-.2px}
 .kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:24px;border-top:1px solid color-mix(in srgb,var(--ink) 14%,transparent);padding-top:16px;max-width:460px}
 .kpis div{display:grid;gap:2px;padding-inline-end:12px}
 .kpis div+div{border-inline-start:1px solid color-mix(in srgb,var(--ink) 14%,transparent);padding-inline-start:14px}
-.kpis b{font-size:26px;font-weight:700;line-height:1.1;font-variant-numeric:tabular-nums}
+.kpis b{direction:ltr;unicode-bidi:isolate;font-size:26px;font-weight:700;line-height:1.1;font-variant-numeric:tabular-nums}
 .kpis span{font-size:12.5px;color:var(--muted);font-weight:700;line-height:1.4}
 /* accreditation bar */
 .accbar{display:flex;align-items:center;gap:14px 22px;flex-wrap:wrap;padding:18px 0;border-bottom:1px solid var(--line)}
@@ -692,7 +733,7 @@ footer>p{font-size:13px}
   .band.hero-band{padding-block:24px 30px}
   .hero .art img{max-height:190px}
   .kpis{max-width:none}
-  .kpis b{font-size:22px}
+  .kpis b{direction:ltr;unicode-bidi:isolate;font-size:22px}
   .accbar{padding:16px 0}
   .accbar-i span{font-size:13px}
   .foot-top{flex-direction:column}
@@ -760,7 +801,7 @@ html,body{overflow-x:clip}
 .hero .hello{font-size:13px}
 @media(max-width:860px){.hero{grid-template-columns:minmax(0,1fr)!important}.art.hand .nm{left:71%;top:62%}.art.hand .nm b{font-size:clamp(22px,8cqw,40px)}.art.hand{justify-content:center}.art.hand .stagex{width:min(440px,100%);margin:0 auto -6px;-webkit-mask-image:linear-gradient(to top,transparent 0,#000 22%);mask-image:linear-gradient(to top,transparent 0,#000 22%)}}
 
-#p-home #next,#p-home #home-reviews,#p-home .stats{display:none!important}
+#p-home #next,#p-home #home-reviews,#p-home .stats{display:none!important} #home-rv .shead,#home-rv .reviews{display:none!important} #rhRate{--rhr-btn:var(--red,#c4553d)}
 .fact-home{display:flex;gap:14px;align-items:center;margin:18px 0 6px;padding:16px 18px;border-radius:20px;background:#fff;border:1.5px solid var(--line);box-shadow:0 6px 20px rgba(47,59,51,.06);border-inline-start:5px solid var(--red)}
 .fact-home .fh-ic{flex:none;width:46px;height:46px;border-radius:14px;background:#FBE9E4;display:grid;place-items:center}
 .fact-home .fh-ic svg{width:26px;height:26px;fill:none;stroke:var(--red);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
@@ -954,6 +995,7 @@ html,body{overflow-x:clip}
     </div>
 </div>
 <div class="hsec" id="home-rv">
+  <div id="rhRate" class="rhr" data-src="الاستوديو"></div>
   <div class="shead"><p class="eyebrow" data-t="vEy">آراء المتدربين</p><h2 class="h2" data-t="vShareH">شاركني رأيك</h2></div>
   <div class="reviews one">
     <form class="card" id="rv-form" novalidate>
@@ -962,7 +1004,8 @@ html,body{overflow-x:clip}
       <div class="field"><label for="rv-name" data-t="vName">اسمك (اختياري)</label><input type="text" id="rv-name"></div>
       <div class="field"><label for="rv-text" data-t="vText">رأيك</label><textarea id="rv-text"></textarea></div>
       <p class="err" id="rv-err" hidden></p>
-      <a class="btn" id="rv-send" href="https://wa.me/966568587031" target="_blank" rel="noopener" data-t="vSend">أرسل رأيك عبر واتساب</a>
+      <a class="btn" id="rv-send" href="#" role="button" data-t="vSend">أرسل رأيك</a>
+      <p class="muted" id="rv-note" data-t="vNote" style="font-size:12.5px;margin:8px 0 0">يُنشر رأيك بعد المراجعة.</p>
     </form>
   </div>
 </div>
@@ -1091,7 +1134,7 @@ html,body{overflow-x:clip}
 
   <div class="sec">
     <p class="eyebrow" data-t="sEy">على حساباتي</p>
-    <h3 class="h2" data-t="sH">محتوى جديد كل أسبوع</h3>
+    <h3 class="h2" data-t="sH">محتوى جديد باستمرار</h3>
   </div>
   <div class="series">
     <div class="card"><img class="pic" src="img/image-16.webp" alt="" loading="lazy"><b data-t="s1t">من القاعة</b><span data-t="s1p">مواقف حقيقية من الدورات ووش نتعلم منها</span></div>
@@ -1206,7 +1249,7 @@ const T = {
   w1:["أي دورة تبغى؟","Which course?"], w2:["وين ولمين؟","Where and for whom?"], w3:["بياناتك","Your details"], w4:["راجع رسالتك وأرسلها","Review and send"], back:["رجوع","Back"], next:["التالي","Next"],
   vShareH:["شاركني رأيك","Share your review"],
   vCount:["تقييم","reviews"], vShare:["شارك رأيك","Share your review"], vFirstT:["كن أول من يقيّم","Be the first to review"], vFirstP:["حضرت دورة معي؟ تقييمك يساعد غيرك يختار.","Took a course with me? Your review helps others choose."],
-  rights:["Rawan Hub · روان السفياني. جميع الحقوق محفوظة. يُمنع نسخ أو إعادة استخدام المحتوى أو التصاميم أو شخصية «روان المدربة» بأي شكل بدون إذن كتابي.","Rawan Hub · Rawan Alsofyani. All rights reserved. The content, designs and the \"Rawan the Trainer\" character may not be copied or reused in any form without written permission."],
+  rights:["Rawan Hub · روان السفياني. جميع الحقوق محفوظة. يُمنع نسخ أو إعادة استخدام المحتوى أو التصاميم أو شخصية «روان المدربة» بأي شكل بدون إذن كتابي.","Rawan Hub · Rawan Alsufyani. All rights reserved. The content, designs and the \"Rawan the Trainer\" character may not be copied or reused in any form without written permission."],
   footFollow:["تابعني وتواصل معي","Follow and contact me"], footWa:["واتساب واتصال","WhatsApp and calls"], footSoc:["تيك توك وإكس","TikTok and X"], footMail:["الإيميل","Email"],
   voiceB:["اسمع روان","Hear from Rawan"],
   rnEy:["متى تنتهي شهادتي؟","When does my certificate expire?"], rnH:["احسب موعد التجديد","Check your renewal date"], rnDate:["تاريخ حضورك للدورة","Date you took the course"],
@@ -1266,12 +1309,12 @@ const T = {
   wNote:["خطوات توعوية مختصرة ولا تغني عن الدورة أو الاتصال بالإسعاف.","Short awareness steps. They don't replace a course or calling an ambulance."],
   tapFlip:["اضغط للخطوات","Tap for steps"],
   e1:["الإسعاف","Ambulance"], e2:["الدفاع المدني","Civil Defense"], e3:["الشرطة","Police"],
-  sEy:["على حساباتي","On my accounts"], sH:["محتوى جديد كل أسبوع","New content every week"],
+  sEy:["على حساباتي","On my accounts"], sH:["محتوى جديد باستمرار","Fresh content regularly"],
   s1t:["من القاعة","From the classroom"], s1p:["مواقف حقيقية من الدورات ووش نتعلم منها","Real moments from courses and what they teach"],
   s2t:["خرافة أو حقيقة","Myth or fact"], s2p:["نصحح المعلومات الشائعة الغلط","Correcting common misconceptions"],
   s3t:["دقيقة إسعاف","One-minute first aid"], s3p:["مهارة وحدة في دقيقة","One skill in one minute"],
   tt:["تيك توك","TikTok"], xx:["تويتر","X"],
-  aEy:["عن روان","About"], aH:["روان السفياني","Rawan Alsofyani"], bioT:["نبذة عني","About me"],
+  aEy:["عن روان","About"], aH:["روان السفياني","Rawan Alsufyani"], bioT:["نبذة عني","About me"],
   bioP0:["أؤمن أن المعرفة تكتسب قيمتها حين نشاركها.","I believe knowledge gains its value when we share it."],
   bioP1:["مدربة معتمدة، أجد شغفي في تبسيط المعلومة وتحويلها إلى تجربة عملية ممتعة، تجمع بين التعلم والتفاعل، ","As an accredited trainer, my passion is simplifying information and turning it into a practical, enjoyable experience that blends learning and interaction, "],
   bioP2:["وتترك أثرًا يتجاوز قاعة التدريب","and leaves an impact that reaches beyond the training room"],
@@ -1281,7 +1324,7 @@ const T = {
   gEy:["من القاعة","From the classroom"], gH:["لقطات من الدورات","Moments from the courses"], ph:["صورة قريبًا","Photo coming soon"],
   vEy:["آراء المتدربين","Trainee reviews"], vH:["وش قالوا عن الدورات","What trainees say"],
   vEmptyT:["أول الآراء قريبًا","First reviews coming soon"], vEmptyP:["حضرت دورة معي؟ شاركني رأيك، وأنشره هنا بعد موافقتك.","Attended a course with me? Share your review and I'll post it here with your permission."],
-  vStars:["تقييمك","Your rating"], vCourse:["الدورة","Course"], vName:["اسمك (اختياري)","Your name (optional)"], vText:["رأيك","Your review"], vSend:["أرسل رأيك عبر واتساب","Send your review on WhatsApp"],
+  vStars:["تقييمك","Your rating"], vCourse:["الدورة","Course"], vName:["اسمك (اختياري)","Your name (optional)"], vText:["رأيك","Your review"], vSend:["أرسل رأيك","Send your review"], vNote:["يُنشر رأيك بعد المراجعة.","Your review is published after approval."], vThanks:["شكرًا لك! وصلني رأيك، ويظهر هنا بعد المراجعة 🌿","Thank you! Your review will appear here after approval 🌿"], vErrSend:["صار خطأ في الإرسال، حاول مرة ثانية","Could not send. Please try again."], vLimit:["وصلنا رأيك اليوم، شكرًا لك","We received your review today, thank you"], vNoLink:["الرجاء كتابة الرأي بدون روابط","Please write your review without links"],
   vNeed:["اختر التقييم واكتب رأيك","Pick a rating and write your review"],
   gRegEy:["التسجيل","Registration"], gRegH:["سجّل خلال دقيقة عبر واتساب","Register in a minute on WhatsApp"],
   gRegP:["عبّ البيانات واضغط الزر. يفتح واتساب برسالة جاهزة، وأرد عليك بالموعد والسعر.","Fill in your details and tap the button. WhatsApp opens with a ready message, and I'll reply with the date and price."],
@@ -1385,6 +1428,10 @@ const FAQ = [
   [["تقدمين دورات للجهات في مقرها؟","Do you train organizations on site?"],["إيه، للمدارس والشركات والمنشآت الصحية. اختر «جهة أو مجموعة» في النموذج.","Yes, for schools, companies and health facilities. Choose \"An organization or group\" in the form."]]
 ];
 
+function rvCall(fn,args){return fetch("https://script.google.com/macros/s/AKfycbxvUBpwEXMsv_tICeW17V7eL4NaSgJjUkC87Sd3NTBoM7yO_fd3oukm_hDV0dsPBdRKzQ/exec",{method:"POST",credentials:"omit",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({fn:fn,args:args})}).then(function(r){return r.json()}).then(function(j){if(j&&j.ok)return j.result;throw new Error((j&&j.error)||"error")})}
+function rvDayOk(){try{var d=new Date().toISOString().slice(0,10),o=JSON.parse(localStorage.getItem("rh-rv-day")||"{}");return !(o.d===d&&o.n>=2)}catch(e){return true}}
+function rvDayAdd(){try{var d=new Date().toISOString().slice(0,10),o=JSON.parse(localStorage.getItem("rh-rv-day")||"{}");o=o.d===d?{d:d,n:(o.n||0)+1}:{d:d,n:1};localStorage.setItem("rh-rv-day",JSON.stringify(o))}catch(e){}}
+var RV_LINK=/https?:|www\.|\.(com|net|org|sa|me|ly)\b|t\.me|wa\.me/i;
 const $ = id => document.getElementById(id);
 let L = 0; // 0 ar, 1 en
 try { if (localStorage.getItem("lang") === "en") L = 1; } catch(e){}
@@ -1476,6 +1523,7 @@ function renderHome(){
   $("home-reviews").innerHTML = `<div class="rv-head"><div><p class="eyebrow">${tr("vEy")}</p>${REVIEWS.length ? `<p class="rv-avg"><b class="lat">${avg.toFixed(1)}</b><span class="s">${"★".repeat(Math.round(avg))}</span><small>${REVIEWS.length} ${tr("vCount")}</small></p>` : ""}</div><a class="btn sm ghost" href="#home" data-goreview="1">${tr("vShare")}</a></div>` +
     (REVIEWS.length ? `<div class="card rv rot" id="rv-rot"></div>`
       : `<div class="card rv-empty"><img class="pic" src="img/image-31.webp" alt="" loading="lazy"><div><b>${tr("vFirstT")}</b><p class="muted" style="font-size:14px">${tr("vFirstP")}</p></div></div>`);
+  $("home-reviews").classList.toggle("has", REVIEWS.length > 0);
 }
 document.addEventListener("click", e => { if (e.target.closest("[data-goreview]")) setTimeout(() => { const f = $("rv-form"); if (f) f.scrollIntoView({block:"center"}); }, 60); });
 // rotating review
@@ -1849,10 +1897,22 @@ function updateReview(){
   const c = COURSES.find(x => x.code === $("rv-course").value);
   const lines = L ? ["My review of the course", `Course: ${c ? c.code : ""}`, `Rating: ${stars}`, `Name: ${$("rv-name").value.trim() || "—"}`, `Review: ${$("rv-text").value.trim()}`, "I agree to publishing this review on the website"]
                   : ["رأيي في الدورة", `الدورة: ${c ? c.code : ""}`, `التقييم: ${stars}`, `الاسم: ${$("rv-name").value.trim() || "—"}`, `رأيي: ${$("rv-text").value.trim()}`, "أوافق على نشر رأيي في الموقع"];
-  $("rv-send").href = `https://wa.me/${PHONE}?text=${encodeURIComponent(lines.join("\n"))}`;
+  void lines; // الرأي يُرسل للخادم (إيميل للموافقة) بدل واتساب
   if (!$("rv-err").hidden && st.stars && $("rv-text").value.trim()) $("rv-err").hidden = true;
 }
-$("rv-send").addEventListener("click", e => { if (!st.stars || !$("rv-text").value.trim()){ e.preventDefault(); $("rv-err").textContent = tr("vNeed"); $("rv-err").hidden = false; } });
+$("rv-send").addEventListener("click", e => { e.preventDefault();
+  const err = m => { $("rv-err").textContent = tr(m); $("rv-err").hidden = false; };
+  const text = $("rv-text").value.trim(), name = $("rv-name").value.trim();
+  if (!st.stars || text.length < 5) return err("vNeed");
+  if (RV_LINK.test(text + " " + name)) return err("vNoLink");
+  if (!rvDayOk()) return err("vLimit");
+  const b = $("rv-send"); if (b.dataset.busy) return; b.dataset.busy = "1"; b.style.opacity = ".6";
+  rvCall("submitReview", [{ name: name, stars: st.stars, course: $("rv-course").value, text: text, src: "الاستوديو", lang: L ? "en" : "ar" }])
+    .then(r => { if (!r || !r.ok) throw new Error(r && r.msg); rvDayAdd(); $("rv-form").innerHTML = '<p class="rv-thanks" style="margin:0;font-weight:700;text-align:center;padding:10px 0">' + tr("vThanks") + '</p>'; })
+    .catch(() => { err("vErrSend"); delete b.dataset.busy; b.style.opacity = ""; });
+});
+// آخر 10 آراء معتمدة من الخادم
+rvCall("getReviews", []).then(list => { if (!list || !list.length) return; REVIEWS.length = 0; list.forEach(x => REVIEWS.push({ name: x.name || "", text: [x.text, x.text], stars: Math.max(1, Math.min(5, +x.stars || 5)), course: x.course || "" })); applyLang(); }).catch(() => {});
 
 // copy
 function toast(t){ const el = $("toast"); el.textContent = t; el.hidden = false; clearTimeout(toast.t); toast.t = setTimeout(() => el.hidden = true, 2200); }
@@ -1974,4 +2034,47 @@ document.fonts && document.fonts.ready.then(() => moveSpike(false));
 })();
 </script>
 <script src="/ribbon.js" data-logo="/studio/img/image-05.webp" data-target=".top .logo .hublogo"></script>
+<script>
+/* قياس الزيارات بدون أي بيانات شخصية: الصفحة، المصدر، اللغة، نوع الجهاز. لإيقافه على جهازك: localStorage.setItem("rh-notrack","1") */
+(function(){var E="https://script.google.com/macros/s/AKfycbxvUBpwEXMsv_tICeW17V7eL4NaSgJjUkC87Sd3NTBoM7yO_fd3oukm_hDV0dsPBdRKzQ/exec";function send(ev){try{if(localStorage.getItem("rh-notrack"))return}catch(e){}try{var q=new URLSearchParams(location.search),r="",src;try{r=document.referrer?new URL(document.referrer).hostname:""}catch(e){}src=q.get("m")?"شريك: "+q.get("m").toLowerCase():(q.get("utm_source")||(r&&r!==location.hostname?r:(r?"من داخل الموقع":"مباشر")));fetch(E,{method:"POST",mode:"no-cors",credentials:"omit",keepalive:true,headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({fn:"trackVisit",args:[{p:location.pathname,src:src,lang:document.documentElement.lang||"",dev:/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)?"جوال":"كمبيوتر",ev:ev||"زيارة"}]})})}catch(e){}}window.rhTrack=send;if(document.readyState==="complete")send();else addEventListener("load",function(){send()})})();
+</script>
+<script>
+/* التقييمات: أي أحد يقيّم، والتقييم يوصل روان بالإيميل للموافقة. يظهر هنا المتوسط وآخر 10 آراء معتمدة كشريط متحرك */
+(function(){
+var E="https://script.google.com/macros/s/AKfycbxvUBpwEXMsv_tICeW17V7eL4NaSgJjUkC87Sd3NTBoM7yO_fd3oukm_hDV0dsPBdRKzQ/exec",root=document.getElementById("rhRate");if(!root)return;
+function call(fn,a){return fetch(E,{method:"POST",credentials:"omit",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({fn:fn,args:a})}).then(function(r){return r.json()}).then(function(j){if(j&&j.ok)return j.result;throw new Error((j&&j.error)||"error")})}
+function en(){return document.documentElement.lang==="en"}function T(a,b){return en()?b:a}
+function esc(t){return String(t||"").replace(/[&<>"]/g,function(m){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m]})}
+function dayOk(){try{var d=new Date().toISOString().slice(0,10),o=JSON.parse(localStorage.getItem("rh-rv-day")||"{}");return !(o.d===d&&o.n>=2)}catch(e){return true}}
+function dayAdd(){try{var d=new Date().toISOString().slice(0,10),o=JSON.parse(localStorage.getItem("rh-rv-day")||"{}");o=o.d===d?{d:d,n:(o.n||0)+1}:{d:d,n:1};localStorage.setItem("rh-rv-day",JSON.stringify(o))}catch(e){}}
+var LINK=/https?:|www\.|\.(com|net|org|sa|me|ly)\b|t\.me|wa\.me/i;
+var data=null,picked=0,sent=false,keep={t:"",n:""};
+function stars(n,cls){var s="";for(var i=1;i<=5;i++)s+='<span class="'+(i<=Math.round(n)?"on":"")+'">★</span>';return '<span class="rhr-st '+(cls||"")+'" role="img" aria-label="'+(Math.round(n*10)/10)+'/5">'+s+"</span>"}
+function count(n){return en()?(n+(n===1?" rating":" ratings")):(n===1?"تقييم واحد":n===2?"تقييمين":n+(n<11?" تقييمات":" تقييم"))}
+function card(x){return '<figure class="rhr-card">'+stars(x.stars,"sm")+'<blockquote dir="auto">'+esc(x.text)+'</blockquote><figcaption dir="auto">'+esc(x.name||T("زائر","Visitor"))+"</figcaption></figure>"}
+function render(){
+  var f=root.querySelector("form");if(f){keep.t=f.querySelector("textarea").value;keep.n=f.querySelector("input").value}
+  var has=data&&data.count>0,h='<div class="rhr-head"><h2 class="rhr-t">'+T("رأيك يهمنا","Your opinion matters")+"</h2>";
+  if(has)h+='<div class="rhr-sum"><b class="rhr-avg">'+Number(data.avg).toFixed(1)+"</b><div>"+stars(data.avg)+"<small>"+T("بناءً على ","Based on ")+count(data.count)+"</small></div></div>";
+  h+="</div>";
+  if(has&&data.items&&data.items.length){var c=data.items.map(card).join(""),loop=data.items.length>2;h+='<div class="rhr-strip'+(loop?" loop":"")+'"><div class="rhr-track" style="--d:'+Math.max(30,data.items.length*8)+'s">'+c+(loop?c:"")+"</div></div>"}
+  if(sent)h+='<p class="rhr-thanks">'+T("شكرًا لك! وصلنا تقييمك، ويظهر بعد المراجعة 🌿","Thank you! Your rating will appear after review 🌿")+"</p>";
+  else{h+='<form class="rhr-box" novalidate><div class="rhr-top"><span class="rhr-q">'+T("قيّم تجربتك","Rate your experience")+'</span><div class="rhr-pick" role="radiogroup" aria-label="'+T("التقييم","Rating")+'">';
+    for(var i=1;i<=5;i++)h+='<button type="button" data-s="'+i+'" class="'+(i<=picked?"on":"")+'" role="radio" aria-checked="'+(i===picked)+'" aria-label="'+i+'/5">★</button>';
+    h+='</div></div><div class="rhr-more"><input maxlength="40" autocomplete="given-name" placeholder="'+T("اسمك (اختياري)","Your name (optional)")+'" value="'+esc(keep.n)+'"><div class="rhr-row"><textarea maxlength="500" rows="2" placeholder="'+T("اكتب رأيك (اختياري)","Write a review (optional)")+'">'+esc(keep.t)+'</textarea><button type="submit" class="rhr-send">'+T("إرسال","Send")+'</button></div><p class="rhr-msg" hidden></p></div></form>'}
+  root.innerHTML=h;bind()}
+function bind(){var f=root.querySelector("form");if(!f)return;
+  f.querySelector(".rhr-pick").addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;picked=+b.dataset.s;[].forEach.call(f.querySelectorAll(".rhr-pick button"),function(x){x.classList.toggle("on",+x.dataset.s<=picked);x.setAttribute("aria-checked",+x.dataset.s===picked)});var m=f.querySelector(".rhr-more");if(m.hidden){m.hidden=false;f.querySelector("textarea").focus()}});
+  f.addEventListener("submit",function(e){e.preventDefault();var msg=f.querySelector(".rhr-msg"),t=f.querySelector("textarea").value.trim(),n=f.querySelector("input").value.trim();
+    function say(a,b){msg.textContent=T(a,b);msg.hidden=false}
+    if(!picked)return say("اختر عدد النجوم","Pick a star rating");
+    if(LINK.test(t+" "+n))return say("الرجاء الكتابة بدون روابط","Please write without links");
+    if(!dayOk())return say("وصلنا تقييمك اليوم، شكرًا لك","We received your rating today, thank you");
+    var b=f.querySelector(".rhr-send");b.disabled=true;
+    call("submitReview",[{name:n,stars:picked,text:t,src:root.dataset.src||"الموقع",lang:en()?"en":"ar"}]).then(function(r){if(!r||!r.ok)throw new Error(r&&r.msg);dayAdd();sent=true;keep={t:"",n:""};render()}).catch(function(){b.disabled=false;say("صار خطأ في الإرسال، حاول مرة ثانية","Could not send. Please try again.")})})}
+render();
+call("getReviews",[]).then(function(d){if(d&&typeof d==="object"&&!Array.isArray(d)){data=d;render()}}).catch(function(){});
+try{new MutationObserver(function(){render()}).observe(document.documentElement,{attributes:true,attributeFilter:["lang"]})}catch(e){}
+})();
+</script>
 </body></html>
